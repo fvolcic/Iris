@@ -1,0 +1,83 @@
+\hypertarget{classMessageHandler}{}\doxysection{Message\+Handler Class Reference}
+\label{classMessageHandler}\index{MessageHandler@{MessageHandler}}
+
+
+Class is responsible for both J\+S\+ON message parsing along with J\+S\+ON data extraction. There are a variety of flags that are set depending on the different messages received.  
+
+
+
+
+{\ttfamily \#include $<$message.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classMessageHandler_a13cd60aae74d7302f983025fcb127957}{parse\+Message}} (char $\ast$message)
+\begin{DoxyCompactList}\small\item\em This function parses a message. Returns false if the message was semantically invalid. True otherwise. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMessageHandler_ad39acb6eb0c612c89084ef042fa7d2cc}{new\+Action\+Available}} ()
+\begin{DoxyCompactList}\small\item\em return true if there is a new Action ready to be displayed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMessageHandler_a7d816d520c24ce81f096919aaeccddaa}{new\+Command\+Available}} ()
+\begin{DoxyCompactList}\small\item\em return true if there is a new command that needs to be executed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class is responsible for both J\+S\+ON message parsing along with J\+S\+ON data extraction. There are a variety of flags that are set depending on the different messages received. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMessageHandler_ad39acb6eb0c612c89084ef042fa7d2cc}\label{classMessageHandler_ad39acb6eb0c612c89084ef042fa7d2cc}} 
+\index{MessageHandler@{MessageHandler}!newActionAvailable@{newActionAvailable}}
+\index{newActionAvailable@{newActionAvailable}!MessageHandler@{MessageHandler}}
+\doxysubsubsection{\texorpdfstring{newActionAvailable()}{newActionAvailable()}}
+{\footnotesize\ttfamily bool Message\+Handler\+::new\+Action\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+return true if there is a new Action ready to be displayed. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMessageHandler_a7d816d520c24ce81f096919aaeccddaa}\label{classMessageHandler_a7d816d520c24ce81f096919aaeccddaa}} 
+\index{MessageHandler@{MessageHandler}!newCommandAvailable@{newCommandAvailable}}
+\index{newCommandAvailable@{newCommandAvailable}!MessageHandler@{MessageHandler}}
+\doxysubsubsection{\texorpdfstring{newCommandAvailable()}{newCommandAvailable()}}
+{\footnotesize\ttfamily bool Message\+Handler\+::new\+Command\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+return true if there is a new command that needs to be executed. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMessageHandler_a13cd60aae74d7302f983025fcb127957}\label{classMessageHandler_a13cd60aae74d7302f983025fcb127957}} 
+\index{MessageHandler@{MessageHandler}!parseMessage@{parseMessage}}
+\index{parseMessage@{parseMessage}!MessageHandler@{MessageHandler}}
+\doxysubsubsection{\texorpdfstring{parseMessage()}{parseMessage()}}
+{\footnotesize\ttfamily bool Message\+Handler\+::parse\+Message (\begin{DoxyParamCaption}\item[{char $\ast$}]{message }\end{DoxyParamCaption})}
+
+
+
+This function parses a message. Returns false if the message was semantically invalid. True otherwise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{message_8h}{message.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,9 @@
+digraph "src/network.cpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="src/network.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Define the network.h functionality."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="network.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$network_8h.html",tooltip="Network.h takes care of all networking and provides a simple interface for communication with the out..."];
+}

@@ -1,0 +1,10 @@
+This project automatically generates documentation with Doxygen.
+To use this functionality in VSCode, first install the Doxygen extension.
+For each function written, use the deoxygen extension to generate compatible documentation.
+Next, make sure Doxygen is installed on your system. On windows,
+
+$ sudo apt-get install doxygen
+
+Finally, generate the docs with
+
+$ doxygen Doxyfile

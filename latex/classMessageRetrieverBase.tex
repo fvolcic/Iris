@@ -1,0 +1,75 @@
+\hypertarget{classMessageRetrieverBase}{}\doxysection{Message\+Retriever\+Base Class Reference}
+\label{classMessageRetrieverBase}\index{MessageRetrieverBase@{MessageRetrieverBase}}
+
+
+Create the base class for the message retreiver. All different ways of retrieving messages must be done using through the \mbox{\hyperlink{classMessageRetrieverBase}{Message\+Retriever\+Base}} class.  
+
+
+
+
+{\ttfamily \#include $<$messageretriever.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classMessageRetrieverBase_a95eb1368eaaa01881019be244802ab13}{setup\+Retriever}} ()=0
+\begin{DoxyCompactList}\small\item\em Setup all necessary functions that will be needed for the message retriever. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMessageRetrieverBase_a10799349b4c1dd267bd8a1ff32d30c6b}{update\+Retriever}} ()=0
+\begin{DoxyCompactList}\small\item\em This function will run an update on the retreiver. This will allow the retiever to seek for an incoming message if there is one. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMessageRetrieverBase_a95b1b38b7caeeb7f56332103715185fa}{is\+New\+Message}} ()=0
+\begin{DoxyCompactList}\small\item\em Check to see if there is a new message available from the message retriever. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMessageRetrieverBase_aa753a0918fe5ecd06b7d8ed32a4fad72}{get\+New\+Message}} ()=0
+\begin{DoxyCompactList}\small\item\em This will retrieve the most recent message from the message retriever. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Create the base class for the message retreiver. All different ways of retrieving messages must be done using through the \mbox{\hyperlink{classMessageRetrieverBase}{Message\+Retriever\+Base}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMessageRetrieverBase_aa753a0918fe5ecd06b7d8ed32a4fad72}\label{classMessageRetrieverBase_aa753a0918fe5ecd06b7d8ed32a4fad72}} 
+\index{MessageRetrieverBase@{MessageRetrieverBase}!getNewMessage@{getNewMessage}}
+\index{getNewMessage@{getNewMessage}!MessageRetrieverBase@{MessageRetrieverBase}}
+\doxysubsubsection{\texorpdfstring{getNewMessage()}{getNewMessage()}}
+{\footnotesize\ttfamily virtual void Message\+Retriever\+Base\+::get\+New\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+This will retrieve the most recent message from the message retriever. 
+
+\mbox{\Hypertarget{classMessageRetrieverBase_a95b1b38b7caeeb7f56332103715185fa}\label{classMessageRetrieverBase_a95b1b38b7caeeb7f56332103715185fa}} 
+\index{MessageRetrieverBase@{MessageRetrieverBase}!isNewMessage@{isNewMessage}}
+\index{isNewMessage@{isNewMessage}!MessageRetrieverBase@{MessageRetrieverBase}}
+\doxysubsubsection{\texorpdfstring{isNewMessage()}{isNewMessage()}}
+{\footnotesize\ttfamily virtual void Message\+Retriever\+Base\+::is\+New\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Check to see if there is a new message available from the message retriever. 
+
+\mbox{\Hypertarget{classMessageRetrieverBase_a95eb1368eaaa01881019be244802ab13}\label{classMessageRetrieverBase_a95eb1368eaaa01881019be244802ab13}} 
+\index{MessageRetrieverBase@{MessageRetrieverBase}!setupRetriever@{setupRetriever}}
+\index{setupRetriever@{setupRetriever}!MessageRetrieverBase@{MessageRetrieverBase}}
+\doxysubsubsection{\texorpdfstring{setupRetriever()}{setupRetriever()}}
+{\footnotesize\ttfamily virtual void Message\+Retriever\+Base\+::setup\+Retriever (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Setup all necessary functions that will be needed for the message retriever. 
+
+\mbox{\Hypertarget{classMessageRetrieverBase_a10799349b4c1dd267bd8a1ff32d30c6b}\label{classMessageRetrieverBase_a10799349b4c1dd267bd8a1ff32d30c6b}} 
+\index{MessageRetrieverBase@{MessageRetrieverBase}!updateRetriever@{updateRetriever}}
+\index{updateRetriever@{updateRetriever}!MessageRetrieverBase@{MessageRetrieverBase}}
+\doxysubsubsection{\texorpdfstring{updateRetriever()}{updateRetriever()}}
+{\footnotesize\ttfamily virtual void Message\+Retriever\+Base\+::update\+Retriever (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+This function will run an update on the retreiver. This will allow the retiever to seek for an incoming message if there is one. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{messageretriever_8h}{messageretriever.\+h}}\end{DoxyCompactItemize}

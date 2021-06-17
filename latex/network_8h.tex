@@ -1,0 +1,129 @@
+\hypertarget{network_8h}{}\doxysection{src/network.h File Reference}
+\label{network_8h}\index{src/network.h@{src/network.h}}
+
+
+Network.\+h takes care of all networking and provides a simple interface for communication with the outside world.  
+
+
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structNetwork_1_1WIFI__INFO}{Network\+::\+W\+I\+F\+I\+\_\+\+I\+N\+FO}}
+\begin{DoxyCompactList}\small\item\em Details all info needed to connect to a network. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{network_8h_a95a120c50425291d0cb6ae8967e7a85e}{Network\+::connect}} (const W\+I\+F\+I\+\_\+\+I\+N\+FO $\ast$info)
+\begin{DoxyCompactList}\small\item\em Connect the device to the internet. This will ensure the device stays connected. If the device disconnects, this function will reconnect the device to the internet. This function will return false if the device cannot connect to the internet for any reason. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{network_8h_a32a06824c513fcba2fad6fbf54844f31}{Network\+::connect}} ()
+\begin{DoxyCompactList}\small\item\em Connect to the internet, and automatically get ssid and password for the connection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{network_8h_ae44f73c87e85de6353c6365e5b86d911}{Network\+::disconnect}} ()
+\begin{DoxyCompactList}\small\item\em Disconnect the device from the internet. Shuts off current network connection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{network_8h_a5d1ffa00c83b080c4c4ff0a65a91147c}{Network\+::setup\+\_\+communication}} ()
+\begin{DoxyCompactList}\small\item\em Set up the communication line for the light strip. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{network_8h_a975e0097bc1cf63648e0b57e108dfa45}{Network\+::is\+\_\+new\+\_\+message}} ()
+\begin{DoxyCompactList}\small\item\em Returns true if there was a new message sent over the network to the device. If there was not a new message, then the function returns false. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{network_8h_a331811056e13d0fd999ffa203afe1e43}{Network\+::get\+\_\+message}} ()
+\begin{DoxyCompactList}\small\item\em Returns the most recently sent message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Network.\+h takes care of all networking and provides a simple interface for communication with the outside world. 
+
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2021-\/06-\/15
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{network_8h_a32a06824c513fcba2fad6fbf54844f31}\label{network_8h_a32a06824c513fcba2fad6fbf54844f31}} 
+\index{network.h@{network.h}!connect@{connect}}
+\index{connect@{connect}!network.h@{network.h}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Network\+::connect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Connect to the internet, and automatically get ssid and password for the connection. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{network_8h_a95a120c50425291d0cb6ae8967e7a85e}\label{network_8h_a95a120c50425291d0cb6ae8967e7a85e}} 
+\index{network.h@{network.h}!connect@{connect}}
+\index{connect@{connect}!network.h@{network.h}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Network\+::connect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structNetwork_1_1WIFI__INFO}{W\+I\+F\+I\+\_\+\+I\+N\+FO}} $\ast$}]{info }\end{DoxyParamCaption})}
+
+
+
+Connect the device to the internet. This will ensure the device stays connected. If the device disconnects, this function will reconnect the device to the internet. This function will return false if the device cannot connect to the internet for any reason. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em W\+I\+F\+I\+\_\+\+I\+N\+FO} & -\/$>$ All the needed wifi params are defined within this struct.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{network_8h_ae44f73c87e85de6353c6365e5b86d911}\label{network_8h_ae44f73c87e85de6353c6365e5b86d911}} 
+\index{network.h@{network.h}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!network.h@{network.h}}
+\doxysubsubsection{\texorpdfstring{disconnect()}{disconnect()}}
+{\footnotesize\ttfamily void Network\+::disconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Disconnect the device from the internet. Shuts off current network connection. 
+
+\mbox{\Hypertarget{network_8h_a331811056e13d0fd999ffa203afe1e43}\label{network_8h_a331811056e13d0fd999ffa203afe1e43}} 
+\index{network.h@{network.h}!get\_message@{get\_message}}
+\index{get\_message@{get\_message}!network.h@{network.h}}
+\doxysubsubsection{\texorpdfstring{get\_message()}{get\_message()}}
+{\footnotesize\ttfamily char $\ast$ Network\+::get\+\_\+message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the most recently sent message. 
+
+\begin{DoxyReturn}{Returns}
+char$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{network_8h_a975e0097bc1cf63648e0b57e108dfa45}\label{network_8h_a975e0097bc1cf63648e0b57e108dfa45}} 
+\index{network.h@{network.h}!is\_new\_message@{is\_new\_message}}
+\index{is\_new\_message@{is\_new\_message}!network.h@{network.h}}
+\doxysubsubsection{\texorpdfstring{is\_new\_message()}{is\_new\_message()}}
+{\footnotesize\ttfamily bool Network\+::is\+\_\+new\+\_\+message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns true if there was a new message sent over the network to the device. If there was not a new message, then the function returns false. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{network_8h_a5d1ffa00c83b080c4c4ff0a65a91147c}\label{network_8h_a5d1ffa00c83b080c4c4ff0a65a91147c}} 
+\index{network.h@{network.h}!setup\_communication@{setup\_communication}}
+\index{setup\_communication@{setup\_communication}!network.h@{network.h}}
+\doxysubsubsection{\texorpdfstring{setup\_communication()}{setup\_communication()}}
+{\footnotesize\ttfamily void Network\+::setup\+\_\+communication (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set up the communication line for the light strip. 
+
