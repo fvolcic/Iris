@@ -18,11 +18,3 @@ bool Network::connect(const WIFI_INFO * info){
 void Network::disconnect(){
 
 }
-
-bool Network::is_new_message(){
-    
-}
-
-char * Network::get_message(){
-    
-}

@@ -19,6 +19,16 @@ The prior message system is being depreciated.
                       Action message to the led strip defining the gradient and 
                       the gradients properties.
 
+<== LED transition Message ==>
+    -- definition --> An LED transition message has represents a transition on the led strip.
+                      This will contain all the information regaurding the type of transition along
+                      with how to transition from one effect to another effect.
+
+<== LED Trigger Message ==>
+    -- definition --> This represents a trigger on the led strip. A trigger is a device that is used to
+                      change from one effect to another effect. Essentially, a trigger will tell us when 
+                      is time to start put the transition into effect.
+
 <== LED Strip Command ==>
     -- definition --> A LED Strip Command is something that tells the LED strip to
                       perform some action. This is, by definition, any command that
@@ -31,16 +41,20 @@ The prior message system is being depreciated.
     -- format -->
         {
             "type":"LEDACTION-JSON",
+            "action-key":<unsigned int>,
             "effect-params": [<param-val 1>, <param-val 2>, ... , <param-val n>],
-            "action-group-id":<unsigned int>,
+            "action-group-id":<unsigned int | optional>,
             "layer":<unsigned int | optional>
         }
     
     -- definitions -->
         type: str -> Type tells the computer that the message represents a json action.
+        action-key: unsigned int -> The identification of the action.
         effect-params: list -> This is a list of parameters that set different values in
                                 the led effect. 
         action-group-id: unsigned int -> This defines which action group to put the newly defined action into.
+                                        If this is left unspecified, then then the action will be put into a new
+                                        actionGroup with a default transition action on the group.
         layer: unsigned int -> This defines which layer to place the action at. If unspecified, then this message
                                 would represent an effect that is to be added to the strip. If the message has this
                                 parameter defined, then this effect will replace whatever action is running at
@@ -48,11 +62,41 @@ The prior message system is being depreciated.
                                 ex.) if the strip has <gradient> <brightness gradient> as the actions in 
                                      action group 1, and we send a message with layer set as 0, the <gradient> will 
                                      be replaced with the action defined in the message.
-                                    
+
+<== LED transition Message ==>
+    -- format -->
+        {
+            "type":"transition",
+            "effect-params": [<param-val 1>, <param-val 2>, ... , <param-val n>],
+            "transition-key":<unsigned int>,
+            "action-group-id":<unsigned int> 
+        }
+    -- definitions -->
+        type: str -> Tells us that the message is a transition message
+        effect-params: List -> The values and data for the transition effect
+        transition-key: unsigned int -> Which transition to use.
+        action-group-id: unsigned int -> which action group to put the transition on.
+
+<== LED Trigger Message ==>
+    -- format -->
+        {
+            "type":"trigger",
+            "trigger-id": <unsigned int>,
+            "trigger-params": [<param-val 1>, <param-val 2>, ... , <param-val n>],
+            "action-group": <unsigned int>,
+            "layer" <unsigned int | optional>
+        }
+
+    -- definitions -->
+        type: str -> tells us that the message represents a trigger
+        trigger-id: unsigned int -> which trigger do we want to use
+        action-group: unsigned int -> which action group do we want to add the trigger to
+        layer: unsigned int | optional -> which layer of the action group do we want the trigger in.
+
 <== LED Strip Command ==>
     -- format -->
         {
-            "type":"COMMAND",
+            "type":"command",
             "command-id": <str>,
             "command-params":[<param-val 1>, <param-val 2>, ... , <param-val n>]
         }

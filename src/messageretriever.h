@@ -9,6 +9,9 @@
  * 
  */
 
+#ifndef MESSAGERETRIEVER_H
+#define MESSAGERETRIEVER_H
+
 /**
  * @brief Create the base class for the message retreiver.
  *        All different ways of retrieving messages must be
@@ -45,3 +48,5 @@ public:
     virtual void getNewMessage() = 0;
 
 };
+
+#endif

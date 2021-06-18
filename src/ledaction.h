@@ -18,7 +18,7 @@ using rgb_color = Display::rgb_color;
 #ifndef LED_Action_GAURD
 #define LED_Action_GAURD
 
-class LED_Action {
+class LEDAction {
   protected:
 
     int led_count; //The number of LEDs that exist in the LED strip
@@ -36,7 +36,7 @@ class LED_Action {
     //AlternateCoreActions - are there actions that are to be run on the alternate core?
     //MQTTAction - are there actions that require MQTT
     //fullStripUpdate - does this action overwrite all past actions?
-    LED_Action(int led_count,  bool updateLEDs, bool alternateCoreActions, bool MQTTAction, bool fullStripUpdate, char * message) :
+    LEDAction(int led_count,  bool updateLEDs, bool alternateCoreActions, bool MQTTAction, bool fullStripUpdate, char * message) :
       led_count(led_count),  updateLEDs(updateLEDs), alternateCoreActions(alternateCoreActions), fullStripUpdate(fullStripUpdate), message(message) {}
 
     //This is the function that is called to both update an array containing the LED colors
@@ -84,7 +84,7 @@ class LED_Action {
     //REQUIRES:
     virtual char * getActionStateMessage(){return '\0'}
 
-    virtual ~LED_Action() {};
+    virtual ~LEDAction() {};
 
     //getter function for updateLEDs
     bool getUpdateLEDs() {

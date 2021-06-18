@@ -49,25 +49,4 @@ namespace Network{
      */
     void disconnect();
 
-    /**
-     * @brief Set up the communication line for the light strip. 
-     * 
-     */
-    void setup_communication();
-
-    /**
-     * @brief Returns true if there was a new message sent over the network to the device.
-     *        If there was not a new message, then the function returns false.
-     * 
-     * @return true 
-     * @return false 
-     */
-    bool is_new_message();
-
-    /**
-     * @brief Returns the most recently sent message.
-     * 
-     * @return char* 
-     */
-    char * get_message();
 };
