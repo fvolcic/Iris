@@ -82,7 +82,7 @@ public:
 
 private:
 
-    bool isNewMessage = false; // Do any of the sources have a new messaeg. 
+    bool isNewMessage_v = false; // Do any of the sources have a new messaeg. 
 
     int sourceIndex = 0; // What is the current index for searching for messags.
 

@@ -9,6 +9,10 @@
  * 
  */
 
+#include "globals.h"
+
+#include <queue>
+
 #ifndef MESSAGERETRIEVER_H
 #define MESSAGERETRIEVER_H
 
@@ -39,13 +43,41 @@ public:
      * @brief Check to see if there is a new message available from the message retriever.
      * 
      */
-    virtual void isNewMessage() = 0; 
+    bool isNewMessage(); 
 
     /**
      * @brief This will retrieve the most recent message from the message retriever.
      * 
      */
-    virtual void getNewMessage() = 0;
+    char * getNewMessage();
+
+protected:
+
+    /**
+     * @brief This will return a pointer to the next available write buffer.
+     * 
+     * @note All write buffers will have a size of MAX_MESSAGE_LENGTH (globals.h)
+     * 
+     * @return char* 
+     */
+    char * getWriteBuffer(); 
+
+    /**
+     * @brief This tells the messageretriever that a message has been sucessfully written to the buffer.
+     * 
+     */
+    void messageBufferWriteCompleted(); 
+
+private:
+
+    // Internal message buffer. This is where the first message is stored.
+    char messageBuffer[MAX_MESSAGE_LENGTH]; 
+
+    // If the message buffer is full, then additional messages will need to be stored
+    // in the dynamic message buffer for processing after the first message. 
+    std::queue<char *> dynamicMessageBuffer; 
+
+    std::queue<char *> 
 
 };
 

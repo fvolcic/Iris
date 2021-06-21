@@ -13,6 +13,8 @@
 
 namespace Filesystem{
 
+    bool launch_success = false; 
+
     /**
      * @brief This starts the file system for reading and writing.
      *        If there was an error, this will return false. 
@@ -21,6 +23,24 @@ namespace Filesystem{
      * @return false 
      */
     bool launch();
+
+    /**
+     * @brief Check if the FS has properly mounted. 
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool is_mounted();
+
+    /**
+     * @brief Formats the filesystem.
+     * 
+     * @note Data is not recoverable if this function is called. 
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool format_filesystem();
 
     /**
      * @brief Return datum from the file system. This takes the key of the data and it returns the

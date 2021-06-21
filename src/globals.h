@@ -13,7 +13,7 @@
 
 #define MAX_MESSAGE_LENGTH 2048 // Max network message size - 2KB. 
 
-//Your secret key. Do not share. Generate with -> openssl rand -hex 8
+// Your secret key. Do not share. Generate with -> $ openssl rand -hex 8
 #define SECRET_KEY {0x23,}
 
 #define VERBOSE // print information via serial. 

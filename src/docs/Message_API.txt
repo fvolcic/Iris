@@ -10,6 +10,8 @@ The prior message system is being depreciated.
     -- 2 --> Messages must be semantically correct. If a message is received and 
              its type is specified, but the message is semantically incorrect according
              to that type, then the message will be discarded. 
+    -- 3 --> Never use quotes in a message. If something is meant to be a string, it will
+             be converted to a string. If quotes are present, then the quotes will be added to the string.
 
 <===== MESSAGE TYPES =====>
 <== LED Action Message ==>

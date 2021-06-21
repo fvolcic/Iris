@@ -11,10 +11,4 @@
 
 #include "network.h"
 
-bool Network::connect(const WIFI_INFO * info){
 
-}
-
-void Network::disconnect(){
-
-}

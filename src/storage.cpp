@@ -17,6 +17,11 @@
 
 bool Filesystem::launch(){
 
+    // If the filesystem has already been launched,
+    // then return true. 
+    if(Filesystem::is_mounted())
+        return true; 
+
     //Attempt to mount to fs. 
     //If mounting fails, then return false to indicate failure.
     if(!SPIFFS.begin(true))
@@ -38,10 +43,26 @@ bool Filesystem::launch(){
         }
     }
 
+    Filesystem::launch_success = true;
     return true; 
 }
 
+bool Filesystem::format_filesystem(){
+    if(!Filesystem::is_mounted())
+        return false; 
+    
+    return SPIFFS.format(); 
+}
+
+bool Filesystem::is_mounted(){
+    return Filesystem::launch_success; 
+}
+
 char * Filesystem::get_data(char * key){
+
+    if(!Filesystem::is_mounted())
+        return nullptr; 
+
     //Return nothing if file does not exist. 
     if(!SPIFFS.exists(key))
         return nullptr;
@@ -61,12 +82,19 @@ char * Filesystem::get_data(char * key){
 }
 
 bool Filesystem::store_data(char * key, char * data, bool strict){
+
+    // If there was an error mounting the filesystem 
+    if(!Filesystem::is_mounted())
+        return false; 
+
+    // If the data already exists and we are in strict mode.
     if(strict && SPIFFS.exists(key))
         return false; 
 
     const char mode = 'w'; 
     File file = SPIFFS.open(key, & mode); 
 
+    // Otherwise, write all datum into memory. 
     for(char * begin = data; *begin;++begin)
         file.write(*begin); 
     file.write('\0'); 
@@ -76,10 +104,15 @@ bool Filesystem::store_data(char * key, char * data, bool strict){
 }
 
 bool Filesystem::file_exists(char * filename){
+    if(!is_mounted())
+        return false; 
     return SPIFFS.exists(filename); 
 }
 
 bool delete_file(char * filename, bool strict=false){
+
+    if(!Filesystem::is_mounted())
+        return false; 
 
     if(strict && !Filesystem::file_exists(filename))
         return false; 
