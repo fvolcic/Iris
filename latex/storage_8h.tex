@@ -15,6 +15,10 @@ This graph shows which files directly or indirectly include this file\+:
 \item 
 bool \mbox{\hyperlink{storage_8h_a4cbb6ca7ea559899756b07cc428f1393}{Filesystem\+::launch}} ()
 \begin{DoxyCompactList}\small\item\em This starts the file system for reading and writing. If there was an error, this will return false. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{storage_8h_a667089b5e3be44df7eb29fd9ed304ffc}{Filesystem\+::is\+\_\+mounted}} ()
+\begin{DoxyCompactList}\small\item\em Check if the FS has properly mounted. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{storage_8h_a10d66fc7e4559dc3271747a0ca07c929}{Filesystem\+::format\+\_\+filesystem}} ()
+\begin{DoxyCompactList}\small\item\em Formats the filesystem. \end{DoxyCompactList}\item 
 char $\ast$ \mbox{\hyperlink{storage_8h_a0531f383ccd2203c3f47a08610dbe874}{Filesystem\+::get\+\_\+data}} (char $\ast$key)
 \begin{DoxyCompactList}\small\item\em Return datum from the file system. This takes the key of the data and it returns the datum stored with that key value in the filesystem. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{storage_8h_a73d94a6dcfb37115c11a06237789cd19}{Filesystem\+::store\+\_\+data}} (char $\ast$key, char $\ast$data, bool strict=false)
@@ -32,6 +36,12 @@ bool \mbox{\hyperlink{storage_8h_a21a79d1be31d1749277f70528eaf8286}{Filesystem\+
 \begin{DoxyCompactList}\small\item\em Check if a given filename exists in the filesystem. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{storage_8h_a3a6eda0ed4a2d77f8b3899997287e016}{Filesystem\+::delete\+\_\+file}} (char $\ast$filename, bool strict=false)
 \begin{DoxyCompactList}\small\item\em Delete a file in the filesystem. If strict is true and file is not present, return false. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{storage_8h_ad0c53a3526978b038e419bf10873b65b}\label{storage_8h_ad0c53a3526978b038e419bf10873b65b}} 
+bool {\bfseries Filesystem\+::launch\+\_\+success} = false
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -111,6 +121,24 @@ true
 
 false 
 \end{DoxyReturn}
+\mbox{\Hypertarget{storage_8h_a10d66fc7e4559dc3271747a0ca07c929}\label{storage_8h_a10d66fc7e4559dc3271747a0ca07c929}} 
+\index{storage.h@{storage.h}!format\_filesystem@{format\_filesystem}}
+\index{format\_filesystem@{format\_filesystem}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{format\_filesystem()}{format\_filesystem()}}
+{\footnotesize\ttfamily bool Filesystem\+::format\+\_\+filesystem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Formats the filesystem. 
+
+\begin{DoxyNote}{Note}
+Data is not recoverable if this function is called.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
 \mbox{\Hypertarget{storage_8h_a0531f383ccd2203c3f47a08610dbe874}\label{storage_8h_a0531f383ccd2203c3f47a08610dbe874}} 
 \index{storage.h@{storage.h}!get\_data@{get\_data}}
 \index{get\_data@{get\_data}!storage.h@{storage.h}}
@@ -154,6 +182,21 @@ This returns dynamically allocated memory. The file data must be deleted.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 char$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{storage_8h_a667089b5e3be44df7eb29fd9ed304ffc}\label{storage_8h_a667089b5e3be44df7eb29fd9ed304ffc}} 
+\index{storage.h@{storage.h}!is\_mounted@{is\_mounted}}
+\index{is\_mounted@{is\_mounted}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{is\_mounted()}{is\_mounted()}}
+{\footnotesize\ttfamily bool Filesystem\+::is\+\_\+mounted (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if the FS has properly mounted. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
 \end{DoxyReturn}
 \mbox{\Hypertarget{storage_8h_a4cbb6ca7ea559899756b07cc428f1393}\label{storage_8h_a4cbb6ca7ea559899756b07cc428f1393}} 
 \index{storage.h@{storage.h}!launch@{launch}}

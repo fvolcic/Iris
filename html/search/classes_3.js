@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wifi_5finfo_41',['WIFI_INFO',['../structNetwork_1_1WIFI__INFO.html',1,'Network']]]
+  ['rgb_5fcolor_65',['rgb_color',['../structDisplay_1_1rgb__color.html',1,'Display']]]
 ];

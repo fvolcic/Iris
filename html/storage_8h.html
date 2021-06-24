@@ -68,7 +68,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">storage.h File Reference</div>  </div>
 </div><!--header-->
@@ -97,6 +98,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a4cbb6ca7ea559899756b07cc428f1393"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="storage_8h.html#a4cbb6ca7ea559899756b07cc428f1393">Filesystem::launch</a> ()</td></tr>
 <tr class="memdesc:a4cbb6ca7ea559899756b07cc428f1393"><td class="mdescLeft">&#160;</td><td class="mdescRight">This starts the file system for reading and writing. If there was an error, this will return false.  <a href="storage_8h.html#a4cbb6ca7ea559899756b07cc428f1393">More...</a><br /></td></tr>
 <tr class="separator:a4cbb6ca7ea559899756b07cc428f1393"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a667089b5e3be44df7eb29fd9ed304ffc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="storage_8h.html#a667089b5e3be44df7eb29fd9ed304ffc">Filesystem::is_mounted</a> ()</td></tr>
+<tr class="memdesc:a667089b5e3be44df7eb29fd9ed304ffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the FS has properly mounted.  <a href="storage_8h.html#a667089b5e3be44df7eb29fd9ed304ffc">More...</a><br /></td></tr>
+<tr class="separator:a667089b5e3be44df7eb29fd9ed304ffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10d66fc7e4559dc3271747a0ca07c929"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="storage_8h.html#a10d66fc7e4559dc3271747a0ca07c929">Filesystem::format_filesystem</a> ()</td></tr>
+<tr class="memdesc:a10d66fc7e4559dc3271747a0ca07c929"><td class="mdescLeft">&#160;</td><td class="mdescRight">Formats the filesystem.  <a href="storage_8h.html#a10d66fc7e4559dc3271747a0ca07c929">More...</a><br /></td></tr>
+<tr class="separator:a10d66fc7e4559dc3271747a0ca07c929"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0531f383ccd2203c3f47a08610dbe874"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="storage_8h.html#a0531f383ccd2203c3f47a08610dbe874">Filesystem::get_data</a> (char *key)</td></tr>
 <tr class="memdesc:a0531f383ccd2203c3f47a08610dbe874"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return datum from the file system. This takes the key of the data and it returns the datum stored with that key value in the filesystem.  <a href="storage_8h.html#a0531f383ccd2203c3f47a08610dbe874">More...</a><br /></td></tr>
 <tr class="separator:a0531f383ccd2203c3f47a08610dbe874"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -121,6 +128,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a3a6eda0ed4a2d77f8b3899997287e016"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="storage_8h.html#a3a6eda0ed4a2d77f8b3899997287e016">Filesystem::delete_file</a> (char *filename, bool strict=false)</td></tr>
 <tr class="memdesc:a3a6eda0ed4a2d77f8b3899997287e016"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete a file in the filesystem. If strict is true and file is not present, return false.  <a href="storage_8h.html#a3a6eda0ed4a2d77f8b3899997287e016">More...</a><br /></td></tr>
 <tr class="separator:a3a6eda0ed4a2d77f8b3899997287e016"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ad0c53a3526978b038e419bf10873b65b"><td class="memItemLeft" align="right" valign="top"><a id="ad0c53a3526978b038e419bf10873b65b"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>Filesystem::launch_success</b> = false</td></tr>
+<tr class="separator:ad0c53a3526978b038e419bf10873b65b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This is what is used to communicate with the internal filesystem. </p>
@@ -236,6 +249,29 @@ false </dd></dl>
 
 </div>
 </div>
+<a id="a10d66fc7e4559dc3271747a0ca07c929"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10d66fc7e4559dc3271747a0ca07c929">&#9670;&nbsp;</a></span>format_filesystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Filesystem::format_filesystem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Formats the filesystem. </p>
+<dl class="section note"><dt>Note</dt><dd>Data is not recoverable if this function is called.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
+</div>
+</div>
 <a id="a0531f383ccd2203c3f47a08610dbe874"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0531f383ccd2203c3f47a08610dbe874">&#9670;&nbsp;</a></span>get_data()</h2>
 
@@ -300,6 +336,28 @@ false </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>char* </dd></dl>
+
+</div>
+</div>
+<a id="a667089b5e3be44df7eb29fd9ed304ffc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a667089b5e3be44df7eb29fd9ed304ffc">&#9670;&nbsp;</a></span>is_mounted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Filesystem::is_mounted </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the FS has properly mounted. </p>
+<dl class="section return"><dt>Returns</dt><dd>true </dd>
+<dd>
+false </dd></dl>
 
 </div>
 </div>

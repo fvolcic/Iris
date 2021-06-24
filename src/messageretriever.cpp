@@ -20,9 +20,9 @@ MessageRetrieverBase::Message * MessageRetrieverBase::getMessageBuffer(){
     // but in the case that it is not available, we will use a dynmic buffer. 
     if(staticbufferAvailable){
         staticbufferAvailable = false; 
-        messageBuffer = new MessageRetrieverBase::Message(messageBuffer, 
+        messageBuffer = new MessageRetrieverBase::Message(this->messageBuffer, 
                                                     MessageRetrieverBase::Message::MessageType::StaticMessage,
-                                                    &staticbufferAvailable);
+                                                    & staticbufferAvailable);
     }else{
         messageBuffer = new MessageRetrieverBase::Message(MessageRetrieverBase::getDynamicBuffer(),
                                                     MessageRetrieverBase::Message::MessageType::DynamicMessage,
@@ -30,10 +30,6 @@ MessageRetrieverBase::Message * MessageRetrieverBase::getMessageBuffer(){
     }
 
     return messageBuffer; 
-}
-
-void MessageRetrieverBase::messageBufferWriteCompleted(){
-    
 }
 
 
@@ -53,4 +49,12 @@ void MessageRetrieverBase::Message::DestroyMessage(){
     if(msgType == MessageRetrieverBase::Message::MessageType::DynamicMessage)
         delete buffer;
     (*finishedWriteFlag) = true; 
+}
+
+char * MessageRetrieverBase::Message::begin(){
+    return buffer; 
+}
+
+char * MessageRetrieverBase::Message::end(){ 
+    return buffer + MAX_MESSAGE_LENGTH; 
 }

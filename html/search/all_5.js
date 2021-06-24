@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['is_5fnew_5fmessage_11',['is_new_message',['../network_8h.html#a975e0097bc1cf63648e0b57e108dfa45',1,'Network']]],
-  ['isnewmessage_12',['isNewMessage',['../classMessageRetrieverBase.html#a95b1b38b7caeeb7f56332103715185fa',1,'MessageRetrieverBase']]]
+  ['get_5fdata_11',['get_data',['../storage_8h.html#a0531f383ccd2203c3f47a08610dbe874',1,'Filesystem']]],
+  ['get_5fencrypted_5fdata_12',['get_encrypted_data',['../storage_8h.html#a2c052e91ceb1ca46896ab57f54a987a3',1,'Filesystem']]],
+  ['getmessagebuffer_13',['getMessageBuffer',['../classMessageRetrieverBase.html#a60a16761efda32febff3b88fd8054211',1,'MessageRetrieverBase']]],
+  ['getmessagetype_14',['getMessageType',['../classMessageManagement_1_1MessageManager.html#aea36a61a9abe378aa3ddc1f3b6e34f80',1,'MessageManagement::MessageManager']]],
+  ['getnewmessage_15',['getNewMessage',['../classMessageRetrieverBase.html#a79d5edcf61e0cc61b48b6d0d3d262bec',1,'MessageRetrieverBase']]]
 ];

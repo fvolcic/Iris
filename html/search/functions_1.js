@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['delete_5ffile_55',['delete_file',['../storage_8cpp.html#adcf1b94718a62de8395309dcdf2cecbe',1,'delete_file():&#160;storage.cpp'],['../storage_8h.html#a3a6eda0ed4a2d77f8b3899997287e016',1,'Filesystem::delete_file()']]],
-  ['disconnect_56',['disconnect',['../network_8h.html#ae44f73c87e85de6353c6365e5b86d911',1,'Network']]]
+  ['connect_89',['connect',['../network_8h.html#a95a120c50425291d0cb6ae8967e7a85e',1,'Network::connect(const WIFI_INFO *info)'],['../network_8h.html#a32a06824c513fcba2fad6fbf54844f31',1,'Network::connect()']]],
+  ['create_5ffile_90',['create_file',['../storage_8h.html#a098729bef22dcfe5e90cd25a55bf091e',1,'Filesystem']]]
 ];

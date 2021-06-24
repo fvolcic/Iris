@@ -1,0 +1,63 @@
+\hypertarget{structMessageRetrieverBase_1_1Message}{}\doxysection{Message\+Retriever\+Base\+::Message Struct Reference}
+\label{structMessageRetrieverBase_1_1Message}\index{MessageRetrieverBase::Message@{MessageRetrieverBase::Message}}
+
+
+This is the struct that will represent a message. This will provide an interface to destroy messages and read messags.  
+
+
+
+
+{\ttfamily \#include $<$messageretriever.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structMessageRetrieverBase_1_1Message_a3172db5c470f0651c28f5f34d6dc3092}\label{structMessageRetrieverBase_1_1Message_a3172db5c470f0651c28f5f34d6dc3092}} 
+enum {\bfseries Message\+Type} \{ {\bfseries Static\+Message}, 
+{\bfseries Dynamic\+Message}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structMessageRetrieverBase_1_1Message_a19eb256f3754e4b31982cbd78b892d74}{Message}} (char $\ast$message, Message\+Type type, bool $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{structMessageRetrieverBase_1_1Message}{Message}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structMessageRetrieverBase_1_1Message_afdae5d22e1adf6d83fdf0d032d48fe3b}\label{structMessageRetrieverBase_1_1Message_afdae5d22e1adf6d83fdf0d032d48fe3b}} 
+char $\ast$ {\bfseries operator()} ()
+\item 
+\mbox{\Hypertarget{structMessageRetrieverBase_1_1Message_a1abf729a7bf36fe62610937d9ab99bc5}\label{structMessageRetrieverBase_1_1Message_a1abf729a7bf36fe62610937d9ab99bc5}} 
+void {\bfseries Destroy\+Message} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is the struct that will represent a message. This will provide an interface to destroy messages and read messags. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structMessageRetrieverBase_1_1Message_a19eb256f3754e4b31982cbd78b892d74}\label{structMessageRetrieverBase_1_1Message_a19eb256f3754e4b31982cbd78b892d74}} 
+\index{MessageRetrieverBase::Message@{MessageRetrieverBase::Message}!Message@{Message}}
+\index{Message@{Message}!MessageRetrieverBase::Message@{MessageRetrieverBase::Message}}
+\doxysubsubsection{\texorpdfstring{Message()}{Message()}}
+{\footnotesize\ttfamily Message\+Retriever\+Base\+::\+Message\+::\+Message (\begin{DoxyParamCaption}\item[{char $\ast$}]{message,  }\item[{Message\+Type}]{type,  }\item[{bool $\ast$}]{flag }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{structMessageRetrieverBase_1_1Message}{Message}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & -\/ pointer to a message buffer \\
+\hline
+{\em type} & -\/ what is the type of memory used for the buffer. \\
+\hline
+{\em flag} & -\/ flag is a pointer to the boolean flag \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{messageretriever_8h}{messageretriever.\+h}}\item 
+src/\mbox{\hyperlink{messageretriever_8cpp}{messageretriever.\+cpp}}\end{DoxyCompactItemize}

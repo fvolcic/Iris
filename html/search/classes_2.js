@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['rgb_5fcolor_40',['rgb_color',['../structDisplay_1_1rgb__color.html',1,'Display']]]
+  ['message_61',['Message',['../structMessageRetrieverBase_1_1Message.html',1,'MessageRetrieverBase']]],
+  ['messagehandler_62',['MessageHandler',['../classMessageHandler.html',1,'']]],
+  ['messagemanager_63',['MessageManager',['../classMessageManagement_1_1MessageManager.html',1,'MessageManagement']]],
+  ['messageretrieverbase_64',['MessageRetrieverBase',['../classMessageRetrieverBase.html',1,'']]]
 ];

@@ -5,11 +5,19 @@
 Message retriever base class for the led light strip.  
 
 
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+Include dependency graph for messageretriever.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classMessageRetrieverBase}{Message\+Retriever\+Base}}
-\begin{DoxyCompactList}\small\item\em Create the base class for the message retreiver. All different ways of retrieving messages must be done using through the \mbox{\hyperlink{classMessageRetrieverBase}{Message\+Retriever\+Base}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Create the base class for the message retreiver. All different ways of retrieving messages must be done using through the \mbox{\hyperlink{classMessageRetrieverBase}{Message\+Retriever\+Base}} class. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structMessageRetrieverBase_1_1Message}{Message\+Retriever\+Base\+::\+Message}}
+\begin{DoxyCompactList}\small\item\em This is the struct that will represent a message. This will provide an interface to destroy messages and read messags. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}

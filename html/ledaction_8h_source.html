@@ -81,7 +81,7 @@ $(function() {
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef LED_Action_GAURD</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define LED_Action_GAURD</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classLED__Action.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLED__Action.html">LED_Action</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classLEDAction.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLEDAction.html">LEDAction</a> {</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">int</span> led_count; <span class="comment">//The number of LEDs that exist in the LED strip</span></div>
@@ -99,7 +99,7 @@ $(function() {
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">//AlternateCoreActions - are there actions that are to be run on the alternate core?</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">//MQTTAction - are there actions that require MQTT</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">//fullStripUpdate - does this action overwrite all past actions?</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classLED__Action.html">LED_Action</a>(<span class="keywordtype">int</span> led_count,  <span class="keywordtype">bool</span> updateLEDs, <span class="keywordtype">bool</span> alternateCoreActions, <span class="keywordtype">bool</span> MQTTAction, <span class="keywordtype">bool</span> fullStripUpdate, <span class="keywordtype">char</span> * message) :</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classLEDAction.html">LEDAction</a>(<span class="keywordtype">int</span> led_count,  <span class="keywordtype">bool</span> updateLEDs, <span class="keywordtype">bool</span> alternateCoreActions, <span class="keywordtype">bool</span> MQTTAction, <span class="keywordtype">bool</span> fullStripUpdate, <span class="keywordtype">char</span> * message) :</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      led_count(led_count),  updateLEDs(updateLEDs), alternateCoreActions(alternateCoreActions), fullStripUpdate(fullStripUpdate), message(message) {}</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">//This is the function that is called to both update an array containing the LED colors</span></div>
@@ -147,7 +147,7 @@ $(function() {
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">//REQUIRES:</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">char</span> * getActionStateMessage(){<span class="keywordflow">return</span> <span class="charliteral">&#39;\0&#39;</span>}</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classLED__Action.html">LED_Action</a>() {};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classLEDAction.html">LEDAction</a>() {};</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">//getter function for updateLEDs</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">bool</span> getUpdateLEDs() {</div>
@@ -184,7 +184,7 @@ $(function() {
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;};</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassLED__Action_html"><div class="ttname"><a href="classLED__Action.html">LED_Action</a></div><div class="ttdef"><b>Definition:</b> ledaction.h:21</div></div>
+<div class="ttc" id="aclassLEDAction_html"><div class="ttname"><a href="classLEDAction.html">LEDAction</a></div><div class="ttdef"><b>Definition:</b> ledaction.h:21</div></div>
 <div class="ttc" id="astructDisplay_1_1rgb__color_html"><div class="ttname"><a href="structDisplay_1_1rgb__color.html">Display::rgb_color</a></div><div class="ttdoc">A color that is used for displaying to the led strip.</div><div class="ttdef"><b>Definition:</b> display.h:18</div></div>
 <div class="ttc" id="adisplay_8h_html"><div class="ttname"><a href="display_8h.html">display.h</a></div><div class="ttdoc">This file contains all tools to write to and interface will the led strip.</div></div>
 <!-- start footer part -->

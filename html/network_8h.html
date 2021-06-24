@@ -103,15 +103,6 @@ Functions</h2></td></tr>
 <tr class="memitem:ae44f73c87e85de6353c6365e5b86d911"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="network_8h.html#ae44f73c87e85de6353c6365e5b86d911">Network::disconnect</a> ()</td></tr>
 <tr class="memdesc:ae44f73c87e85de6353c6365e5b86d911"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disconnect the device from the internet. Shuts off current network connection.  <a href="network_8h.html#ae44f73c87e85de6353c6365e5b86d911">More...</a><br /></td></tr>
 <tr class="separator:ae44f73c87e85de6353c6365e5b86d911"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d1ffa00c83b080c4c4ff0a65a91147c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="network_8h.html#a5d1ffa00c83b080c4c4ff0a65a91147c">Network::setup_communication</a> ()</td></tr>
-<tr class="memdesc:a5d1ffa00c83b080c4c4ff0a65a91147c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up the communication line for the light strip.  <a href="network_8h.html#a5d1ffa00c83b080c4c4ff0a65a91147c">More...</a><br /></td></tr>
-<tr class="separator:a5d1ffa00c83b080c4c4ff0a65a91147c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a975e0097bc1cf63648e0b57e108dfa45"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="network_8h.html#a975e0097bc1cf63648e0b57e108dfa45">Network::is_new_message</a> ()</td></tr>
-<tr class="memdesc:a975e0097bc1cf63648e0b57e108dfa45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if there was a new message sent over the network to the device. If there was not a new message, then the function returns false.  <a href="network_8h.html#a975e0097bc1cf63648e0b57e108dfa45">More...</a><br /></td></tr>
-<tr class="separator:a975e0097bc1cf63648e0b57e108dfa45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a331811056e13d0fd999ffa203afe1e43"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="network_8h.html#a331811056e13d0fd999ffa203afe1e43">Network::get_message</a> ()</td></tr>
-<tr class="memdesc:a331811056e13d0fd999ffa203afe1e43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the most recently sent message.  <a href="network_8h.html#a331811056e13d0fd999ffa203afe1e43">More...</a><br /></td></tr>
-<tr class="separator:a331811056e13d0fd999ffa203afe1e43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Network.h takes care of all networking and provides a simple interface for communication with the outside world. </p>
@@ -186,67 +177,6 @@ false </dd></dl>
 </div><div class="memdoc">
 
 <p>Disconnect the device from the internet. Shuts off current network connection. </p>
-
-</div>
-</div>
-<a id="a331811056e13d0fd999ffa203afe1e43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a331811056e13d0fd999ffa203afe1e43">&#9670;&nbsp;</a></span>get_message()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char * Network::get_message </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the most recently sent message. </p>
-<dl class="section return"><dt>Returns</dt><dd>char* </dd></dl>
-
-</div>
-</div>
-<a id="a975e0097bc1cf63648e0b57e108dfa45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a975e0097bc1cf63648e0b57e108dfa45">&#9670;&nbsp;</a></span>is_new_message()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Network::is_new_message </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns true if there was a new message sent over the network to the device. If there was not a new message, then the function returns false. </p>
-<dl class="section return"><dt>Returns</dt><dd>true </dd>
-<dd>
-false </dd></dl>
-
-</div>
-</div>
-<a id="a5d1ffa00c83b080c4c4ff0a65a91147c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d1ffa00c83b080c4c4ff0a65a91147c">&#9670;&nbsp;</a></span>setup_communication()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Network::setup_communication </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set up the communication line for the light strip. </p>
 
 </div>
 </div>

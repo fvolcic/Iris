@@ -75,10 +75,36 @@ public:
          * @param flag - flag is a pointer to the boolean flag
          */
         Message(char * message, MessageType type, bool * flag);
-
+        
+        /**
+         * @brief Returns a pointer to the buffer stored within the
+         *        message struct
+         * 
+         * @return char* 
+         */
         char * operator()(); 
 
+        /**
+         * @brief This will free all the space that the
+         *        buffer was using. If there was dynmic
+         *        memory in use, that memory will be destroyed.
+         * 
+         */
         void DestroyMessage();
+
+        /**
+         * @brief Return bidirectional iterator
+         * 
+         * @return char* 
+         */
+        char * begin();
+
+        /**
+         * @brief Return end of the internal buffer.
+         * 
+         * @return char* 
+         */
+        char * end(); 
 
     private:
         bool messageAlive = true; 
@@ -97,12 +123,6 @@ protected:
      * @return char* 
      */
     Message * getMessageBuffer(); 
-
-    /**
-     * @brief This tells the messageretriever that a message has been sucessfully written to the buffer.
-     * 
-     */
-    void messageBufferWriteCompleted(); 
 
 private:
 

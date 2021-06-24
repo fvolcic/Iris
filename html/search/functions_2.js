@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['file_5fexists_57',['file_exists',['../storage_8h.html#a21a79d1be31d1749277f70528eaf8286',1,'Filesystem']]]
+  ['delete_5ffile_91',['delete_file',['../storage_8cpp.html#adcf1b94718a62de8395309dcdf2cecbe',1,'delete_file():&#160;storage.cpp'],['../storage_8h.html#a3a6eda0ed4a2d77f8b3899997287e016',1,'Filesystem::delete_file()']]],
+  ['destroybuffer_92',['destroyBuffer',['../classMessageRetrieverBase.html#a1e8d0d860cf0cf1f9e8187d95b284995',1,'MessageRetrieverBase']]],
+  ['disconnect_93',['disconnect',['../network_8h.html#ae44f73c87e85de6353c6365e5b86d911',1,'Network']]]
 ];
