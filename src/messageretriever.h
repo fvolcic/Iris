@@ -16,6 +16,8 @@
 #ifndef MESSAGERETRIEVER_H
 #define MESSAGERETRIEVER_H
 
+struct MessageRetrieverBase::Message; 
+
 /**
  * @brief Create the base class for the message retreiver.
  *        All different ways of retrieving messages must be
@@ -26,38 +28,7 @@ class MessageRetrieverBase {
 
 public:
 
-    /**
-     * @brief Setup all necessary functions that will be needed for the message retriever.
-     * 
-     */
-    virtual void setupRetriever() = 0; 
-
-    /**
-     * @brief This function will run an update on the retreiver. This will allow the retiever to
-     *        seek for an incoming message if there is one.
-     * 
-     */
-    virtual void updateRetriever() = 0;
-
-    /**
-     * @brief Check to see if there is a new message available from the message retriever.
-     * 
-     */
-    bool isNewMessage(); 
-
-    /**
-     * @brief This will retrieve the most recent message from the message retriever.
-     * 
-     */
-    char * getNewMessage();
-
-    /**
-     * @brief Given a buffer, this will destroy the given buffer. 
-     * 
-     */
-    void destroyBuffer(char *); 
-
-    /**
+     /**
      * @brief This is the struct that will represent a message.
      *        This will provide an interface to destroy messages and read messags. 
      * 
@@ -113,6 +84,48 @@ public:
         char * buffer; 
     };
 
+    //******************************************************************
+    //* Below are the two virtual functions that need to be overriden. *
+    //* These are the only two functions that must be implemented by a * 
+    //* a base class. This are required for the retriever to work      *
+    //* correctly.                                                     *
+    //******************************************************************
+
+    /**
+     * @brief Setup all necessary functions that will be needed for the message retriever.
+     * 
+     */
+    virtual void setupRetriever() = 0; 
+
+    /**
+     * @brief This function will run an update on the retreiver. This will allow the retiever to
+     *        seek for an incoming message if there is one.
+     * 
+     */
+    virtual void updateRetriever() = 0;
+
+    //*****************************************************************
+
+    /**
+     * @brief Check to see if there is a new message available from the message retriever.
+     * 
+     */
+    bool isMessageAvailable(); 
+
+    /**
+     * @brief This will retrieve the most recent message from the message retriever.
+     * 
+     */
+    MessageRetrieverBase::Message * getNewMessage();
+
+    /**
+     * @brief Given a buffer, this will destroy the given buffer. 
+     * 
+     */
+    void destroyBuffer(char *); 
+
+   
+
 protected:
 
     /**
@@ -123,6 +136,12 @@ protected:
      * @return char* 
      */
     Message * getMessageBuffer(); 
+
+    /**
+     * @brief Will add a message to the queue.
+     * 
+     */
+    void enqueue_message(Message *); 
 
 private:
 

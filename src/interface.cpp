@@ -15,7 +15,7 @@ template<Interface::Interfaces I>
 bool Interface::enabled(){
 
     //Sets the needed byte for the enabled file in the FS.
-    interface_file[3] = static_cast<int> (I); 
+    interface_file[3] = static_cast<char> (I); 
 
     return Filesystem::file_exists(interface_file); 
 }

@@ -32,6 +32,19 @@ MessageRetrieverBase::Message * MessageRetrieverBase::getMessageBuffer(){
     return messageBuffer; 
 }
 
+void MessageRetrieverBase::enqueue_message(Message * msgPtr){
+    messages.push(msgPtr); 
+}
+
+bool MessageRetrieverBase::isMessageAvailable(){
+    return messages.size() != 0;
+}
+
+MessageRetrieverBase::Message * MessageRetrieverBase::getNewMessage(){
+    MessageRetrieverBase::Message * tmpMsg = messages.front(); 
+    messages.pop(); 
+    return tmpMsg; 
+}
 
 // Below definitions are for the internal message class. ------------------------------------------
 
@@ -49,6 +62,7 @@ void MessageRetrieverBase::Message::DestroyMessage(){
     if(msgType == MessageRetrieverBase::Message::MessageType::DynamicMessage)
         delete buffer;
     (*finishedWriteFlag) = true; 
+    messageAlive = false; 
 }
 
 char * MessageRetrieverBase::Message::begin(){
