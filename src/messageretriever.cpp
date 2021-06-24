@@ -1,0 +1,56 @@
+/**
+ * @file messageretriever.cpp
+ * 
+ * @brief Defines some of the base class functionality for the classes that inhert this class to use.
+ * @version 0.1
+ * @date 2021-06-23
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
+#include "messageretriever.h"
+
+MessageRetrieverBase::Message * MessageRetrieverBase::getMessageBuffer(){
+
+    MessageRetrieverBase::Message * messageBuffer;
+
+    // This is where we determine what kind of buffer we need.
+    // We will always attempt to use the internal static buffer if it is free,
+    // but in the case that it is not available, we will use a dynmic buffer. 
+    if(staticbufferAvailable){
+        staticbufferAvailable = false; 
+        messageBuffer = new MessageRetrieverBase::Message(messageBuffer, 
+                                                    MessageRetrieverBase::Message::MessageType::StaticMessage,
+                                                    &staticbufferAvailable);
+    }else{
+        messageBuffer = new MessageRetrieverBase::Message(MessageRetrieverBase::getDynamicBuffer(),
+                                                    MessageRetrieverBase::Message::MessageType::DynamicMessage,
+                                                    & throwaway);
+    }
+
+    return messageBuffer; 
+}
+
+void MessageRetrieverBase::messageBufferWriteCompleted(){
+    
+}
+
+
+// Below definitions are for the internal message class. ------------------------------------------
+
+MessageRetrieverBase::Message:: Message(char * message, MessageType type, bool * flag)
+: buffer(message), msgType(type) ,finishedWriteFlag(flag) 
+{}
+
+char * MessageRetrieverBase::Message::operator()(){
+    return buffer; 
+}
+
+void MessageRetrieverBase::Message::DestroyMessage(){
+    if(!messageAlive)
+        return;
+    if(msgType == MessageRetrieverBase::Message::MessageType::DynamicMessage)
+        delete buffer;
+    (*finishedWriteFlag) = true; 
+}

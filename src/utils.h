@@ -20,11 +20,12 @@ namespace Utils{
         /**
          * @brief Create a dynamic assertion that will only pass if val == PASS. 
          * 
-         * @tparam PASS 
+         * @tparam PASS - required value needed for the assert to pass
+         * @tparam STRICT - If true, the program will reset on a failure. 
          * @param val 
          */
-        template<bool PASS>
-        void assert(bool val);  
+        template<bool PASS, bool STRICT=false>
+        bool assert(bool val);  
 
     }; 
 

@@ -20,12 +20,6 @@ enum class Interfaces { WIFI, MQTT, BT, SERIAL };
 char interface_file[] = {"/", "I", "F", "0", "\0"}; 
 
 template<Interface::Interfaces I>
-bool enabled(){
-
-    //Sets the needed byte for the enabled file in the FS.
-    interface_file[3] = static_cast<int> (I); 
-
-    return Filesystem::file_exists(interface_file); 
-}
+bool enabled(); 
 
 };
