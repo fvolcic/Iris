@@ -36,6 +36,8 @@ namespace ledstd{
             /**
              * @brief Pop the back element of the structure.
              * 
+             * @bug does not yet account for the case when size = 1 of size = 0
+             * 
              * @param elt 
              * @return T 
              */
@@ -43,6 +45,8 @@ namespace ledstd{
 
             /**
              * @brief Pop the frontmost element of the vector. 
+             * 
+             * @bug does not yet account for the case when size = 1 of size = 0
              * 
              * @param elt 
              * @return T 
