@@ -89,12 +89,12 @@ T * ledstd::vector<T, Size>::end(){
 }
 
 template<class T, int Size>
-T ledstd::vector<T, Size>::at(unsigned int index){
+T & ledstd::vector<T, Size>::at(unsigned int index){
     return datum[index]; 
 }
 
 template<class T, int Size>
-T ledstd::vector<T, Size>::operator[](unsigned int index){
+T & ledstd::vector<T, Size>::operator[](unsigned int index){
     return datum[index];
 }
 

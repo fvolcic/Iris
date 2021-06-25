@@ -89,34 +89,11 @@ T * ledstd::vector<T, Size>::end(){
 }
 
 template<class T, int Size>
-T ledstd::vector<T, Size>::at(unsigned int index){
+T & ledstd::vector<T, Size>::at(unsigned int index){
     return datum[index]; 
 }
 
 template<class T, int Size>
-T ledstd::vector<T, Size>::operator[](unsigned int index){
+T & ledstd::vector<T, Size>::operator[](unsigned int index){
     return datum[index];
-}
-
-
-#include <iostream> 
-int main(){
-    ledstd::vector<int, 1> v; 
-    for(int i = 0; i < 1000; ++i){
-        v.push_back(i); 
-    }
-    std::cout << v.size() << std::endl; 
-
-    for(auto i = v.begin(); i != v.end(); ++i){
-        std::cout << *i << std::endl; 
-    }
-
-    for(int i = 0; i < 100; ++i){
-        std::cout << v.pop_back() << std::endl; 
-        std::cout << v.pop_front() << std::endl; 
-    }
-
-    for(int i = 0; i < 800; ++i){
-        std::cout << v[i] << std::endl; 
-    }
 }
