@@ -15,8 +15,7 @@
 #define FILESYSTEM_PIO_H
 
 namespace Filesystem{
-
-    bool launch_success = false; 
+    extern bool launch_success; 
 
     /**
      * @brief This starts the file system for reading and writing.

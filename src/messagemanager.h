@@ -12,6 +12,9 @@
 
 #include "messageretriever.h"
 
+#ifndef MESSAGERETRIEVER_PIO_H
+#define MESSAGERETRIEVER_PIO_H
+
 /**
  * @brief The class that will contain all operations
  *        for handling incoming messages. Message paring is not done here.
@@ -47,3 +50,5 @@ private:
     unsigned int source_index = 0;      
 
 };
+
+#endif 

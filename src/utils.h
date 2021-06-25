@@ -10,6 +10,9 @@
  * 
  */
 
+#ifndef UTILS_PIO_H
+#define UTILS_PIO_H
+
 namespace Utils{
 
     /**
@@ -45,3 +48,5 @@ namespace Utils{
 
 };
 }; 
+
+#endif

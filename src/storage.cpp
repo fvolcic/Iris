@@ -15,6 +15,8 @@
 #include "storage.h"
 #include "SPIFFS.h"
 
+bool Filesystem::launch_success = false; 
+
 bool Filesystem::launch(){
 
     // If the filesystem has already been launched,

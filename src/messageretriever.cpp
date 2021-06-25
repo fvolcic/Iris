@@ -11,6 +11,9 @@
 
 #include "messageretriever.h"
 
+#ifndef MESSAGERETRIEVER_CPP
+#define MESSAGERETRIEVER_CPP
+
 MessageRetrieverBase::Message * MessageRetrieverBase::getMessageBuffer(){
 
     MessageRetrieverBase::Message * messageBuffer;
@@ -72,3 +75,5 @@ char * MessageRetrieverBase::Message::begin(){
 char * MessageRetrieverBase::Message::end(){ 
     return buffer + MAX_MESSAGE_LENGTH; 
 }
+
+#endif
