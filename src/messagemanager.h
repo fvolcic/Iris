@@ -23,7 +23,6 @@
 class MessageManager{
 
 public:
-
     MessageManager(); 
     ~MessageManager(); 
 
@@ -31,6 +30,7 @@ public:
      * @brief returns a new message if there is one available. If there
      *        is no new available message, then this class will return
      *        a nullptr. 
+     * 
      * 
      * @return char* 
      */
@@ -41,7 +41,7 @@ private:
 
     // All the different places that messages can come from.
     static const int num_sources = 0;
-    MessageRetrieverBase * message_sources[]; 
+    MessageRetrieverBase * message_sources[3]; // An array of pointers  
 
     // The source index allows for easy scanning of all the different indexs. 
     unsigned int source_index = 0;      
