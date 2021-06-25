@@ -12,7 +12,7 @@
 #include "globals.h"
 
 #ifdef VERBOSE
-#define PRINTER_SETUP() \ 
+#define PRINTER_SETUP()\ 
     (Serial.begin(BAUD))
 #endif
 
@@ -21,7 +21,7 @@
 #endif
 
 #ifdef VERBOSE
-#define PRINT(str) \
+#define PRINT(str)\
     (Serial.println( (str) ))
 #endif
 

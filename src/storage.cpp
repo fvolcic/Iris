@@ -127,10 +127,10 @@ bool delete_file(char * filename, bool strict=false){
 //TODO::------------------------------------------------------------------------------------
 //Must actually implement the excrypted data storage methods. This currently just stores data normally,
 //but should really use an encrypted key that is stored in the program binary. 
-bool Filesystem::store_encrypted_data(char * key, char * data, bool strict, uint8_t * secret_key){
+bool Filesystem::store_encrypted_data(char * key, char * data, bool strict, char * secret_key){
     return Filesystem::store_data(key, data, strict); 
 }
 
-char * Filesystem::get_encrypted_data(char * key, uint8_t * secret_key){
+char * Filesystem::get_encrypted_data(char * key, char * secret_key){
     return Filesystem::get_data(key); 
 }

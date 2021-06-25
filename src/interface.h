@@ -17,7 +17,7 @@ namespace Interface{
 
 enum class Interfaces { WIFI, MQTT, BT, SERIAL }; 
 
-char interface_file[] = {"/", "I", "F", "0", "\0"}; 
+char interface_file[] = {'/', 'I', 'F', '0', '\0'}; 
 
 template<Interface::Interfaces I>
 bool enabled(); 

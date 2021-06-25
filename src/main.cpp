@@ -11,7 +11,6 @@
 
 #include <Arduino.h>
 
-#include "network.h"
 #include "storage.h"
 #include "printer.h"
 

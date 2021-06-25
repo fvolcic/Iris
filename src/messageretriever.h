@@ -16,7 +16,6 @@
 #ifndef MESSAGERETRIEVER_H
 #define MESSAGERETRIEVER_H
 
-struct MessageRetrieverBase::Message; 
 
 /**
  * @brief Create the base class for the message retreiver.
@@ -79,9 +78,10 @@ public:
 
     private:
         bool messageAlive = true; 
-        MessageType msgType; 
-        bool * finishedWriteFlag; 
         char * buffer; 
+        MessageType msgType; 
+        bool * finishedWriteFlag;        
+        
     };
 
     //******************************************************************

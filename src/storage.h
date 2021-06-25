@@ -11,6 +11,9 @@
 
 #include "globals.h"
 
+#ifndef FILESYSTEM_PIO_H
+#define FILESYSTEM_PIO_H
+
 namespace Filesystem{
 
     bool launch_success = false; 
@@ -76,7 +79,7 @@ namespace Filesystem{
      * @param secret_key 
      * @return char* 
      */
-    char * get_encrypted_data(char * key, uint8_t * secret_key); 
+    char * get_encrypted_data(char * key, char * secret_key); 
 
     /**
      * @brief - Store data to the filesystem that is encrypted with the secret key.
@@ -88,7 +91,7 @@ namespace Filesystem{
      * @return true 
      * @return false 
      */
-    bool store_encrypted_data(char * key, char * data, bool strict = false, uint8_t * secret_key = 0x0); 
+    bool store_encrypted_data(char * key, char * data, bool strict = false, char * secret_key = 0x0); 
 
     /**
      * @brief Create a file in the spiffs filesystem. If strict is true and file exists, return false. 
@@ -119,3 +122,5 @@ namespace Filesystem{
     bool delete_file(char * filename, bool strict=false);
 
 };
+
+#endif

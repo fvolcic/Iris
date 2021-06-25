@@ -40,7 +40,7 @@ private:
 
 
     // All the different places that messages can come from.
-    static const int num_sources = 0;
+    static const int num_sources = 3;
     MessageRetrieverBase * message_sources[3]; // An array of pointers  
 
     // The source index allows for easy scanning of all the different indexs. 

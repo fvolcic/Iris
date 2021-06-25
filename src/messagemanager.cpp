@@ -22,7 +22,6 @@ Msg * MessageManager::getNewMessage(){
            source_index = (i + 1) % num_sources;
            return message_sources[i % num_sources]->getNewMessage();
         }
-
-        return nullptr; 
     }
+     return nullptr; 
 }
