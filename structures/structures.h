@@ -1,7 +1,7 @@
 /**
  * @file structures.h
  * 
- * @brief A simple queue implementation for use in this project.
+ * @brief Declerations of data structures that can be used throughout this project.
  * @version 0.1
  * @date 2021-06-25
  * 
@@ -148,5 +148,57 @@ namespace ledstd{
             T ** containerPointers; // pointer to arr of pointers
 
     };
+
+    /**
+     * @brief This class represents a queue that uses a circular buffer for maintaining the elts. 
+     * 
+     * @tparam T 
+     * @tparam BufferSize 
+     */
+    template<typename T, unsigned int BufferSize>
+    class RingBuffer{
+
+        public:
+
+            RingBuffer();
+            ~RingBuffer(); 
+
+            /**
+             * @brief Get the next element in the queue. 
+             * 
+             * @return T& 
+             */
+            T & next();
+
+            /**
+             * @brief Push an element into the queue. 
+             * 
+             * @return T& 
+             */
+            void push(T elt); 
+
+            /**
+             * @brief Removes the next element from the queue. 
+             * 
+             * @return T& 
+             */
+            void pop(); 
+
+            /**
+             * @brief Get a pointer to the internal buffer
+             * 
+             * @return T* 
+             */
+            T * data();
+
+        private:
+
+            // Represents where the start and end of the buffer are. 
+            unsigned int head, tail; 
+
+            T queue[BufferSize]; // The internal data buffer. 
+
+    };
+
 
 }; 

@@ -11,6 +11,11 @@
 
 #include "structures.h"
 
+
+//*****************************************************************
+//*                           Vector                              *
+//*****************************************************************
+
 template<class T, int Size>
 ledstd::vector<T, Size>::vector() : datum_size(0), capacity(Size)
 {
@@ -97,3 +102,37 @@ template<class T, int Size>
 T & ledstd::vector<T, Size>::operator[](unsigned int index){
     return datum[index];
 }
+
+
+//*****************************************************************
+//*                       RingBuffer                              *
+//*****************************************************************
+
+template<class T, unsigned int BufferSize>
+ledstd::RingBuffer<T, BufferSize>::RingBuffer() : head(0), tail(0){}
+
+template<class T, unsigned int BufferSize>
+ledstd::RingBuffer<T, BufferSize>::~RingBuffer(){}
+
+template<class T, unsigned int BufferSize>
+void ledstd::RingBuffer<T, BufferSize>::push(T elt){
+    queue[tail] = elt; 
+    tail = (++tail) % BufferSize;  
+}
+
+template<class T, unsigned int BufferSize>
+void ledstd::RingBuffer<T, BufferSize>::pop(){
+    head = (++head) % BufferSize; 
+}
+
+template<class T, unsigned int BufferSize>
+T & ledstd::RingBuffer<T, BufferSize>::next(){
+    return queue[head]; 
+}
+
+template<class T, unsigned int BufferSize>
+T * ledstd::RingBuffer<T, BufferSize>::data(){
+    return queue; 
+}
+
+template class ledstd::RingBuffer<int, 10u>;
