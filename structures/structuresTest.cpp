@@ -1,12 +1,7 @@
 #include "structures.h"
 #include "unit_test_framework.h"
 
-//
-
-#include "iostream"
-
-#define PRINT(str) std::cout << str;
-#define PRINTLN(str) std::cout << str << std::endl; 
+#include <iostream>
 
 TEST(TestRingBufferPushPop){
 

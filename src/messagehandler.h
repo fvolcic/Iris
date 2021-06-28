@@ -11,45 +11,29 @@
  */
 
 /**
- * @brief Class is responsible for both JSON message parsing along with JSON data extraction.
- *        There are a variety of flags that are set depending on the different messages received.
+ * @brief Base class for a message handler. This provides the interface for what is needed
+ *        for parsing messages and extracting there contents. 
  * 
+ * @tparam MsgTypes 
  */
-class MessageHandler{
-
+template<enum class MsgTypes>
+class MessageHandlerBase{
 public:
 
-    MessageHandler(); 
+    MessageHandler();
     ~MessageHandler(); 
 
     /**
-     * @brief This function parses a message. Returns false if the message was semantically invalid. True otherwise.
+     * @brief Check if a message of a given type is available. 
      * 
-     * @param message 
+     * @tparam MsgTypes 
+     * @tparam MsgType 
      * @return true 
      * @return false 
      */
-    bool parseMessage(char * message); 
-
-    /**
-     * @brief return true if there is a new Action ready to be displayed.
-     * 
-     * @return true 
-     * @return false 
-     */
-    bool newActionAvailable();
-
-    /**
-     * @brief return true if there is a new command that needs to be executed.
-     * 
-     * @return true 
-     * @return false 
-     */
-    bool newCommandAvailable();
+    template<enum class MsgTypes, MsgTypes MsgType>
+    bool MessageAvailable(); 
 
 private:
-    
-    bool actionAvailable = false; // Is there a new message? 
-    bool commandAvailable = false; // Is there a new command?
 
 };
