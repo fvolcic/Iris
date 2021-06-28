@@ -10,8 +10,8 @@
  */
 
 #include "globals.h"
-
-#include <queue>
+#include "message.h"
+#include "structures.h"
 
 #ifndef MESSAGERETRIEVER_H
 #define MESSAGERETRIEVER_H
@@ -26,63 +26,6 @@
 class MessageRetrieverBase {
 
 public:
-
-     /**
-     * @brief This is the struct that will represent a message.
-     *        This will provide an interface to destroy messages and read messags. 
-     * 
-     */
-    struct Message{
-
-        // This represents the current two different type of messsages.
-        enum class MessageType { StaticMessage, DynamicMessage }; 
-
-        /**
-         * @brief Construct a new Message object
-         * 
-         * @param message - pointer to a message buffer
-         * @param type - what is the type of memory used for the buffer. 
-         * @param flag - flag is a pointer to the boolean flag
-         */
-        Message(char * message, MessageType type, bool * flag);
-        
-        /**
-         * @brief Returns a pointer to the buffer stored within the
-         *        message struct
-         * 
-         * @return char* 
-         */
-        char * operator()(); 
-
-        /**
-         * @brief This will free all the space that the
-         *        buffer was using. If there was dynmic
-         *        memory in use, that memory will be destroyed.
-         * 
-         */
-        void DestroyMessage();
-
-        /**
-         * @brief Return bidirectional iterator
-         * 
-         * @return char* 
-         */
-        char * begin();
-
-        /**
-         * @brief Return end of the internal buffer.
-         * 
-         * @return char* 
-         */
-        char * end(); 
-
-    private:
-        bool messageAlive = true; 
-        char * buffer; 
-        MessageType msgType; 
-        bool * finishedWriteFlag;        
-        
-    };
 
     //******************************************************************
     //* Below are the two virtual functions that need to be overriden. *
@@ -116,7 +59,7 @@ public:
      * @brief This will retrieve the most recent message from the message retriever.
      * 
      */
-    MessageRetrieverBase::Message * getNewMessage();
+    Message * getNewMessage();
 
     /**
      * @brief Given a buffer, this will destroy the given buffer. 
@@ -140,6 +83,8 @@ protected:
     /**
      * @brief Will add a message to the queue.
      * 
+     * @note if there is no more room in the message queue, then the message will be ignored. 
+     *       
      */
     void enqueue_message(Message *); 
 
@@ -148,8 +93,12 @@ private:
     // Internal message buffer. This is where the first message is stored.
     char messageBuffer[MAX_MESSAGE_LENGTH]; 
 
-    // This queue is for storing all messages.
-    std::queue<Message *> messages; 
+    // -> This queue is for storing all messages.
+    // -> We are assuming that no more than 5 messages will be in the queue at a single time.
+    //    If this assumption is ill formed, then the queue can be expanded by altering the
+    //    second template parameter. For this to compile, structures.cpp also needs to be
+    //    edited to contain the template class instantiaion info for queue of size 5.
+    ledstd::RingBuffer<Message *, 5u> messages; 
 
     // These are the flags that a message retriever class will need.
     // staticbufferAvailable will let us know the messageBuffer array is available to

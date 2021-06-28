@@ -159,4 +159,4 @@ bool ledstd::RingBuffer<T, BufferSize>::queue_full(){
 
 // RingBuffer template instantiations below. Needed for the linking stage of compilation.
 
-template class ledstd::RingBuffer<int, 10u>; 
+template class ledstd::RingBuffer<int, 5u>; 

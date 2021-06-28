@@ -1,55 +1,67 @@
 /**
- * @file message.h
+ * @file message.cpp
  * 
- * @brief This is where the message parsing happens.
- * 
+ * @brief File decalares a message. This is what is used by the messageretriver.
  * @version 0.1
- * @date 2021-06-15
+ * @date 2021-06-28
  * 
  * @copyright Copyright (c) 2021
  * 
  */
 
 /**
- * @brief Class is responsible for both JSON message parsing along with JSON data extraction.
- *        There are a variety of flags that are set depending on the different messages received.
+ * @brief This is the struct that will represent a message.
+ *        This will provide an interface to destroy messages and read messags. 
  * 
  */
-class MessageHandler{
+struct Message{
 
-public:
-
-    MessageHandler(); 
-    ~MessageHandler(); 
+    // This represents the current two different type of messsages.
+    enum class MessageType { StaticMessage, DynamicMessage }; 
 
     /**
-     * @brief This function parses a message. Returns false if the message was semantically invalid. True otherwise.
+     * @brief Construct a new Message object
      * 
-     * @param message 
-     * @return true 
-     * @return false 
+     * @param message - pointer to a message buffer
+     * @param type - what is the type of memory used for the buffer. 
+     * @param flag - flag is a pointer to the boolean flag
      */
-    bool parseMessage(char * message); 
+    Message(char * message, MessageType type, bool * flag);
+    
+    /**
+     * @brief Returns a pointer to the buffer stored within the
+     *        message struct
+     * 
+     * @return char* 
+     */
+    char * operator()(); 
 
     /**
-     * @brief return true if there is a new Action ready to be displayed.
+     * @brief This will free all the space that the
+     *        buffer was using. If there was dynmic
+     *        memory in use, that memory will be destroyed.
      * 
-     * @return true 
-     * @return false 
      */
-    bool newActionAvailable();
+    void DestroyMessage();
 
     /**
-     * @brief return true if there is a new command that needs to be executed.
+     * @brief Return bidirectional iterator
      * 
-     * @return true 
-     * @return false 
+     * @return char* 
      */
-    bool newCommandAvailable();
+    char * begin();
+
+    /**
+     * @brief Return end of the internal buffer.
+     * 
+     * @return char* 
+     */
+    char * end(); 
 
 private:
+    bool messageAlive = true; 
+    char * buffer; 
+    MessageType msgType; 
+    bool * finishedWriteFlag;        
     
-    bool actionAvailable = false; // Is there a new message? 
-    bool commandAvailable = false; // Is there a new command?
-
 };

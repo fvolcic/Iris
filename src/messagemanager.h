@@ -11,6 +11,7 @@
  */
 
 #include "messageretriever.h"
+#include "message.h"
 
 #ifndef MESSAGERETRIEVER_PIO_H
 #define MESSAGERETRIEVER_PIO_H
@@ -37,7 +38,7 @@ public:
      * 
      * @return char* 
      */
-    MessageRetrieverBase::Message * getNewMessage(); 
+    Message * getNewMessage(); 
 
 private: 
 

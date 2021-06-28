@@ -10,25 +10,26 @@
  */
 
 #include "messageretriever.h"
+#include "message.h"
 
 #ifndef MESSAGERETRIEVER_CPP
 #define MESSAGERETRIEVER_CPP
 
-MessageRetrieverBase::Message * MessageRetrieverBase::getMessageBuffer(){
+Message * MessageRetrieverBase::getMessageBuffer(){
 
-    MessageRetrieverBase::Message * messageBuffer;
+    Message * messageBuffer;
 
     // This is where we determine what kind of buffer we need.
     // We will always attempt to use the internal static buffer if it is free,
     // but in the case that it is not available, we will use a dynmic buffer. 
     if(staticbufferAvailable){
         staticbufferAvailable = false; 
-        messageBuffer = new MessageRetrieverBase::Message(this->messageBuffer, 
-                                                    MessageRetrieverBase::Message::MessageType::StaticMessage,
+        messageBuffer = new Message(this->messageBuffer, 
+                                                    Message::MessageType::StaticMessage,
                                                     & staticbufferAvailable);
     }else{
-        messageBuffer = new MessageRetrieverBase::Message(MessageRetrieverBase::getDynamicBuffer(),
-                                                    MessageRetrieverBase::Message::MessageType::DynamicMessage,
+        messageBuffer = new Message(MessageRetrieverBase::getDynamicBuffer(),
+                                                    Message::MessageType::DynamicMessage,
                                                     & throwaway);
     }
 
@@ -36,6 +37,9 @@ MessageRetrieverBase::Message * MessageRetrieverBase::getMessageBuffer(){
 }
 
 void MessageRetrieverBase::enqueue_message(Message * msgPtr){
+    if(messages.queue_full())
+        return msgPtr->DestroyMessage(); // Do nothing with the message if the queue is full.
+    
     messages.push(msgPtr); 
 }
 
@@ -43,37 +47,14 @@ bool MessageRetrieverBase::isMessageAvailable(){
     return messages.size() != 0;
 }
 
-MessageRetrieverBase::Message * MessageRetrieverBase::getNewMessage(){
-    MessageRetrieverBase::Message * tmpMsg = messages.front(); 
+Message * MessageRetrieverBase::getNewMessage(){
+    Message * tmpMsg = messages.next(); 
     messages.pop(); 
     return tmpMsg; 
 }
 
 // Below definitions are for the internal message class. ------------------------------------------
 
-MessageRetrieverBase::Message:: Message(char * message, MessageType type, bool * flag)
-: buffer(message), msgType(type) ,finishedWriteFlag(flag) 
-{}
 
-char * MessageRetrieverBase::Message::operator()(){
-    return buffer; 
-}
-
-void MessageRetrieverBase::Message::DestroyMessage(){
-    if(!messageAlive)
-        return;
-    if(msgType == MessageRetrieverBase::Message::MessageType::DynamicMessage)
-        delete buffer;
-    (*finishedWriteFlag) = true; 
-    messageAlive = false; 
-}
-
-char * MessageRetrieverBase::Message::begin(){
-    return buffer; 
-}
-
-char * MessageRetrieverBase::Message::end(){ 
-    return buffer + MAX_MESSAGE_LENGTH; 
-}
 
 #endif
