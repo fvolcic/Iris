@@ -118,11 +118,17 @@ template<class T, unsigned int BufferSize>
 void ledstd::RingBuffer<T, BufferSize>::push(T elt){
     queue[tail] = elt; 
     tail = (++tail) % BufferSize;  
+
+    if(tail == head)
+        fullQueue = true;
 }
 
 template<class T, unsigned int BufferSize>
 void ledstd::RingBuffer<T, BufferSize>::pop(){
     head = (++head) % BufferSize; 
+
+    if(fullQueue)
+        fullQueue = false; 
 }
 
 template<class T, unsigned int BufferSize>
@@ -135,4 +141,22 @@ T * ledstd::RingBuffer<T, BufferSize>::data(){
     return queue; 
 }
 
-template class ledstd::RingBuffer<int, 10u>;
+template<class T, unsigned int BufferSize>
+unsigned int ledstd::RingBuffer<T, BufferSize>::size(){
+    if(fullQueue && head==tail)
+        return BufferSize;
+
+    if(tail >= head)
+        return tail - head; 
+    
+    return tail + BufferSize - head; 
+}
+
+template<class T, unsigned int BufferSize>
+bool ledstd::RingBuffer<T, BufferSize>::queue_full(){
+    return fullQueue; 
+}
+
+// RingBuffer template instantiations below. Needed for the linking stage of compilation.
+
+template class ledstd::RingBuffer<int, 10u>; 

@@ -152,12 +152,16 @@ namespace ledstd{
     /**
      * @brief This class represents a queue that uses a circular buffer for maintaining the elts. 
      * 
+     * @note Do not overfill buffer. If you push more and BufferSize elts into the RingBuffer,
+     *       then there will be undfined behavior. 
+     * 
      * @tparam T 
      * @tparam BufferSize 
      */
     template<typename T, unsigned int BufferSize>
     class RingBuffer{
-
+        static_assert(BufferSize > 0); // ensure that the buffer even exists. 
+        
         public:
 
             RingBuffer();
@@ -191,12 +195,32 @@ namespace ledstd{
              */
             T * data();
 
+            /**
+             * @brief Return the number of elements that are in the ringBuffer. 
+             * 
+             * @return unsigned int 
+             */
+            unsigned int size(); 
+
+            /**
+             * @brief Check if the queue can fit anymore elts. 
+             * 
+             * @return true 
+             * @return false 
+             */
+            bool queue_full(); 
+
         private:
 
+            // Ensure that we know if queue is full or empty. 
+            bool fullQueue = false; 
+            
             // Represents where the start and end of the buffer are. 
             unsigned int head, tail; 
 
             T queue[BufferSize]; // The internal data buffer. 
+
+            
 
     };
 
