@@ -53,8 +53,4 @@ Message * MessageRetrieverBase::getNewMessage(){
     return tmpMsg; 
 }
 
-// Below definitions are for the internal message class. ------------------------------------------
-
-
-
 #endif

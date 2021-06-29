@@ -10,6 +10,13 @@
  * 
  */
 
+#include "enum.h"
+
+/**
+ * @brief Name the different possible sources for a message.
+ */
+ENUM(MessageSources, SERIAL); 
+
 /**
  * @brief Base class for a message handler. This provides the interface for what is needed
  *        for parsing messages and extracting there contents. 
@@ -26,13 +33,13 @@ public:
     /**
      * @brief Check if a message of a given type is available. 
      * 
+     * 
      * @tparam MsgTypes 
-     * @tparam MsgType 
      * @return true 
      * @return false 
      */
-    template<enum class MsgTypes, MsgTypes MsgType>
-    bool MessageAvailable(); 
+    template<enum class MsgTypes>
+    bool MessageAvailable(MsgTypes msgtype); 
 
 private:
 

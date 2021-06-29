@@ -58,15 +58,11 @@ public:
     /**
      * @brief This will retrieve the most recent message from the message retriever.
      * 
-     */
-    Message * getNewMessage();
-
-    /**
-     * @brief Given a buffer, this will destroy the given buffer. 
+     * @note You will have to call destroyMessage on this pointer when the pointer
+     *       is no longer needed. 
      * 
      */
-    void destroyBuffer(char *); 
-
+    Message * getNewMessage();
    
 
 protected:
