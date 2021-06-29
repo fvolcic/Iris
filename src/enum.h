@@ -22,3 +22,4 @@
  * 
  */
 #define ENUMSIZE(enum_class) static_cast<unsigned int> (enum_class::_COUNT_)
+#define ENUMSIZE(enum_class, valtype) static_cast<valtype> (enum_class::_COUNT_)
