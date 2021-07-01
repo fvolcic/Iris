@@ -12,7 +12,10 @@
 bool cstrcmp(const char * c_str1, const char * c_str2);
 
 /**
- * @brief Compare two strings, do not need to be terminated with '\0' 
+ * @brief Compare two char arrays
+ * 
+ * @note Do not need to be '\0' terminated, but their length must be known prior to
+ *       using this function.
  * 
  * @param c_str1 
  * @param c_str1_len 
