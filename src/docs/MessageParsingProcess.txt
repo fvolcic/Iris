@@ -1,0 +1,21 @@
+Message Parsing Stage 1. )
+    -> Message is received by a Message Retriever (Any Retriever represented by the MessageRetreiver base class)
+    -> This message is stored as a string of json, and is passed onto the MessageManager.
+
+-------------------                               -----------------
+|Message Retriever| --| JSON String (char *) |--> |Message Manager|
+-------------------                               -----------------
+
+Message Parsing Stage 2. )
+    -> At this stage, the Message Manager has the string representation of a message.
+    -> The Message Manager will turn this message reprentation into a JSON Object (using ArduinoJSON)
+    -> The Message Manager ensures that the message is semantically valid in terms of json.
+       The Message Manager does not ensure that the message has any true semantic meaning,
+       only that the message is parsable into json. 
+    -> Here, the json object is passed onto the correct MessageDecoder. Once the MessageDecoder has the
+       object, it will ensure that the json object is semantically meaningful. If the message is meaningful,
+       then whatever the message represented will be executed by the MessageDecoder. 
+
+-----------------                                     ----------------
+|Message Manager| --| JSON Object (Arduino JSON) |--> |MessageDecoder|
+-----------------                                     ----------------

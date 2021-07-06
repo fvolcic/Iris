@@ -1,0 +1,1 @@
+This file contains information on how to construct a MessageDecoder class using the MessageDecoder base class.
