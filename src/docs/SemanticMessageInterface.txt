@@ -1,0 +1,3 @@
+-> This file contains details on the semantic message interface
+-> The semantic message interface is a parsed representation of a message.
+-> A parsed message will have the following interface.

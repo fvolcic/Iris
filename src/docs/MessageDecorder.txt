@@ -1,1 +1,14 @@
-This file contains information on how to construct a MessageDecoder class using the MessageDecoder base class.
+-> This file contains information on how to construct a 
+   MessageDecoder class using the MessageDecoder base class.
+
+-> MessageDecoder is the interface used to extract the semantic meaning from a message along with 
+   execute any semantic meaning that is passed from a message. 
+
+                         ---------------- MessageDecoder ----------------
+
+MessageDecoder structure and execution path
+
+--------------------------------------
+|         Parsed Message Object      | 
+| Supports semanticMessage interface |
+--------------------------------------
