@@ -1,3 +1,10 @@
 -> This file contains details on the semantic message interface
 -> The semantic message interface is a parsed representation of a message.
 -> A parsed message will have the following interface.
+
+First we must look at how the message is defined
+
+    The message is defined using JSON. The key's in the message are
+    the message traits, and the values are the trait values. 
+    Together, the traits and the trait values give the message an
+    exact meaning. 

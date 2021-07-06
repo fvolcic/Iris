@@ -3,6 +3,7 @@ To use this functionality in VSCode, first install the Doxygen extension.
 For each function written, use the deoxygen extension to generate compatible documentation.
 Next, make sure Doxygen is installed on your system. On windows,
 
+$ sudo apt-get update
 $ sudo apt-get install doxygen
 
 Finally, generate the docs with
