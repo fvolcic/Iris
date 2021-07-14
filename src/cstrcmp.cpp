@@ -1,7 +1,9 @@
+#include "utils.h"
+
 #ifndef cstrcmpCPP
 #define cstrcmpCPP
 
-bool cstrcmp(const char  * c_str1,const char  * c_str2) {
+bool Utils::Compare::cstrcmp(const char  * c_str1,const char  * c_str2) {
   while (*c_str1 && * c_str2) {
     if (*c_str1 != *c_str2)
       return false;
@@ -13,7 +15,7 @@ bool cstrcmp(const char  * c_str1,const char  * c_str2) {
   return true;
 }
 
-bool cstrcmp(const char * c_str1, unsigned int c_str1_len, const char * c_str2, unsigned int c_str2_len){
+bool Utils::Compare::cstrcmp(const char * c_str1, unsigned int c_str1_len, const char * c_str2, unsigned int c_str2_len){
   if(c_str1_len != c_str2_len)
     return false; 
   for(unsigned int i = 0; i < c_str1_len; ++i){

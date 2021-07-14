@@ -10,6 +10,11 @@
  */
 
 #include "utils.h"
+#include <Arduino.h>
+
+unsigned int Utils::random(){
+    return esp_random(); // get a cryptographically secure random number
+}
 
 template<bool PASS, bool STRICT>
 bool Utils::Asserts::assert(bool val){
