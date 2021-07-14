@@ -11,8 +11,9 @@
 
 #include "messagemanager.h"
 #include "messageretriever.h"
+#include "message.h"
 
-using Msg = MessageRetrieverBase::Message; 
+using Msg = Message; 
 
 Msg * MessageManager::getNewMessage(){
 
