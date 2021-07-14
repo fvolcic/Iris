@@ -1,0 +1,23 @@
+// This file outlines how the entire led system works.
+
+
+Threads (Gotten from the thread manager):
+
+1.) Message Processing Thread
+2.) Main Program Thread (LED Light in this case)
+
+
+
+-----------                         -----------------------------
+| Message | --| Some Interface |--> | Message Processing Thread |
+-----------                         -----------------------------
+                                                  |
+                                                  |-----------------------
+                                                  \/                     |     -------------------------
+                                    -----------------------------        |---> | Main Program Adjuster |
+                                    |      System Settings      |              -------------------------
+                                    -----------------------------                           |
+                                                /\\/                                        |
+                                    -----------------------------                           |
+                                    |     Main Program Thread   |<--------------------------|
+                                    -----------------------------
