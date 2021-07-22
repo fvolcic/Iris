@@ -9,3 +9,15 @@
  * 
  */
 
+#include <Arduino.h>
+
+#include "globals.h"
+#include "serialretriever.h"
+
+void SerialRetriever::setupRetriever(){
+    // Ensure that serial is enabled. 
+    Serial.begin(BAUD); 
+
+
+
+}
