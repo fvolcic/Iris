@@ -13,11 +13,12 @@
 
 #include "globals.h"
 #include "serialretriever.h"
+#include "utils.h"
 
 void SerialRetriever::setupRetriever(){
-    // Ensure that serial is enabled. 
-    Serial.begin(BAUD); 
+    Utils::LEDSerial::initializeSerial(); 
+}
 
-
-
+void SerialRetriever::updateRetriever(){
+    
 }

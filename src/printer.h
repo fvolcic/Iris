@@ -10,10 +10,11 @@
  */
 
 #include "globals.h"
+#include "utils.h"
 
 #ifdef VERBOSE
 #define PRINTER_SETUP()\ 
-    (Serial.begin(BAUD))
+    (Utils::LEDSerial::initializeSerial())
 #endif
 
 #ifndef VERBOSE
@@ -22,7 +23,7 @@
 
 #ifdef VERBOSE
 #define PRINT(str)\
-    (Serial.println( (str) ))
+    (Utils::LEDSerial::print( (str) ))
 #endif
 
 #ifndef VERBOSE

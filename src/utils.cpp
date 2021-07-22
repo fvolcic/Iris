@@ -17,7 +17,7 @@ unsigned int Utils::random(){
 }
 
 template<bool PASS, bool STRICT>
-bool Utils::Asserts::assert(bool val){
+bool Utils::Asserts::runtime_assert(bool val){
     if(STRICT){
         if(PASS != val)
             Utils::Program::RESET(); // reset program
@@ -25,5 +25,18 @@ bool Utils::Asserts::assert(bool val){
     }else{
         return PASS == val; 
     }
-    
+}
+
+void Utils::LEDSerial::initializeSerial(unsigned long baud_rate){
+    if(!Utils::LEDSerial::serialInitialized){
+        Serial.begin(baud_rate); 
+        Utils::LEDSerial::serialInitialized = true; 
+    }
+}
+
+template<typename T>
+void Utils::LEDSerial::print(T datum){
+    if(!Utils::LEDSerial::serialInitialized)
+        Utils::LEDSerial::initializeSerial(); 
+    Serial.print(datum); 
 }

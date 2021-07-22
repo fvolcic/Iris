@@ -10,11 +10,43 @@
  * 
  */
 
+#include "globals.h"
+
 #ifndef UTILS_PIO_H
 #define UTILS_PIO_H
 
 namespace Utils
 {
+
+    namespace LEDSerial{
+
+        // boolean that tells us if the serial has already been initialized.
+        bool serialInitialized = false; 
+
+        /**
+         * @brief Initialize the program serial. 
+         * 
+         * @note If serial is already initialized, then initialize serial wont do anything. 
+         */
+        void initializeSerial(unsigned long baudRate = BAUD);
+
+        /**
+         * @brief Writes serial data.
+         * 
+         * @tparam T 
+         * @param datum 
+         */
+        template<typename T>
+        void print(T datum);
+
+        /**
+         * @brief Return true if there is serial available.
+         * 
+         * @return true 
+         * @return false 
+         */
+        bool checkSerial();
+    };
 
     /**
      * @brief Retrieve a random number.
@@ -75,7 +107,7 @@ namespace Utils
          * @param val 
          */
         template <bool PASS, bool STRICT = false>
-        bool assert(bool val);
+        bool runtime_assert(bool val);
 
     };
 
