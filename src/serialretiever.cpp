@@ -14,6 +14,7 @@
 #include "globals.h"
 #include "serialretriever.h"
 #include "utils.h"
+#include "message.h"
 
 void SerialRetriever::setupRetriever(){
     Utils::LEDSerial::initializeSerial(); 
@@ -21,4 +22,11 @@ void SerialRetriever::setupRetriever(){
 
 void SerialRetriever::updateRetriever(){
     
+    // First check if there is some new information available to be read. 
+    if(!Utils::LEDSerial::serialAvailable())
+        return; 
+    
+    Message * messageBuffer = this->getMessageBuffer(); // get the message buffer
+    Utils::LEDSerial::readSerialUntil(Utils::LEDSerial::finalSerialByte, messageBuffer->begin()); // read the data into the message buffer 
+    this->enqueue_message(messageBuffer); // Enqueue the new message
 }

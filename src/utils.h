@@ -22,6 +22,7 @@ namespace Utils
 
         // boolean that tells us if the serial has already been initialized.
         bool serialInitialized = false; 
+        char finalSerialByte = '\0'; 
 
         /**
          * @brief Initialize the program serial. 
@@ -45,7 +46,13 @@ namespace Utils
          * @return true 
          * @return false 
          */
-        bool checkSerial();
+        bool serialAvailable();
+
+        /**
+         * @brief Read a serial data stream until a given byte is seen.
+         * 
+         */
+        void readSerialUntil(char endByte, char * buffer);
     };
 
     /**
