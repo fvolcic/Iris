@@ -27,6 +27,12 @@ bool Utils::Asserts::runtime_assert(bool val){
     }
 }
 
+//                   *******************************************
+//                   *                                         *
+//                   *         LED Serial Implementation       *
+//                   *                                         *
+//                   *******************************************
+
 void Utils::LEDSerial::initializeSerial(unsigned long baud_rate){
     if(!Utils::LEDSerial::serialInitialized){
         Serial.begin(baud_rate); 
@@ -39,4 +45,13 @@ void Utils::LEDSerial::print(T datum){
     if(!Utils::LEDSerial::serialInitialized)
         Utils::LEDSerial::initializeSerial(); 
     Serial.print(datum); 
+}
+
+bool Utils::LEDSerial::serialAvailable(){
+    return Serial.available(); 
+}
+
+bool Utils::LEDSerial::readSerialUntil(char endByte, char * buffer, unsigned int length, unsigned long timeout = 1000){
+    Serial.setTimeout(timeout); 
+    return Serial.readBytesUntil(endByte, buffer, length); 
 }

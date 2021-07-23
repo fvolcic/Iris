@@ -16,6 +16,9 @@
 #include "utils.h"
 #include "message.h"
 
+#ifndef SERIALRETIEVER_H
+#define SERIALRETIEVER_H
+
 void SerialRetriever::setupRetriever(){
     Utils::LEDSerial::initializeSerial(); 
 }
@@ -30,3 +33,5 @@ void SerialRetriever::updateRetriever(){
     Utils::LEDSerial::readSerialUntil(Utils::LEDSerial::finalSerialByte, messageBuffer->begin()); // read the data into the message buffer 
     this->enqueue_message(messageBuffer); // Enqueue the new message
 }
+
+#endif

@@ -51,8 +51,23 @@ namespace Utils
         /**
          * @brief Read a serial data stream until a given byte is seen.
          * 
+         * @note Forward write iterator is required.
+         *       The iterator must support operator++ and write. 
+         *       (Since these are the only required operations, a char * will work) 
+         * 
+         * @note Terminating character is not read into the buffer. 
+         * 
+         * @param endByte The terminating byte
+         * @param buffer The buffer to read into
+         * @param length The maximum read length
+         * @param timeout The time until the read should fail for taking too long
+         * 
+         * @return True
+         *         False
+         *         -> Returns false if the read fails. Returns true otherwise.
          */
-        void readSerialUntil(char endByte, char * buffer);
+
+        bool readSerialUntil(char endByte, char *  buffer, unsigned int length, unsigned long timeout = 1000);
     };
 
     /**
