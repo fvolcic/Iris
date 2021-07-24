@@ -16,14 +16,14 @@ unsigned int Utils::random(){
     return esp_random(); // get a cryptographically secure random number
 }
 
-template<bool PASS, bool STRICT>
+template<bool PASS_VAL, bool STRICT>
 bool Utils::Asserts::runtime_assert(bool val){
     if(STRICT){
-        if(PASS != val)
+        if(PASS_VAL != val)
             Utils::Program::RESET(); // reset program
         return true; 
     }else{
-        return PASS == val; 
+        return PASS_VAL == val; 
     }
 }
 

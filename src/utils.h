@@ -18,6 +18,13 @@
 namespace Utils
 {
 
+    /**
+     * @brief The namespace for all the serial communication that can be used.
+     * 
+     * @todo Rename finalSerialByte and then find a new location for it. I don't love finalSerialByte
+     *       being placed here, but it will work for now.
+     * 
+     */
     namespace LEDSerial{
 
         // boolean that tells us if the serial has already been initialized.
@@ -67,7 +74,7 @@ namespace Utils
          *         -> Returns false if the read fails. Returns true otherwise.
          */
 
-        bool readSerialUntil(char endByte, char *  buffer, unsigned int length, unsigned long timeout = 1000);
+        bool readSerialUntil(char endByte, char *  buffer, unsigned int length = MAX_MESSAGE_LENGTH, unsigned long timeout = 1000);
     };
 
     /**
@@ -128,7 +135,7 @@ namespace Utils
          * @tparam STRICT - If true, the program will reset on a failure. 
          * @param val 
          */
-        template <bool PASS, bool STRICT = false>
+        template <bool PASS_VAL, bool STRICT = false>
         bool runtime_assert(bool val);
 
     };

@@ -26,3 +26,9 @@ Msg * MessageManager::getNewMessage(){
     }
      return nullptr; 
 }
+
+MessageManager::~MessageManager(){
+    // delete all the dynamically allocated message source pointers.
+    for(unsigned int i = 0; i < num_sources; ++i)
+        delete message_sources[i]; 
+}   

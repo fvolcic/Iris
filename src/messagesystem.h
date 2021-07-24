@@ -19,8 +19,19 @@
  */
 class MessageSystem{
 
+        /**
+         * @brief Check if there is a new message available. 
+         * 
+         * @return true 
+         * @return false 
+         */
+        bool checkMessages();
 
     private:
-
+        
+        // The message manager class is defined in messagemanager.h
+        // Essentially this is a funnel that allows all the different
+        // message sources to be read together. 
+        MessageManager messages(); 
 
 };

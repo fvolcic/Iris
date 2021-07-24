@@ -10,8 +10,11 @@
  * 
  */
 
-#include "messageretriever.h"
 #include "message.h"
+
+// * All message retriever includes below *
+#include "messageretriever.h"
+#include "serialretriever.h"
 
 #ifndef MESSAGERETRIEVER_PIO_H
 #define MESSAGERETRIEVER_PIO_H
@@ -35,17 +38,15 @@ public:
      *        is no new available message, then this class will return
      *        a nullptr. 
      * 
-     * 
      * @return char* 
      */
     Message * getNewMessage(); 
 
 private: 
 
-
     // All the different places that messages can come from.
-    static const int num_sources = 3;
-    MessageRetrieverBase * message_sources[3]; // An array of pointers  
+    static const int num_sources = 1;
+    MessageRetrieverBase * message_sources[1] = { new SerialRetriever() }; 
 
     // The source index allows for easy scanning of all the different indexs. 
     unsigned int source_index = 0;      
