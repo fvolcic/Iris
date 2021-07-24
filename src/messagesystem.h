@@ -13,25 +13,34 @@
 #include "messagedecoderbase.h"
 
 /**
- * @brief This class outlines the entire message system. Messages are recieved, parsed, and executed,
- *        all from this class. 
+ * @brief Contains all the needed information to start and manage the message system.
  * 
  */
-class MessageSystem{
+namespace MessageSystem{
 
-        /**
-         * @brief Check if there is a new message available. 
-         * 
-         * @return true 
-         * @return false 
-         */
-        bool checkMessages();
+    struct messageSystemConfig{
 
-    private:
-        
-        // The message manager class is defined in messagemanager.h
-        // Essentially this is a funnel that allows all the different
-        // message sources to be read together. 
-        MessageManager messages(); 
+    };
 
+    /**
+     * @brief This begins the messaging system by starting a thread for the message system. 
+     * 
+     * @return true - on successful launch
+     * @return false - on launch failure
+     */
+    bool startMessageSystem(messageSystemConfig * config); 
+
+    /**
+     * @brief Stop the message system thread.
+     * 
+     * @return true - on successful message system kill
+     * @return false - on message system kill failure.
+     */
+    bool killMessageSystem();
+
+    /**
+     * @brief Run the message system in a loop for a thread.
+     * 
+     */
+    void run();
 };
