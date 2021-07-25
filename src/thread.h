@@ -16,4 +16,24 @@
  */
 namespace Thread{
 
+    /**
+     * @brief thread_handle is an alias for a thread object that can be manipulated. 
+     * 
+     */
+    using thread_handle = void; 
+
+    /**
+     * @brief Config structure for a new thread
+     * 
+     */
+    struct thread_config{}; 
+
+    /**
+     * @brief Create a thread object using the given config
+     * 
+     * @param config 
+     * @return thread_handle 
+     */
+    thread_handle create_thread(thread_config * config); 
+
 };
