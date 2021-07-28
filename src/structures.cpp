@@ -151,7 +151,6 @@ unsigned int ledstd::RingBuffer<T, BufferSize>::size(){
     
     return tail + BufferSize - head; 
 }
-
 template<class T, unsigned int BufferSize>
 bool ledstd::RingBuffer<T, BufferSize>::queue_full(){
     return fullQueue; 
