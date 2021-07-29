@@ -51,7 +51,7 @@ bool Utils::LEDSerial::serialAvailable(){
     return Serial.available(); 
 }
 
-bool Utils::LEDSerial::readSerialUntil(char endByte, char * buffer, unsigned int length, unsigned long timeout = 1000){
+bool Utils::LEDSerial::readSerialUntil(char endByte, char * buffer, unsigned int length, unsigned long timeout = 1000UL){
     Serial.setTimeout(timeout); 
     return Serial.readBytesUntil(endByte, buffer, length); 
 }
