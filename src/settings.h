@@ -29,6 +29,9 @@ namespace Settings{
     namespace network{
         namespace WIFI{
             bool network_enabled; // is the system internet enabled or not?
+            /**
+            * @todo Change these pointers to static arrays. There is a maximum ssid size and password size that should be used to init arrays
+            */
             char * SSID; // network SSID
             char * PASS; // netword PASSWORD
         };
