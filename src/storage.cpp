@@ -39,7 +39,7 @@ bool Filesystem::launch(){
             return false; 
         }
         //Create the check file in SPIFFS
-        char mode = 'w'; 
+        static const char mode = 'w'; 
         if(!SPIFFS.open(checkfile, & mode)){
             return false; 
         }
@@ -93,7 +93,7 @@ bool Filesystem::store_data(char * key, char * data, bool strict){
     if(strict && SPIFFS.exists(key))
         return false; 
 
-    const char mode = 'w'; 
+    static const char mode = 'w'; 
     File file = SPIFFS.open(key, & mode); 
 
     // Otherwise, write all datum into memory. 
