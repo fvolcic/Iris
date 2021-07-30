@@ -43,6 +43,20 @@ TEST(testRingBufferSize){
 
     ASSERT_EQUAL(queue.size(), 9); 
 
+    queue.pop(); 
+
+    ASSERT_EQUAL(queue.size(), 8); 
+
+    queue.pop();
+    queue.pop();
+    queue.pop(); 
+
+    for(unsigned int i = 0; i < 20; ++i){
+        queue.push(i);
+        queue.pop();
+        ASSERT_EQUAL(queue.size(), 5); 
+    }
+
 }
 
 
