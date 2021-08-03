@@ -32,6 +32,6 @@ public:
 
 private:
 
-    static const char msgKey[5]; 
+    static const char msgKey[]; 
 };
 

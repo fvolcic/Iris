@@ -11,6 +11,8 @@
 
 #include "messagemanager.h"
 #include "messagedecoderbase.h"
+#include "thread.h"
+
 
 /**
  * @brief Contains all the needed information to start and manage the message system.
@@ -41,6 +43,13 @@ namespace MessageSystem{
     /**
      * @brief Run the message system in a loop for a thread.
      * 
+     * @note this function should only never be directly called
+     *       except for in the startMessageSystem function.
      */
-    void run();
+    void _run(task_param_requirements);
+
+
+    // handle for the globally created message thread
+    Thread::thread_handle MessageThreadHandle; 
+
 };

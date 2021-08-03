@@ -18,11 +18,10 @@
  */
 namespace Thread{
 
-    /**
-     * @brief thread_handle is an alias for a thread object that can be manipulated. 
-     * 
-     */
+    // Different alias' for modularizing the code
     using thread_handle = TaskHandle_t; 
+    using TaskFunction = TaskFunction_t; 
+
 
     /**
      * @brief Config structure for a new thread
@@ -31,9 +30,10 @@ namespace Thread{
     struct thread_config{
         bool pinToCore = false;
         unsigned int core = 0;
-        unsigned int stackDepth;
+        unsigned int stackDepth = 1000;
         unsigned int taskPriority = 0; 
-        unsigned int coreId = tskNO_AFFINITY; // INT_MAX
+        unsigned int coreId = tskNO_AFFINITY; 
+        TaskFunction task; 
     }; 
 
     /**
@@ -49,6 +49,18 @@ namespace Thread{
      * 
      */
     #define delayTask(ticks) vTaskDelay( (ticks) ); 
+
+    /**
+     * @brief Requirements for what should be placed in the a task function
+     * 
+     */
+    #define task_param_requirements void *
+
+    /**
+     * @brief Get the handle of a function for a thread
+     * 
+     */
+    #define getTaskEntry(task) & (task) 
 
     /**
      * @brief Will delete a task and remove from the thread pool
