@@ -59,6 +59,7 @@ namespace Thread{
     /**
      * @brief Get the handle of a function for a thread
      * 
+     * @param task function name to get task handle from
      */
     #define getTaskEntry(task) & (task) 
 

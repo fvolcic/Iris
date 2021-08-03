@@ -20,5 +20,5 @@ bool MessageSystem::startMessageSystem(MessageSystem::messageSystemConfig *confi
 
 bool MessageSystem::killMessageSystem(){
     Thread::delete_task(MessageSystem::MessageThreadHandle);
-    return true; // kinda just assume this always works lmao
+    return true; 
 }
