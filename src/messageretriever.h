@@ -27,12 +27,12 @@ class MessageRetrieverBase {
 
 public:
 
-    //******************************************************************
-    //* Below are the two virtual functions that need to be overriden. *
-    //* These are the only two functions that must be implemented by a * 
-    //* a base class. This are required for the retriever to work      *
-    //* correctly.                                                     *
-    //******************************************************************
+    // ******************************************************************
+    // * Below are the two virtual functions that need to be overriden. *
+    // * These are the only two functions that must be implemented by a * 
+    // * a base class. This are required for the retriever to work      *
+    // * correctly.                                                     *
+    // ******************************************************************
 
     /**
      * @brief Setup all necessary functions that will be needed for the message retriever.
