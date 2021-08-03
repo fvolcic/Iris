@@ -34,6 +34,7 @@ namespace Thread{
         unsigned int taskPriority = 0; 
         unsigned int coreId = tskNO_AFFINITY; 
         TaskFunction task; 
+        thread_handle * handle;
     }; 
 
     /**
@@ -68,6 +69,6 @@ namespace Thread{
      * 
      * @param task 
      */
-    void delete_task(thread_handle task); 
+    void delete_task(thread_handle * handle); 
 
 };

@@ -13,15 +13,19 @@
 #include "SYSTEM_CONFIG.h"
 
 Thread::thread_handle Thread::create_thread(Thread::thread_config * config){
-    Thread::thread_handle handle; 
-    
 #ifdef USING_FREE_RTOS
     if(config->pinToCore){
-        xTaskCreatePinnedToCore(config->task, nullptr, config->stackDepth, nullptr, config->taskPriority, &handle, config->coreId); 
+        xTaskCreatePinnedToCore(config->task, nullptr, config->stackDepth, nullptr, config->taskPriority, config->handle, config->coreId); 
     }
     if(!config->pinToCore){
-        
+        xTaskCreate(config->task, nullptr, config->stackDepth, nullptr, config->taskPriority, config->handle); 
     }
+    return config->handle; 
 #endif
+}
 
+void Thread::delete_task(thread_handle * handle){
+    #ifdef USING_FREE_RTOS
+        vTaskDelete(handle); 
+    #endif
 }
