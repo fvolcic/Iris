@@ -42,6 +42,7 @@ public:
      */
     Message * getNewMessage(); 
     
+    
 private: 
 
     // All the different places that messages can come from.

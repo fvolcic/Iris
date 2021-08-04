@@ -10,6 +10,7 @@
  */
 
 #include "messagesystem.h"
+#include "messagemanager.h"
 #include "thread.h"
 
 bool MessageSystem::startMessageSystem(MessageSystem::messageSystemConfig *config){
@@ -19,6 +20,14 @@ bool MessageSystem::startMessageSystem(MessageSystem::messageSystemConfig *confi
 }
 
 bool MessageSystem::killMessageSystem(){
-    Thread::delete_task(MessageSystem::MessageThreadHandle);
+    Thread::delete_task(& MessageSystem::MessageThreadHandle);
     return true; 
+}
+
+void MessageSystem::_run(task_param_requirements){
+    MessageManager manager; // The funnel for messages from the different message sources
+    
+    while(true){
+        
+    }
 }

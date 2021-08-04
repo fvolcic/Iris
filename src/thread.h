@@ -11,11 +11,13 @@
  */
 
 #include <Arduino.h>
+#include "SYSTEM_CONFIG.h"
 
 /**
- * @brief 
+ * @brief Threading interface for freeRTOS
  * 
  */
+#ifdef USING_FREE_RTOS
 namespace Thread{
 
     // Different alias' for modularizing the code
@@ -65,6 +67,13 @@ namespace Thread{
     #define getTaskEntry(task) & (task) 
 
     /**
+     * @brief End current task. Must be called inside a
+     *        running task. "This" is self referential
+     * 
+     */
+    #define endThisTask() (vTaskDelete(NULL))
+
+    /**
      * @brief Will delete a task and remove from the thread pool
      * 
      * @param task 
@@ -72,3 +81,4 @@ namespace Thread{
     void delete_task(thread_handle * handle); 
 
 };
+#endif

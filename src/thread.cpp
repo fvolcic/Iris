@@ -6,7 +6,9 @@
  * @date 2021-07-28
  * 
  * @copyright Copyright (c) 2021
+ *
  * 
+ * @note espressif freeRTOS: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/system/freertos.html 
  */
 
 #include "thread.h"
@@ -17,7 +19,7 @@ Thread::thread_handle Thread::create_thread(Thread::thread_config * config){
     if(config->pinToCore){
         xTaskCreatePinnedToCore(config->task, nullptr, config->stackDepth, nullptr, config->taskPriority, config->handle, config->coreId); 
     }
-    if(!config->pinToCore){
+    else if(!config->pinToCore){
         xTaskCreate(config->task, nullptr, config->stackDepth, nullptr, config->taskPriority, config->handle); 
     }
     return config->handle; 
