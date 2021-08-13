@@ -23,7 +23,7 @@ Message * MessageRetrieverBase::getMessageBuffer(){
     // We will always attempt to use the internal static buffer if it is free,
     // but in the case that it is not available, we will use a dynmic buffer. 
     if(staticbufferAvailable){
-        staticbufferAvailable = false; 
+        staticbufferAvailable = false; // Will be freed upon deletion of this buffer
         messageBuffer = new Message(this->messageBuffer, 
                                                     Message::MessageType::StaticMessage,
                                                     & staticbufferAvailable);

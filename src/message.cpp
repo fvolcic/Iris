@@ -12,27 +12,32 @@
 #include "message.h"
 #include "globals.h"
 
-Message:: Message(char * message, MessageType type, bool * flag)
-: buffer(message), msgType(type) ,finishedWriteFlag(flag) 
-{}
-
-char * Message::operator()(){
-    return buffer; 
+Message::Message(char *message, MessageType type, bool *flag)
+    : buffer(message), msgType(type), messageBufferInUse(flag)
+{
 }
 
-void Message::DestroyMessage(){
-    if(!messageAlive)
+char *Message::operator()()
+{
+    return buffer;
+}
+
+void Message::DestroyMessage()
+{
+    if (!messageAlive)
         return;
-    if(msgType == Message::MessageType::DynamicMessage)
+    if (msgType == Message::MessageType::DynamicMessage)
         delete buffer;
-    (*finishedWriteFlag) = true; 
-    messageAlive = false; 
+    (*messageBufferInUse) = true;
+    messageAlive = false;
 }
 
-char * Message::begin(){
-    return buffer; 
+char *Message::begin()
+{
+    return buffer;
 }
 
-char * Message::end(){ 
-    return buffer + MAX_MESSAGE_LENGTH; 
+char *Message::end()
+{
+    return buffer + MAX_MESSAGE_LENGTH;
 }

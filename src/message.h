@@ -24,7 +24,9 @@ struct Message{
      * 
      * @param message - pointer to a message buffer
      * @param type - what is the type of memory used for the buffer. 
-     * @param flag - flag is a pointer to the boolean flag
+     * @param flag - This is a pointer to a boolean which will we set to false upon deletion of the message.
+     *             - This is needed because Message is created with both static and dynamic memory, so its important
+     *             - to know when the static memory is free as that is the preffered memory to use.
      */
     Message(char * message, MessageType type, bool * flag);
     
@@ -59,9 +61,9 @@ struct Message{
     char * end(); 
 
 private:
-    bool messageAlive = true; 
-    char * buffer; 
-    MessageType msgType; 
-    bool * finishedWriteFlag;        
+    bool messageAlive = true; // Has the message been deleted or is the message still valid.
+    char * buffer; // Pointer to the internal message buffer.
+    MessageType msgType; // Is the message dynamic or static in terms of buffer location
+    bool * messageBufferInUse; 
     
 };
