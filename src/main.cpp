@@ -13,30 +13,14 @@
 
 #include "storage.h"
 #include "printer.h"
+#include "messagesystem.h"
 
 void setup() {
   PRINTER_SETUP();
-  PRINT("LED Lights v3.");
-  //Network::connect(); 
+  PRINT("Welcome to Iris");
+  PRINT("Debug Mode::True");
 
-  Serial.begin(115200); 
-  Serial.println("Launching...");
-  Serial.println(Filesystem::launch()); 
-  Serial.println("Launched..."); 
-  //Serial.println(Filesystem::store_data("/SSID", "NETGEAR24\0")); 
-  //Serial.println(Filesystem::store_data("/PASS", "littlecartoon561\0")); 
-  char * filePtr = Filesystem::get_data("/SSID");
-  Serial.println("Outputting result\n"); 
-  for(auto begin = filePtr; *begin; ++begin){
-    Serial.print((char)*begin); 
-  }
-  delete filePtr; 
-  Serial.println(); 
-  filePtr = Filesystem::get_data("/PASS");
-  for(auto begin = filePtr; *begin; ++begin){
-    Serial.print((char)*begin); 
-  }
-
+  MessageSystem::startMessageSystem({}); 
 
 }
 
