@@ -13,6 +13,7 @@
 #include "messagemanager.h"
 #include "thread.h"
 #include "utils.h"
+#include "messagedecodersystem.h"
 
 bool MessageSystem::startMessageSystem(MessageSystem::messageSystemConfig *config)
 {
@@ -30,17 +31,18 @@ bool MessageSystem::killMessageSystem()
 void MessageSystem::_run(task_param_requirements)
 {
     MessageManager manager; // The funnel for messages from the different message sources
-
     while (true)
     {
-
         Message *msg = manager.getNewMessage();
-        
-        // If there is not a new message, then allow this to sleep for a while.
         if (Utils::is_nullptr(msg))
-        {   
-            // Delay the message task for 10 ticks
-            delayTask(100 / (double)tickLength);
+        {
+            //TODO: Actually implement a time that we need to wait.
+            delayTask(100); // <------ FIX THIS !!!!!!!!!!!
+            continue;
+        }
+        else
+        {
+            DecoderSystem::decode_execute(msg);
         }
     }
 }
