@@ -55,3 +55,8 @@ bool Utils::LEDSerial::readSerialUntil(char endByte, char * buffer, unsigned int
     Serial.setTimeout(timeout); 
     return Serial.readBytesUntil(endByte, buffer, length); 
 }
+
+template<typename T>
+bool Utils::is_nullptr(T & val){
+    return val == nullptr; 
+}

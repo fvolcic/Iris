@@ -54,6 +54,15 @@ namespace Thread{
     #define delayTask(ticks) vTaskDelay( (ticks) ); 
 
     /**
+     * @brief Program tick length
+     * 
+     * @todo Actually get the proper tick length not this made up number of 0.1.
+     *       - There is a function in esp docs to get the actual tick length, i am just lazy
+     * 
+     */
+    #define tickLength 0.1 
+
+    /**
      * @brief Requirements for what should be placed in the a task function
      * 
      */

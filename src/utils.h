@@ -156,6 +156,18 @@ namespace Utils
         void (*RESET)(void) = 0;
 
     };
+
+
+    /**
+     * @brief Check if a value is a nullptr.
+     * 
+     * @tparam T 
+     * @param val 
+     * @return true 
+     * @return false 
+     */
+    template<typename T>
+    bool is_nullptr(T val);
 };
 
 #endif
