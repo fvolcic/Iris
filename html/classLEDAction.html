@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>LED ACTION LIGHTS 3: LEDAction Class Reference</title>
+<title>Iris: LEDAction Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">LED ACTION LIGHTS 3
+   <div id="projectname">Iris
    &#160;<span id="projectnumber">3</span>
    </div>
    <div id="projectbrief">LEDlightstripcontrolsystem.</div>
@@ -113,6 +113,45 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>getWritePrepared</b> 
 <tr class="memitem:ac6fda6b39d60813cff789703d5631c5f"><td class="memItemLeft" align="right" valign="top"><a id="ac6fda6b39d60813cff789703d5631c5f"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>getFullStripUpdate</b> ()</td></tr>
 <tr class="separator:ac6fda6b39d60813cff789703d5631c5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a551dec3dcd72cd79b5dcfa02a14d9a5f"><td class="memItemLeft" align="right" valign="top"><a id="a551dec3dcd72cd79b5dcfa02a14d9a5f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>LEDAction</b> (int led_count, bool updateLEDs, bool alternateCoreActions, bool MQTTAction, bool fullStripUpdate, char *message)</td></tr>
+<tr class="separator:a551dec3dcd72cd79b5dcfa02a14d9a5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad9e052a914c7862ff0d5cfc31ced6de"><td class="memItemLeft" align="right" valign="top"><a id="aad9e052a914c7862ff0d5cfc31ced6de"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>displayLEDs</b> (<a class="el" href="structDisplay_1_1rgb__color.html">rgb_color</a> *colors)=0</td></tr>
+<tr class="separator:aad9e052a914c7862ff0d5cfc31ced6de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14c9b9e277e7a8f3361a3c2dc05d5405"><td class="memItemLeft" align="right" valign="top"><a id="a14c9b9e277e7a8f3361a3c2dc05d5405"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setupLEDs</b> (<a class="el" href="structDisplay_1_1rgb__color.html">rgb_color</a> *colors)=0</td></tr>
+<tr class="separator:a14c9b9e277e7a8f3361a3c2dc05d5405"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93d85ba7bd34304bb1e920751d2ea951"><td class="memItemLeft" align="right" valign="top"><a id="a93d85ba7bd34304bb1e920751d2ea951"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>alternateCoreActionSetup</b> ()</td></tr>
+<tr class="separator:a93d85ba7bd34304bb1e920751d2ea951"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ce605b6c3bd463a50f549cb88a3f5d2"><td class="memItemLeft" align="right" valign="top"><a id="a2ce605b6c3bd463a50f549cb88a3f5d2"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>alternateCoreAction</b> ()</td></tr>
+<tr class="separator:a2ce605b6c3bd463a50f549cb88a3f5d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b0aaa19c896f653b2ddc9448d70a25d"><td class="memItemLeft" align="right" valign="top"><a id="a9b0aaa19c896f653b2ddc9448d70a25d"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>deconstruct_displayLEDs</b> ()</td></tr>
+<tr class="separator:a9b0aaa19c896f653b2ddc9448d70a25d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f7742fe89b102d6e3c01cef98545442"><td class="memItemLeft" align="right" valign="top"><a id="a0f7742fe89b102d6e3c01cef98545442"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>deconstruct_alternateCoreAction</b> ()</td></tr>
+<tr class="separator:a0f7742fe89b102d6e3c01cef98545442"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71e40b05316e4668152ec6f88619f07a"><td class="memItemLeft" align="right" valign="top"><a id="a71e40b05316e4668152ec6f88619f07a"></a>
+virtual char *&#160;</td><td class="memItemRight" valign="bottom"><b>getActionStateMessage</b> ()</td></tr>
+<tr class="separator:a71e40b05316e4668152ec6f88619f07a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7db3b102c204fd901de1fc9cd76bbef"><td class="memItemLeft" align="right" valign="top"><a id="aa7db3b102c204fd901de1fc9cd76bbef"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>getUpdateLEDs</b> ()</td></tr>
+<tr class="separator:aa7db3b102c204fd901de1fc9cd76bbef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4915a807f70b73afc0e94bb716b89796"><td class="memItemLeft" align="right" valign="top"><a id="a4915a807f70b73afc0e94bb716b89796"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>getAlternateCoreAction</b> ()</td></tr>
+<tr class="separator:a4915a807f70b73afc0e94bb716b89796"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfc4963667324af88cc49a07951efd82"><td class="memItemLeft" align="right" valign="top"><a id="abfc4963667324af88cc49a07951efd82"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getLEDCount</b> ()</td></tr>
+<tr class="separator:abfc4963667324af88cc49a07951efd82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefa21f5468979cd9f89f9d5a67649a02"><td class="memItemLeft" align="right" valign="top"><a id="aefa21f5468979cd9f89f9d5a67649a02"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>getWritePrepared</b> ()</td></tr>
+<tr class="separator:aefa21f5468979cd9f89f9d5a67649a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6fda6b39d60813cff789703d5631c5f"><td class="memItemLeft" align="right" valign="top"><a id="ac6fda6b39d60813cff789703d5631c5f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>getFullStripUpdate</b> ()</td></tr>
+<tr class="separator:ac6fda6b39d60813cff789703d5631c5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -128,15 +167,15 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>alternateCoreActions<
 <tr class="memitem:ad4c9ac35765474d8cd146f44bdc2855c"><td class="memItemLeft" align="right" valign="top"><a id="ad4c9ac35765474d8cd146f44bdc2855c"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>fullStripUpdate</b></td></tr>
 <tr class="separator:ad4c9ac35765474d8cd146f44bdc2855c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4e9477d0f778ec3b92381337db6bed7"><td class="memItemLeft" align="right" valign="top"><a id="ad4e9477d0f778ec3b92381337db6bed7"></a>
+<tr class="memitem:a64d54b804cfedc3b14095286af8dd5ee"><td class="memItemLeft" align="right" valign="top"><a id="a64d54b804cfedc3b14095286af8dd5ee"></a>
 char *&#160;</td><td class="memItemRight" valign="bottom"><b>message</b></td></tr>
-<tr class="separator:ad4e9477d0f778ec3b92381337db6bed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a64d54b804cfedc3b14095286af8dd5ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72754c805061c919dc1e5586de7ab84f"><td class="memItemLeft" align="right" valign="top"><a id="a72754c805061c919dc1e5586de7ab84f"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>preparedForWrite</b> = false</td></tr>
 <tr class="separator:a72754c805061c919dc1e5586de7ab84f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/<a class="el" href="ledaction_8h_source.html">ledaction.h</a></li>
+<li>lib/<a class="el" href="lib_2ledaction_8h_source.html">ledaction.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

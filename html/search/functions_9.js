@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['parseactionmessage_108',['parseActionMessage',['../classMessageManagement_1_1MessageManager.html#af24a9b889a1d25c4e916a19cb6b93a7c',1,'MessageManagement::MessageManager']]],
-  ['parsemessage_109',['parseMessage',['../classMessageHandler.html#a13cd60aae74d7302f983025fcb127957',1,'MessageHandler']]]
+  ['json_229',['JSON',['../classJSON_1_1JSON.html#ad4aede2aa211888d1ba85ede702d35c5',1,'JSON::JSON::JSON(char *str)'],['../classJSON_1_1JSON.html#aaa6509878142ba6af01af4a7b02839f9',1,'JSON::JSON::JSON(Message::Message *JSON_msg)']]]
 ];

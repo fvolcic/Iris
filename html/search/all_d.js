@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['asserts_51',['Asserts',['../namespaceUtils_1_1Asserts.html',1,'Utils']]],
-  ['program_52',['Program',['../namespaceUtils_1_1Program.html',1,'Utils']]],
-  ['updateretriever_53',['updateRetriever',['../classMessageRetrieverBase.html#a10799349b4c1dd267bd8a1ff32d30c6b',1,'MessageRetrieverBase']]],
-  ['utils_2ecpp_54',['utils.cpp',['../utils_8cpp.html',1,'']]],
-  ['utils_2eh_55',['utils.h',['../utils_8h.html',1,'']]]
+  ['next_71',['next',['../classledstd_1_1RingBuffer.html#a6796f61fa1464c5da225c2e7c4d13894',1,'ledstd::RingBuffer::next()'],['../classledstd_1_1RingBuffer.html#a058503857a8e0d58214316fbbcaded85',1,'ledstd::RingBuffer::next()'],['../classledstd_1_1RingBuffer.html#a058503857a8e0d58214316fbbcaded85',1,'ledstd::RingBuffer::next()']]]
 ];

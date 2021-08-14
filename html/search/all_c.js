@@ -1,9 +1,25 @@
 var searchData=
 [
-  ['search_2ecpp_45',['search.cpp',['../search_8cpp.html',1,'']]],
-  ['setupretriever_46',['setupRetriever',['../classMessageRetrieverBase.html#a95eb1368eaaa01881019be244802ab13',1,'MessageRetrieverBase']]],
-  ['storage_2ecpp_47',['storage.cpp',['../storage_8cpp.html',1,'']]],
-  ['storage_2eh_48',['storage.h',['../storage_8h.html',1,'']]],
-  ['store_5fdata_49',['store_data',['../storage_8h.html#a73d94a6dcfb37115c11a06237789cd19',1,'Filesystem']]],
-  ['store_5fencrypted_5fdata_50',['store_encrypted_data',['../storage_8h.html#a0294aee7deffde875905e6e3311aa0f8',1,'Filesystem']]]
+  ['macros_2eh_49',['macros.h',['../macros_8h.html',1,'']]],
+  ['main_2ecpp_50',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['message_51',['Message',['../structMessage.html',1,'Message'],['../structMessage.html#a677a343360a56d8358a356b6d7862b31',1,'Message::Message(char *message, MessageType type, bool *flag)'],['../structMessage.html#a677a343360a56d8358a356b6d7862b31',1,'Message::Message(char *message, MessageType type, bool *flag)']]],
+  ['message_2ecpp_52',['message.cpp',['../message_8cpp.html',1,'']]],
+  ['message_2eh_53',['message.h',['../lib_2message_8h.html',1,'']]],
+  ['messageavailable_54',['MessageAvailable',['../classMessageHandlerBase.html#a7be42a8b4de755488350dee867f860fe',1,'MessageHandlerBase']]],
+  ['messagedecoder_55',['MessageDecoder',['../classMessageDecoder.html',1,'']]],
+  ['messagedecoderbase_2ecpp_56',['messagedecoderbase.cpp',['../messagedecoderbase_8cpp.html',1,'']]],
+  ['messagedecoderbase_2eh_57',['messagedecoderbase.h',['../messagedecoderbase_8h.html',1,'']]],
+  ['messagedecodersystem_2eh_58',['messagedecodersystem.h',['../messagedecodersystem_8h.html',1,'']]],
+  ['messagedecodertest_2ecpp_59',['messagedecodertest.cpp',['../messagedecodertest_8cpp.html',1,'']]],
+  ['messagehandlerbase_60',['MessageHandlerBase',['../classMessageHandlerBase.html',1,'']]],
+  ['messagemanager_61',['MessageManager',['../classMessageManager.html',1,'']]],
+  ['messagemanager_2ecpp_62',['messagemanager.cpp',['../messagemanager_8cpp.html',1,'']]],
+  ['messagemanager_2eh_63',['messagemanager.h',['../lib_2messagemanager_8h.html',1,'(Global Namespace)'],['../src_2messagemanager_8h.html',1,'(Global Namespace)']]],
+  ['messageretriever_2ecpp_64',['messageretriever.cpp',['../messageretriever_8cpp.html',1,'']]],
+  ['messageretriever_2eh_65',['messageretriever.h',['../lib_2messageretriever_8h.html',1,'(Global Namespace)'],['../src_2messageretriever_8h.html',1,'(Global Namespace)']]],
+  ['messageretrieverbase_66',['MessageRetrieverBase',['../classMessageRetrieverBase.html',1,'']]],
+  ['messagesystem_67',['MessageSystem',['../namespaceMessageSystem.html',1,'']]],
+  ['messagesystem_2ecpp_68',['messagesystem.cpp',['../messagesystem_8cpp.html',1,'']]],
+  ['messagesystem_2eh_69',['messagesystem.h',['../messagesystem_8h.html',1,'']]],
+  ['messagesystemconfig_70',['messageSystemConfig',['../structMessageSystem_1_1messageSystemConfig.html',1,'MessageSystem']]]
 ];

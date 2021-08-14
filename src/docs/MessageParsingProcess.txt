@@ -10,9 +10,9 @@ Message Parsing Stage 1. )
 |Message Manager| --| JSON String (char *) --> |MessageDecoderSystem|
 -----------------                              ----------------------
 
-----------------------                      ---------------------------
-|MessageDecoderSystem| --| JSON Object |--> | Specific Message Decoder|
-----------------------                      ---------------------------
+----------------------                                   ---------------------------
+|MessageDecoderSystem| --| JSON Object (ArduinoJSON)|--> | Specific Message Decoder|
+----------------------                                   ---------------------------
 
 ---------------------------                          -----------------
 | Specific Message Decoder| --| Message Meaning |--> |Execute Message|

@@ -10,6 +10,8 @@
  */
 
 #include "message.h"
+#include "ArduinoJson.h"
+#include "globals.h"
 
 /**
  * @brief Contains all the decoder system functions.
@@ -17,6 +19,9 @@
  * 
  */
 namespace DecoderSystem{
+
+    // The internal Static json object buffer
+    StaticJsonDocument<MAX_MESSAGE_LENGTH> jsonObj;
 
     /**
      * @brief Decode and then execute a message object

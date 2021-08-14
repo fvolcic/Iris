@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['is_5fmounted_101',['is_mounted',['../storage_8h.html#a667089b5e3be44df7eb29fd9ed304ffc',1,'Filesystem']]],
-  ['isnewmessage_102',['isNewMessage',['../classMessageManagement_1_1MessageManager.html#acef7e88bb168989e347b47d1aaad00cc',1,'MessageManagement::MessageManager::isNewMessage()'],['../classMessageRetrieverBase.html#a09ec059510d3f76db24a661668c8bb66',1,'MessageRetrieverBase::isNewMessage()']]]
+  ['end_216',['end',['../structMessage.html#a81d8f79120977d2d148638fae9e831d3',1,'Message::end()'],['../structMessage.html#a2869d61953fd86415f58a6cba18ef8ce',1,'Message::end()']]],
+  ['enqueue_5fmessage_217',['enqueue_message',['../classMessageRetrieverBase.html#ab4d093667800120a1826ff95e060f12e',1,'MessageRetrieverBase::enqueue_message(Message *)'],['../classMessageRetrieverBase.html#ab4d093667800120a1826ff95e060f12e',1,'MessageRetrieverBase::enqueue_message(Message *)']]]
 ];

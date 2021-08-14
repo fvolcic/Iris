@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['network_2ecpp_36',['network.cpp',['../network_8cpp.html',1,'']]],
-  ['network_2eh_37',['network.h',['../network_8h.html',1,'']]],
-  ['newactionavailable_38',['newActionAvailable',['../classMessageHandler.html#ad39acb6eb0c612c89084ef042fa7d2cc',1,'MessageHandler']]],
-  ['newcommandavailable_39',['newCommandAvailable',['../classMessageHandler.html#a7d816d520c24ce81f096919aaeccddaa',1,'MessageHandler']]]
+  ['json_42',['JSON',['../classJSON_1_1JSON.html',1,'JSON::JSON'],['../classJSON_1_1JSON.html#ad4aede2aa211888d1ba85ede702d35c5',1,'JSON::JSON::JSON(char *str)'],['../classJSON_1_1JSON.html#aaa6509878142ba6af01af4a7b02839f9',1,'JSON::JSON::JSON(Message::Message *JSON_msg)']]],
+  ['json_2eh_43',['json.h',['../json_8h.html',1,'']]]
 ];

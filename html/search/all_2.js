@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['command_2',['Command',['../messagemanager_8h.html#a0bda67f5103cb355a850647910571f5f',1,'MessageManagement']]],
-  ['connect_3',['connect',['../network_8h.html#a95a120c50425291d0cb6ae8967e7a85e',1,'Network::connect(const WIFI_INFO *info)'],['../network_8h.html#a32a06824c513fcba2fad6fbf54844f31',1,'Network::connect()']]],
-  ['create_5ffile_4',['create_file',['../storage_8h.html#a098729bef22dcfe5e90cd25a55bf091e',1,'Filesystem']]]
+  ['b_2',['b',['../structb.html',1,'']]],
+  ['begin_3',['begin',['../structMessage.html#a46eb393b875db618785b45886228e09a',1,'Message::begin()'],['../structMessage.html#a554c36838bcae60cebbb5774bd48ba93',1,'Message::begin()']]],
+  ['bluetooth_2eh_4',['bluetooth.h',['../lib_2bluetooth_8h.html',1,'(Global Namespace)'],['../src_2bluetooth_8h.html',1,'(Global Namespace)']]],
+  ['bug_20list_5',['Bug List',['../bug.html',1,'']]]
 ];

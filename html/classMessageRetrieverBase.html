@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>LED ACTION LIGHTS 3: MessageRetrieverBase Class Reference</title>
+<title>Iris: MessageRetrieverBase Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">LED ACTION LIGHTS 3
+   <div id="projectname">Iris
    &#160;<span id="projectnumber">3</span>
    </div>
    <div id="projectbrief">LEDlightstripcontrolsystem.</div>
@@ -64,7 +64,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classMessageRetrieverBase-members.html">List of all members</a>  </div>
@@ -76,14 +75,13 @@ $(function() {
 <p>Create the base class for the message retreiver. All different ways of retrieving messages must be done using through the <a class="el" href="classMessageRetrieverBase.html" title="Create the base class for the message retreiver. All different ways of retrieving messages must be do...">MessageRetrieverBase</a> class.  
  <a href="classMessageRetrieverBase.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="messageretriever_8h_source.html">messageretriever.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="lib_2messageretriever_8h_source.html">messageretriever.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for MessageRetrieverBase:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMessageRetrieverBase__inherit__graph.png" border="0" usemap="#MessageRetrieverBase_inherit__map" alt="Inheritance graph"/></div>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMessageRetrieverBase_1_1Message.html">Message</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the struct that will represent a message. This will provide an interface to destroy messages and read messags.  <a href="structMessageRetrieverBase_1_1Message.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a95eb1368eaaa01881019be244802ab13"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessageRetrieverBase.html#a95eb1368eaaa01881019be244802ab13">setupRetriever</a> ()=0</td></tr>
@@ -92,47 +90,45 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a10799349b4c1dd267bd8a1ff32d30c6b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessageRetrieverBase.html#a10799349b4c1dd267bd8a1ff32d30c6b">updateRetriever</a> ()=0</td></tr>
 <tr class="memdesc:a10799349b4c1dd267bd8a1ff32d30c6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function will run an update on the retreiver. This will allow the retiever to seek for an incoming message if there is one.  <a href="classMessageRetrieverBase.html#a10799349b4c1dd267bd8a1ff32d30c6b">More...</a><br /></td></tr>
 <tr class="separator:a10799349b4c1dd267bd8a1ff32d30c6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09ec059510d3f76db24a661668c8bb66"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessageRetrieverBase.html#a09ec059510d3f76db24a661668c8bb66">isNewMessage</a> ()</td></tr>
-<tr class="memdesc:a09ec059510d3f76db24a661668c8bb66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check to see if there is a new message available from the message retriever.  <a href="classMessageRetrieverBase.html#a09ec059510d3f76db24a661668c8bb66">More...</a><br /></td></tr>
-<tr class="separator:a09ec059510d3f76db24a661668c8bb66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79d5edcf61e0cc61b48b6d0d3d262bec"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessageRetrieverBase.html#a79d5edcf61e0cc61b48b6d0d3d262bec">getNewMessage</a> ()</td></tr>
-<tr class="memdesc:a79d5edcf61e0cc61b48b6d0d3d262bec"><td class="mdescLeft">&#160;</td><td class="mdescRight">This will retrieve the most recent message from the message retriever.  <a href="classMessageRetrieverBase.html#a79d5edcf61e0cc61b48b6d0d3d262bec">More...</a><br /></td></tr>
-<tr class="separator:a79d5edcf61e0cc61b48b6d0d3d262bec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e8d0d860cf0cf1f9e8187d95b284995"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessageRetrieverBase.html#a1e8d0d860cf0cf1f9e8187d95b284995">destroyBuffer</a> (char *)</td></tr>
-<tr class="memdesc:a1e8d0d860cf0cf1f9e8187d95b284995"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a buffer, this will destroy the given buffer.  <a href="classMessageRetrieverBase.html#a1e8d0d860cf0cf1f9e8187d95b284995">More...</a><br /></td></tr>
-<tr class="separator:a1e8d0d860cf0cf1f9e8187d95b284995"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb911ec387f54318df279127e9e625ef"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessageRetrieverBase.html#adb911ec387f54318df279127e9e625ef">isMessageAvailable</a> ()</td></tr>
+<tr class="memdesc:adb911ec387f54318df279127e9e625ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check to see if there is a new message available from the message retriever.  <a href="classMessageRetrieverBase.html#adb911ec387f54318df279127e9e625ef">More...</a><br /></td></tr>
+<tr class="separator:adb911ec387f54318df279127e9e625ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c254f83f242e182a7cff3a74a9cf227"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMessage.html">Message</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessageRetrieverBase.html#a5c254f83f242e182a7cff3a74a9cf227">getNewMessage</a> ()</td></tr>
+<tr class="memdesc:a5c254f83f242e182a7cff3a74a9cf227"><td class="mdescLeft">&#160;</td><td class="mdescRight">This will retrieve the most recent message from the message retriever.  <a href="classMessageRetrieverBase.html#a5c254f83f242e182a7cff3a74a9cf227">More...</a><br /></td></tr>
+<tr class="separator:a5c254f83f242e182a7cff3a74a9cf227"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95eb1368eaaa01881019be244802ab13"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessageRetrieverBase.html#a95eb1368eaaa01881019be244802ab13">setupRetriever</a> ()=0</td></tr>
+<tr class="memdesc:a95eb1368eaaa01881019be244802ab13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup all necessary functions that will be needed for the message retriever.  <a href="classMessageRetrieverBase.html#a95eb1368eaaa01881019be244802ab13">More...</a><br /></td></tr>
+<tr class="separator:a95eb1368eaaa01881019be244802ab13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10799349b4c1dd267bd8a1ff32d30c6b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessageRetrieverBase.html#a10799349b4c1dd267bd8a1ff32d30c6b">updateRetriever</a> ()=0</td></tr>
+<tr class="memdesc:a10799349b4c1dd267bd8a1ff32d30c6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function will run an update on the retreiver. This will allow the retiever to seek for an incoming message if there is one.  <a href="classMessageRetrieverBase.html#a10799349b4c1dd267bd8a1ff32d30c6b">More...</a><br /></td></tr>
+<tr class="separator:a10799349b4c1dd267bd8a1ff32d30c6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb911ec387f54318df279127e9e625ef"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessageRetrieverBase.html#adb911ec387f54318df279127e9e625ef">isMessageAvailable</a> ()</td></tr>
+<tr class="memdesc:adb911ec387f54318df279127e9e625ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check to see if there is a new message available from the message retriever.  <a href="classMessageRetrieverBase.html#adb911ec387f54318df279127e9e625ef">More...</a><br /></td></tr>
+<tr class="separator:adb911ec387f54318df279127e9e625ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7cccc13d0744e1541aa0f6dd9e570c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMessage.html">Message</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessageRetrieverBase.html#aa7cccc13d0744e1541aa0f6dd9e570c9">getNewMessage</a> ()</td></tr>
+<tr class="memdesc:aa7cccc13d0744e1541aa0f6dd9e570c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This will retrieve the most recent message from the message retriever.  <a href="classMessageRetrieverBase.html#aa7cccc13d0744e1541aa0f6dd9e570c9">More...</a><br /></td></tr>
+<tr class="separator:aa7cccc13d0744e1541aa0f6dd9e570c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a60a16761efda32febff3b88fd8054211"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMessageRetrieverBase_1_1Message.html">Message</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessageRetrieverBase.html#a60a16761efda32febff3b88fd8054211">getMessageBuffer</a> ()</td></tr>
-<tr class="memdesc:a60a16761efda32febff3b88fd8054211"><td class="mdescLeft">&#160;</td><td class="mdescRight">This will return a pointer to the next available write buffer.  <a href="classMessageRetrieverBase.html#a60a16761efda32febff3b88fd8054211">More...</a><br /></td></tr>
-<tr class="separator:a60a16761efda32febff3b88fd8054211"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaaa427ec068a1fb42551ab65625af2f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMessage.html">Message</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessageRetrieverBase.html#acaaa427ec068a1fb42551ab65625af2f">getMessageBuffer</a> ()</td></tr>
+<tr class="memdesc:acaaa427ec068a1fb42551ab65625af2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This will return a pointer to the next available write buffer.  <a href="classMessageRetrieverBase.html#acaaa427ec068a1fb42551ab65625af2f">More...</a><br /></td></tr>
+<tr class="separator:acaaa427ec068a1fb42551ab65625af2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4d093667800120a1826ff95e060f12e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessageRetrieverBase.html#ab4d093667800120a1826ff95e060f12e">enqueue_message</a> (<a class="el" href="structMessage.html">Message</a> *)</td></tr>
+<tr class="memdesc:ab4d093667800120a1826ff95e060f12e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will add a message to the queue.  <a href="classMessageRetrieverBase.html#ab4d093667800120a1826ff95e060f12e">More...</a><br /></td></tr>
+<tr class="separator:ab4d093667800120a1826ff95e060f12e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c9a728d296f94f72681e164ffcaf8fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMessage.html">Message</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessageRetrieverBase.html#a4c9a728d296f94f72681e164ffcaf8fb">getMessageBuffer</a> ()</td></tr>
+<tr class="memdesc:a4c9a728d296f94f72681e164ffcaf8fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">This will return a pointer to the next available write buffer.  <a href="classMessageRetrieverBase.html#a4c9a728d296f94f72681e164ffcaf8fb">More...</a><br /></td></tr>
+<tr class="separator:a4c9a728d296f94f72681e164ffcaf8fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4d093667800120a1826ff95e060f12e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessageRetrieverBase.html#ab4d093667800120a1826ff95e060f12e">enqueue_message</a> (<a class="el" href="structMessage.html">Message</a> *)</td></tr>
+<tr class="memdesc:ab4d093667800120a1826ff95e060f12e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will add a message to the queue.  <a href="classMessageRetrieverBase.html#ab4d093667800120a1826ff95e060f12e">More...</a><br /></td></tr>
+<tr class="separator:ab4d093667800120a1826ff95e060f12e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Create the base class for the message retreiver. All different ways of retrieving messages must be done using through the <a class="el" href="classMessageRetrieverBase.html" title="Create the base class for the message retreiver. All different ways of retrieving messages must be do...">MessageRetrieverBase</a> class. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a1e8d0d860cf0cf1f9e8187d95b284995"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e8d0d860cf0cf1f9e8187d95b284995">&#9670;&nbsp;</a></span>destroyBuffer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MessageRetrieverBase::destroyBuffer </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Given a buffer, this will destroy the given buffer. </p>
-
-</div>
-</div>
-<a id="a60a16761efda32febff3b88fd8054211"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60a16761efda32febff3b88fd8054211">&#9670;&nbsp;</a></span>getMessageBuffer()</h2>
+<a id="ab4d093667800120a1826ff95e060f12e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4d093667800120a1826ff95e060f12e">&#9670;&nbsp;</a></span>enqueue_message() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -141,7 +137,65 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structMessageRetrieverBase_1_1Message.html">MessageRetrieverBase::Message</a> * MessageRetrieverBase::getMessageBuffer </td>
+          <td class="memname">void MessageRetrieverBase::enqueue_message </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMessage.html">Message</a> *&#160;</td>
+          <td class="paramname"><em>msgPtr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Will add a message to the queue. </p>
+<dl class="section note"><dt>Note</dt><dd>if there is no more room in the message queue, then the message will be ignored. </dd></dl>
+
+</div>
+</div>
+<a id="ab4d093667800120a1826ff95e060f12e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4d093667800120a1826ff95e060f12e">&#9670;&nbsp;</a></span>enqueue_message() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MessageRetrieverBase::enqueue_message </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMessage.html">Message</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Will add a message to the queue. </p>
+<dl class="section note"><dt>Note</dt><dd>if there is no more room in the message queue, then the message will be ignored. </dd></dl>
+
+</div>
+</div>
+<a id="a4c9a728d296f94f72681e164ffcaf8fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c9a728d296f94f72681e164ffcaf8fb">&#9670;&nbsp;</a></span>getMessageBuffer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structMessage.html">Message</a>* MessageRetrieverBase::getMessageBuffer </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -155,19 +209,48 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>This will return a pointer to the next available write buffer. </p>
-<dl class="section note"><dt>Note</dt><dd>All write buffers will have a size of MAX_MESSAGE_LENGTH (<a class="el" href="globals_8h_source.html">globals.h</a>)</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>All write buffers will have a size of MAX_MESSAGE_LENGTH (globals.h)</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>char* </dd></dl>
 
 </div>
 </div>
-<a id="a79d5edcf61e0cc61b48b6d0d3d262bec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79d5edcf61e0cc61b48b6d0d3d262bec">&#9670;&nbsp;</a></span>getNewMessage()</h2>
+<a id="acaaa427ec068a1fb42551ab65625af2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acaaa427ec068a1fb42551ab65625af2f">&#9670;&nbsp;</a></span>getMessageBuffer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structMessage.html">Message</a> * MessageRetrieverBase::getMessageBuffer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This will return a pointer to the next available write buffer. </p>
+<dl class="section note"><dt>Note</dt><dd>All write buffers will have a size of MAX_MESSAGE_LENGTH (globals.h)</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>char* </dd></dl>
+
+</div>
+</div>
+<a id="aa7cccc13d0744e1541aa0f6dd9e570c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7cccc13d0744e1541aa0f6dd9e570c9">&#9670;&nbsp;</a></span>getNewMessage() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char* MessageRetrieverBase::getNewMessage </td>
+          <td class="memname"><a class="el" href="structMessage.html">Message</a>* MessageRetrieverBase::getNewMessage </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -176,17 +259,57 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>This will retrieve the most recent message from the message retriever. </p>
+<dl class="section note"><dt>Note</dt><dd>You will have to call destroyMessage on this pointer when the pointer is no longer needed. </dd></dl>
 
 </div>
 </div>
-<a id="a09ec059510d3f76db24a661668c8bb66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09ec059510d3f76db24a661668c8bb66">&#9670;&nbsp;</a></span>isNewMessage()</h2>
+<a id="a5c254f83f242e182a7cff3a74a9cf227"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c254f83f242e182a7cff3a74a9cf227">&#9670;&nbsp;</a></span>getNewMessage() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool MessageRetrieverBase::isNewMessage </td>
+          <td class="memname"><a class="el" href="structMessage.html">Message</a> * MessageRetrieverBase::getNewMessage </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This will retrieve the most recent message from the message retriever. </p>
+<dl class="section note"><dt>Note</dt><dd>You will have to call destroyMessage on this pointer when the pointer is no longer needed. </dd></dl>
+
+</div>
+</div>
+<a id="adb911ec387f54318df279127e9e625ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb911ec387f54318df279127e9e625ef">&#9670;&nbsp;</a></span>isMessageAvailable() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MessageRetrieverBase::isMessageAvailable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check to see if there is a new message available from the message retriever. </p>
+
+</div>
+</div>
+<a id="adb911ec387f54318df279127e9e625ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb911ec387f54318df279127e9e625ef">&#9670;&nbsp;</a></span>isMessageAvailable() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MessageRetrieverBase::isMessageAvailable </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -199,7 +322,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a95eb1368eaaa01881019be244802ab13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95eb1368eaaa01881019be244802ab13">&#9670;&nbsp;</a></span>setupRetriever()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a95eb1368eaaa01881019be244802ab13">&#9670;&nbsp;</a></span>setupRetriever() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -223,10 +346,41 @@ Protected Member Functions</h2></td></tr>
 
 <p>Setup all necessary functions that will be needed for the message retriever. </p>
 
+<p>Implemented in <a class="el" href="classSerialRetriever.html#aab24ff2ae475cf734d3bb08acbd8b1a7">SerialRetriever</a>.</p>
+
+</div>
+</div>
+<a id="a95eb1368eaaa01881019be244802ab13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95eb1368eaaa01881019be244802ab13">&#9670;&nbsp;</a></span>setupRetriever() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void MessageRetrieverBase::setupRetriever </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup all necessary functions that will be needed for the message retriever. </p>
+
+<p>Implemented in <a class="el" href="classSerialRetriever.html#aab24ff2ae475cf734d3bb08acbd8b1a7">SerialRetriever</a>.</p>
+
 </div>
 </div>
 <a id="a10799349b4c1dd267bd8a1ff32d30c6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10799349b4c1dd267bd8a1ff32d30c6b">&#9670;&nbsp;</a></span>updateRetriever()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a10799349b4c1dd267bd8a1ff32d30c6b">&#9670;&nbsp;</a></span>updateRetriever() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -250,10 +404,41 @@ Protected Member Functions</h2></td></tr>
 
 <p>This function will run an update on the retreiver. This will allow the retiever to seek for an incoming message if there is one. </p>
 
+<p>Implemented in <a class="el" href="classSerialRetriever.html#a8d817c341a0207aa66a452607cea4c41">SerialRetriever</a>.</p>
+
+</div>
+</div>
+<a id="a10799349b4c1dd267bd8a1ff32d30c6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10799349b4c1dd267bd8a1ff32d30c6b">&#9670;&nbsp;</a></span>updateRetriever() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void MessageRetrieverBase::updateRetriever </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This function will run an update on the retreiver. This will allow the retiever to seek for an incoming message if there is one. </p>
+
+<p>Implemented in <a class="el" href="classSerialRetriever.html#a8d817c341a0207aa66a452607cea4c41">SerialRetriever</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/<a class="el" href="messageretriever_8h_source.html">messageretriever.h</a></li>
+<li>lib/<a class="el" href="lib_2messageretriever_8h_source.html">messageretriever.h</a></li>
 <li>src/<a class="el" href="messageretriever_8cpp.html">messageretriever.cpp</a></li>
 </ul>
 </div><!-- contents -->

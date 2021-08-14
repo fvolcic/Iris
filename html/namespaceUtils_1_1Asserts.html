@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>LED ACTION LIGHTS 3: Utils::Asserts Namespace Reference</title>
+<title>Iris: Utils::Asserts Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">LED ACTION LIGHTS 3
+   <div id="projectname">Iris
    &#160;<span id="projectnumber">3</span>
    </div>
    <div id="projectbrief">LEDlightstripcontrolsystem.</div>
@@ -83,6 +83,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a389b3d560ff78333432aa3e8406d000a"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Asserts.html#a389b3d560ff78333432aa3e8406d000a">assert</a> (bool val)</td></tr>
 <tr class="memdesc:a389b3d560ff78333432aa3e8406d000a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a dynamic assertion that will only pass if val == PASS.  <a href="namespaceUtils_1_1Asserts.html#a389b3d560ff78333432aa3e8406d000a">More...</a><br /></td></tr>
 <tr class="separator:a389b3d560ff78333432aa3e8406d000a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9dc8908ad55a0a15fe3edd1690763b2"><td class="memTemplParams" colspan="2">template&lt;bool PASS_VAL, bool STRICT = false&gt; </td></tr>
+<tr class="memitem:ab9dc8908ad55a0a15fe3edd1690763b2"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Asserts.html#ab9dc8908ad55a0a15fe3edd1690763b2">runtime_assert</a> (bool val)</td></tr>
+<tr class="memdesc:ab9dc8908ad55a0a15fe3edd1690763b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a dynamic assertion that will only pass if val == PASS.  <a href="namespaceUtils_1_1Asserts.html#ab9dc8908ad55a0a15fe3edd1690763b2">More...</a><br /></td></tr>
+<tr class="separator:ab9dc8908ad55a0a15fe3edd1690763b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Functionality regaurding asserts which can be used in the program. </p>
@@ -97,6 +101,41 @@ template&lt;bool PASS, bool STRICT = false&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">bool Utils::Asserts::assert </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a dynamic assertion that will only pass if val == PASS. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">PASS</td><td>- required value needed for the assert to pass </td></tr>
+    <tr><td class="paramname">STRICT</td><td>- If true, the program will reset on a failure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab9dc8908ad55a0a15fe3edd1690763b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9dc8908ad55a0a15fe3edd1690763b2">&#9670;&nbsp;</a></span>runtime_assert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool PASS_VAL, bool STRICT = false&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Utils::Asserts::runtime_assert </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>val</em></td><td>)</td>

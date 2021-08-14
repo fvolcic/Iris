@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['wifi_5finfo_56',['WIFI_INFO',['../structNetwork_1_1WIFI__INFO.html',1,'Network']]],
-  ['write_57',['write',['../display_8h.html#a3547dc7939511649780d276700299479',1,'Display']]]
+  ['operator_28_29_72',['operator()',['../structMessage.html#a7a7f03e2af9a88d6bf42e37a9bcaabb5',1,'Message::operator()()'],['../structMessage.html#ac30a76858a3d1bccb7ab0664f4ecc94a',1,'Message::operator()()']]]
 ];

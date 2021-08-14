@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['write_114',['write',['../display_8h.html#a3547dc7939511649780d276700299479',1,'Display']]]
+  ['message_232',['Message',['../structMessage.html#a677a343360a56d8358a356b6d7862b31',1,'Message::Message(char *message, MessageType type, bool *flag)'],['../structMessage.html#a677a343360a56d8358a356b6d7862b31',1,'Message::Message(char *message, MessageType type, bool *flag)']]],
+  ['messageavailable_233',['MessageAvailable',['../classMessageHandlerBase.html#a7be42a8b4de755488350dee867f860fe',1,'MessageHandlerBase']]]
 ];

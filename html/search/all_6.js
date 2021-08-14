@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['ibounded_16',['ibounded',['../structInterface_1_1ibounded.html',1,'Interface']]],
-  ['interface_2ecpp_17',['interface.cpp',['../interface_8cpp.html',1,'']]],
-  ['interface_2eh_18',['interface.h',['../interface_8h.html',1,'']]],
-  ['is_5fmounted_19',['is_mounted',['../storage_8h.html#a667089b5e3be44df7eb29fd9ed304ffc',1,'Filesystem']]],
-  ['isnewmessage_20',['isNewMessage',['../classMessageManagement_1_1MessageManager.html#acef7e88bb168989e347b47d1aaad00cc',1,'MessageManagement::MessageManager::isNewMessage()'],['../classMessageRetrieverBase.html#a09ec059510d3f76db24a661668c8bb66',1,'MessageRetrieverBase::isNewMessage()']]]
+  ['file_5fexists_24',['file_exists',['../lib_2storage_8h.html#a21a79d1be31d1749277f70528eaf8286',1,'Filesystem']]],
+  ['format_5ffilesystem_25',['format_filesystem',['../lib_2storage_8h.html#a10d66fc7e4559dc3271747a0ca07c929',1,'Filesystem']]]
 ];

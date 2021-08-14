@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['connect_89',['connect',['../network_8h.html#a95a120c50425291d0cb6ae8967e7a85e',1,'Network::connect(const WIFI_INFO *info)'],['../network_8h.html#a32a06824c513fcba2fad6fbf54844f31',1,'Network::connect()']]],
-  ['create_5ffile_90',['create_file',['../storage_8h.html#a098729bef22dcfe5e90cd25a55bf091e',1,'Filesystem']]]
+  ['assert_206',['assert',['../namespaceUtils_1_1Asserts.html#a389b3d560ff78333432aa3e8406d000a',1,'Utils::Asserts']]]
 ];
