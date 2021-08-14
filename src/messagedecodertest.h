@@ -11,7 +11,7 @@
 
 #include "messagedecoderbase.h"
 
-class ExampleDecoder : public MessageDecoder {
+class ExampleDecoder : public MessageDecoderBase {
 
 public:
 
@@ -28,7 +28,7 @@ public:
      * @return true 
      * @return false 
      */
-    virtual bool decode() override; 
+    virtual bool decode(JsonDocument & doc) override; 
 
 private:
 

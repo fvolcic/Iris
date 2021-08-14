@@ -9,6 +9,8 @@
  * 
  */
 
+#include "ArduinoJson.h"
+
 #ifndef MESSAGEDECODERBASE_H
 #define MESSAGEDECODERBASE_H
 
@@ -17,12 +19,12 @@
  *        this class will then execute all needed operations.
  * 
  */
-class MessageDecoder{
+class MessageDecoderBase{
 
 public:
 
-    MessageDecoder(); 
-    ~MessageDecoder(); 
+    MessageDecoderBase(); 
+    ~MessageDecoderBase(); 
 
     /**
      * @brief This will decode the actual message and then execute
@@ -31,7 +33,7 @@ public:
      * @return true 
      * @return false 
      */
-    virtual bool decode() = 0;
+    virtual bool decode(JsonDocument & doc) = 0;
 
     /**
      * @brief Check to see if a string matches the message key.
