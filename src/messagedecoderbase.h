@@ -33,7 +33,7 @@ public:
      * @return true 
      * @return false 
      */
-    virtual bool decode(JsonDocument & doc) = 0;
+    virtual bool decode(JsonDocument * doc) = 0;
 
     /**
      * @brief Check to see if a string matches the message key.

@@ -10,8 +10,16 @@
  */
 
 #include "messagedecodertest.h"
+#include "utils.h"
 
 const char const * ExampleDecoder::get_key() {
     return this->msgKey; 
 }
 
+bool ExampleDecoder::decode(JsonDocument * doc) {
+    Utils::LEDSerial::initializeSerial();
+    Utils::LEDSerial::print("Received New Data"); 
+    Utils::LEDSerial::print(doc->data().asString()); 
+}
+
+const char ExampleDecoder::msgKey[] = "example"; 

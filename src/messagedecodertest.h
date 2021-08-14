@@ -25,10 +25,11 @@ public:
     /**
      * @brief Decode the message and execute needed operations.
      * 
+     * 
      * @return true 
      * @return false 
      */
-    virtual bool decode(JsonDocument & doc) override; 
+    virtual bool decode(JsonDocument * doc) override; 
 
 private:
 

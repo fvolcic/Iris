@@ -1,4 +1,11 @@
 var searchData=
 [
-  ['operator_28_29_72',['operator()',['../structMessage.html#a7a7f03e2af9a88d6bf42e37a9bcaabb5',1,'Message::operator()()'],['../structMessage.html#ac30a76858a3d1bccb7ab0664f4ecc94a',1,'Message::operator()()']]]
+  ['pop_72',['pop',['../classledstd_1_1RingBuffer.html#a10f9655af2761046ec41ff5eb6ea601b',1,'ledstd::RingBuffer::pop()'],['../classledstd_1_1RingBuffer.html#a10f9655af2761046ec41ff5eb6ea601b',1,'ledstd::RingBuffer::pop()'],['../classledstd_1_1RingBuffer.html#a10f9655af2761046ec41ff5eb6ea601b',1,'ledstd::RingBuffer::pop()']]],
+  ['pop_5fback_73',['pop_back',['../classledstd_1_1vector.html#ab4578e90408a39e607f1e793cc63469c',1,'ledstd::vector::pop_back()'],['../classledstd_1_1vector.html#ab4578e90408a39e607f1e793cc63469c',1,'ledstd::vector::pop_back()'],['../classledstd_1_1vector.html#ab4578e90408a39e607f1e793cc63469c',1,'ledstd::vector::pop_back()']]],
+  ['pop_5ffront_74',['pop_front',['../classledstd_1_1vector.html#aa72002f89c18fb9603d240114dd5e0c3',1,'ledstd::vector::pop_front()'],['../classledstd_1_1vector.html#aa72002f89c18fb9603d240114dd5e0c3',1,'ledstd::vector::pop_front()'],['../classledstd_1_1vector.html#aa72002f89c18fb9603d240114dd5e0c3',1,'ledstd::vector::pop_front()']]],
+  ['print_75',['print',['../namespaceUtils_1_1LEDSerial.html#ab2a82e34df8490e6618f50ec37cb7a6b',1,'Utils::LEDSerial']]],
+  ['printer_2eh_76',['printer.h',['../lib_2printer_8h.html',1,'(Global Namespace)'],['../src_2printer_8h.html',1,'(Global Namespace)']]],
+  ['push_77',['push',['../classledstd_1_1RingBuffer.html#adba412cdd4cebba0b0d671e51a939275',1,'ledstd::RingBuffer::push(T elt)'],['../classledstd_1_1RingBuffer.html#adba412cdd4cebba0b0d671e51a939275',1,'ledstd::RingBuffer::push(T elt)'],['../classledstd_1_1RingBuffer.html#adba412cdd4cebba0b0d671e51a939275',1,'ledstd::RingBuffer::push(T elt)']]],
+  ['push_5fback_78',['push_back',['../classledstd_1_1vector.html#acf376659cb2a70f1c12755b321074aa3',1,'ledstd::vector::push_back(T elt)'],['../classledstd_1_1vector.html#acf376659cb2a70f1c12755b321074aa3',1,'ledstd::vector::push_back(T elt)'],['../classledstd_1_1vector.html#acf376659cb2a70f1c12755b321074aa3',1,'ledstd::vector::push_back(T elt)']]],
+  ['push_5ffront_79',['push_front',['../classledstd_1_1vector.html#a26d21aa6ec78588b5665c4567c8bbd5f',1,'ledstd::vector::push_front(T elt)'],['../classledstd_1_1vector.html#a26d21aa6ec78588b5665c4567c8bbd5f',1,'ledstd::vector::push_front(T elt)'],['../classledstd_1_1vector.html#a26d21aa6ec78588b5665c4567c8bbd5f',1,'ledstd::vector::push_front(T elt)']]]
 ];

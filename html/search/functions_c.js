@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['message_232',['Message',['../structMessage.html#a677a343360a56d8358a356b6d7862b31',1,'Message::Message(char *message, MessageType type, bool *flag)'],['../structMessage.html#a677a343360a56d8358a356b6d7862b31',1,'Message::Message(char *message, MessageType type, bool *flag)']]],
-  ['messageavailable_233',['MessageAvailable',['../classMessageHandlerBase.html#a7be42a8b4de755488350dee867f860fe',1,'MessageHandlerBase']]]
+  ['next_231',['next',['../classledstd_1_1RingBuffer.html#a6796f61fa1464c5da225c2e7c4d13894',1,'ledstd::RingBuffer::next()'],['../classledstd_1_1RingBuffer.html#a058503857a8e0d58214316fbbcaded85',1,'ledstd::RingBuffer::next()'],['../classledstd_1_1RingBuffer.html#a058503857a8e0d58214316fbbcaded85',1,'ledstd::RingBuffer::next()']]]
 ];

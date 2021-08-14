@@ -1,0 +1,19 @@
+digraph "src/messagedecodersystem.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="src/messagedecodersystem.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="This file outlines the functions that are available for message decoding."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ArduinoJson.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="globals.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$src_2globals_8h_source.html",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="message.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$src_2message_8h_source.html",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="messagedecoderbase.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$messagedecoderbase_8h.html",tooltip="This file contains information regaurding the base class message parser."];
+  Node5 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="messagedecodertest.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$messagedecodertest_8h_source.html",tooltip=" "];
+  Node6 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}
