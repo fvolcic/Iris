@@ -13,6 +13,9 @@
 #include <Arduino.h>
 #include "SYSTEM_CONFIG.h"
 
+#ifndef THREAD_H
+#define THREAD_H
+
 /**
  * @brief Threading interface for freeRTOS
  * 
@@ -90,4 +93,5 @@ namespace Thread{
     void delete_task(thread_handle * handle); 
 
 };
+#endif
 #endif

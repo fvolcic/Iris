@@ -12,6 +12,6 @@
 #include "messagedecoderbase.h"
 #include "utils.h"
 
-bool MessageDecoder::compare(const char * str){
+bool MessageDecoderBase::compare(const char * str){
     return Utils::Compare::cstrcmp(this->get_key() , str); 
 }

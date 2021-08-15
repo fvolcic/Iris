@@ -12,6 +12,9 @@
 #include "utils.h"
 #include <Arduino.h>
 
+#ifndef UTILS_CPP
+#define UTILS_CPP
+
 unsigned int Utils::random(){
     return esp_random(); // get a cryptographically secure random number
 }
@@ -51,7 +54,7 @@ bool Utils::LEDSerial::serialAvailable(){
     return Serial.available(); 
 }
 
-bool Utils::LEDSerial::readSerialUntil(char endByte, char * buffer, unsigned int length, unsigned long timeout = 1000UL){
+bool Utils::LEDSerial::readSerialUntil(char endByte, char * buffer, unsigned int length, unsigned long timeout){
     Serial.setTimeout(timeout); 
     return Serial.readBytesUntil(endByte, buffer, length); 
 }
@@ -60,3 +63,5 @@ template<typename T>
 bool Utils::is_nullptr(T & val){
     return val == nullptr; 
 }
+
+#endif

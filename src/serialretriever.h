@@ -11,6 +11,9 @@
 
 #include "messageretriever.h"
 
+#ifndef SERIALRETRIEVER_H
+#define SERIALRETRIEVER_H
+
 /**
  * @brief The class that represents the Serial retriever.
  * 
@@ -30,3 +33,5 @@ public:
 private:
 
 };
+
+#endif
