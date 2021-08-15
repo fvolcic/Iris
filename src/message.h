@@ -9,6 +9,9 @@
  * 
  */
 
+#ifndef MESSAGE_H
+#define MESSAGE_H
+
 /**
  * @brief This is the struct that will represent a message.
  *        This will provide an interface to destroy messages and read messags. 
@@ -67,3 +70,5 @@ private:
     bool * messageBufferInUse; 
     
 };
+
+#endif

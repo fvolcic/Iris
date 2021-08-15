@@ -11,6 +11,9 @@
 
 #include "messagedecoderbase.h"
 
+#ifndef MESSAGEDECODERTEST_H
+#define MESSAGEDECODERTEST_H
+
 class ExampleDecoder : public MessageDecoderBase {
 
 public:
@@ -20,7 +23,7 @@ public:
      * 
      * @return const char const* 
      */
-    virtual const char const * get_key() override; 
+    virtual const char * get_key() override; 
 
     /**
      * @brief Decode the message and execute needed operations.
@@ -36,3 +39,4 @@ private:
     static const char msgKey[]; 
 };
 
+#endif

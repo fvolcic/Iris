@@ -13,6 +13,10 @@
  * 
  */
 
+#ifndef STRUCTURES_H
+#define STRUCTURES_H
+
+
 namespace ledstd{
 
     /**
@@ -25,10 +29,9 @@ namespace ledstd{
      * @tparam T 
      * @tparam Size 
      */
-    template<class T, int Size=1>
+    template<class T, int Size>
     class vector{ 
-        static_assert(Size>0); 
-
+    
         public:
             vector();
             ~vector(); 
@@ -160,7 +163,7 @@ namespace ledstd{
      */
     template<typename T, unsigned int BufferSize>
     class RingBuffer{
-        static_assert(BufferSize > 0); // ensure that the buffer even exists. 
+        static_assert(BufferSize > 0, "BufferSize must be greater than zero"); // ensure that the buffer even exists. 
         
         public:
 
@@ -226,3 +229,5 @@ namespace ledstd{
 
 
 }; 
+
+#endif

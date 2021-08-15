@@ -40,6 +40,6 @@ namespace DecoderSystem{
      * @param Message::Message - The message object to decode
      * @returns Decode success status - True on success - False on failure
      */
-    bool decode_execute(Message::Message * msg); 
+    bool decode_execute(Message * msg); 
 
 };

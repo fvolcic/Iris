@@ -12,7 +12,7 @@
 #include "messagedecodertest.h"
 #include "utils.h"
 
-const char const * ExampleDecoder::get_key() {
+const char * ExampleDecoder::get_key() {
     return this->msgKey; 
 }
 

@@ -27,7 +27,6 @@ namespace ledstd{
      */
     template<class T, int Size=1>
     class vector{ 
-        static_assert(Size>0); 
 
         public:
             vector();
@@ -160,7 +159,7 @@ namespace ledstd{
      */
     template<typename T, unsigned int BufferSize>
     class RingBuffer{
-        static_assert(BufferSize > 0); // ensure that the buffer even exists. 
+        static_assert(BufferSize > 0, "BufferSize must be greater than zero"); // ensure that the buffer even exists. 
         
         public:
 

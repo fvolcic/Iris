@@ -13,8 +13,8 @@
 #include "utils.h"
 
 #ifdef VERBOSE
-#define PRINTER_SETUP()\ 
-    (Utils::LEDSerial::initializeSerial())
+#define PRINTER_SETUP()\
+(Utils::LEDSerial::initializeSerial())
 #endif
 
 #ifndef VERBOSE

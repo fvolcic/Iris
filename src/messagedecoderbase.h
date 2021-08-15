@@ -58,7 +58,7 @@ protected:
      * @param key 
      * @return char* 
      */
-    virtual const char const * get_key() = 0; 
+    virtual const char * get_key() = 0; 
 
 };
 
