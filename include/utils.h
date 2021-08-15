@@ -28,8 +28,8 @@ namespace Utils
     namespace LEDSerial{
 
         // boolean that tells us if the serial has already been initialized.
-        bool serialInitialized = false; 
-        char finalSerialByte = '\0'; 
+        extern bool serialInitialized;// = false; 
+        extern char finalSerialByte;// = '\0'; 
 
         /**
          * @brief Initialize the program serial. 

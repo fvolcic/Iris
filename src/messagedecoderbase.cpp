@@ -15,3 +15,6 @@
 bool MessageDecoderBase::compare(const char * str){
     return Utils::Compare::cstrcmp(this->get_key() , str); 
 }
+
+MessageDecoderBase::~MessageDecoderBase(){}
+MessageDecoderBase::MessageDecoderBase(){}

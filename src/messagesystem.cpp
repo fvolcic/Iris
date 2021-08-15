@@ -34,7 +34,7 @@ void MessageSystem::_run(task_param_requirements)
     while (true)
     {
         Message *msg = manager.getNewMessage();
-        if (Utils::is_nullptr(msg))
+        if (msg == nullptr)
         {
             /**
              * @todo Actually implement a time that we need to wait.
@@ -49,3 +49,4 @@ void MessageSystem::_run(task_param_requirements)
         }
     }
 }
+
