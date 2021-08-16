@@ -9,8 +9,6 @@
  * 
  */
 
-#include <Crypto.h>
-#include <AES.h>
 
 #include "storage.h"
 #include "SPIFFS.h"
@@ -129,10 +127,16 @@ bool delete_file(char * filename, bool strict=false){
 //TODO::------------------------------------------------------------------------------------
 //Must actually implement the excrypted data storage methods. This currently just stores data normally,
 //but should really use an encrypted key that is stored in the program binary. 
+/**
+ * @todo Create an actual crypto implementation for this function
+ */
 bool Filesystem::store_encrypted_data(char * key, char * data, bool strict, char * secret_key){
     return Filesystem::store_data(key, data, strict); 
 }
 
+/**
+ * @todo Create an actual crypto implementation for this function
+ */
 char * Filesystem::get_encrypted_data(char * key, char * secret_key){
     return Filesystem::get_data(key); 
 }

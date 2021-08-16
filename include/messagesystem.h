@@ -20,6 +20,10 @@
  */
 namespace MessageSystem{
 
+    /**
+     * @brief The configuation struct for the message system
+     * 
+     */
     struct messageSystemConfig{
 
     };
@@ -50,6 +54,6 @@ namespace MessageSystem{
 
 
     // handle for the globally created message thread
-    Thread::thread_handle MessageThreadHandle; 
+    extern Thread::thread_handle MessageThreadHandle; 
 
 };

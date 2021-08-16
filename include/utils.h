@@ -153,7 +153,7 @@ namespace Utils
      *       Use this carefully. 
      * 
      */
-        void (*RESET)(void) = 0;
+        extern void (*RESET)(void);
 
     };
 

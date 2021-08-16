@@ -53,4 +53,8 @@ Message * MessageRetrieverBase::getNewMessage(){
     return tmpMsg; 
 }
 
+MessageRetrieverBase::~MessageRetrieverBase(){
+    
+}
+
 #endif

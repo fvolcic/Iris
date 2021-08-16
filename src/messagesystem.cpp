@@ -15,11 +15,15 @@
 #include "utils.h"
 #include "messagedecodersystem.h"
 
+#ifndef MESSAGESYSTEM_CPP
+#define MESSAGESYSTEM_CPP
+
 bool MessageSystem::startMessageSystem(MessageSystem::messageSystemConfig *config)
 {
     Thread::thread_config threadconfig{};
     threadconfig.task = getTaskEntry(_run);
     MessageSystem::MessageThreadHandle = Thread::create_thread(&threadconfig);
+    return true; 
 }
 
 bool MessageSystem::killMessageSystem()
@@ -50,3 +54,6 @@ void MessageSystem::_run(task_param_requirements)
     }
 }
 
+Thread::thread_handle MessageSystem::MessageThreadHandle;
+
+#endif

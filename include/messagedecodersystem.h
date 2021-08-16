@@ -17,6 +17,9 @@
 // Decoders
 #include "messagedecodertest.h"
 
+#ifndef MESSAGEDECODER_H
+#define MESSAGEDECODER_H
+
 /**
  * @brief Contains all the decoder system functions.
  * 
@@ -25,14 +28,14 @@
 namespace DecoderSystem{
 
     // The internal Static json object buffer
-    StaticJsonDocument<MAX_MESSAGE_LENGTH> jsonObj;
+    extern StaticJsonDocument<MAX_MESSAGE_LENGTH> jsonObj;
 
     // The different decoders are defined here
-    ExampleDecoder exampledecoder; 
+    extern ExampleDecoder exampledecoder; 
 
     // Storage for the different internal message decoder classes
-    unsigned int num_decoders = 1;
-    MessageDecoderBase * decoders[] = {&exampledecoder}; 
+    extern unsigned int num_decoders;// = 1;
+    extern MessageDecoderBase * decoders[];// = {&exampledecoder}; 
 
     /**
      * @brief Decode and then execute a message object
@@ -43,3 +46,5 @@ namespace DecoderSystem{
     bool decode_execute(Message * msg); 
 
 };
+
+#endif

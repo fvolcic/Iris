@@ -15,6 +15,8 @@
 
 using Msg = Message; 
 
+MessageManager::MessageManager(){}
+
 Msg * MessageManager::getNewMessage(){
 
     // scan through sources. if there is a new message, then get that new message. 
@@ -32,3 +34,4 @@ MessageManager::~MessageManager(){
     for(unsigned int i = 0; i < num_sources; ++i)
         delete message_sources[i]; 
 }   
+

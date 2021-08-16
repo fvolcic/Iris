@@ -28,8 +28,8 @@ class MessageRetrieverBase {
 public:
 
     // ******************************************************************
-    // * Below are the two virtual functions that need to be overriden. *
-    // * These are the only two functions that must be implemented by a * 
+    // * Below are the three virtual functions that need to be overriden*
+    // * These are the only three functions that must be implemented by a * 
     // * a base class. This are required for the retriever to work      *
     // * correctly.                                                     *
     // ******************************************************************
@@ -46,6 +46,12 @@ public:
      * 
      */
     virtual void updateRetriever() = 0;
+
+    /**
+     * @brief Destroy the Message Retriever Base object
+     * 
+     */
+    virtual ~MessageRetrieverBase();
 
     //*****************************************************************
 

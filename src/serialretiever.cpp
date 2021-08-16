@@ -34,4 +34,7 @@ void SerialRetriever::updateRetriever(){
     this->enqueue_message(messageBuffer); // Enqueue the new message
 }
 
+SerialRetriever::SerialRetriever(){}
+SerialRetriever::~SerialRetriever(){}
+
 #endif
