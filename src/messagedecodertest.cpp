@@ -20,6 +20,7 @@ bool ExampleDecoder::decode(JsonDocument * doc) {
     Utils::LEDSerial::initializeSerial();
     Utils::LEDSerial::print("Received New Data"); 
     Utils::LEDSerial::print(doc->data().asString()); 
+    return true;
 }
 
 const char ExampleDecoder::msgKey[] = "example"; 
