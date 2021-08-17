@@ -70,29 +70,6 @@ namespace Filesystem{
     bool store_data(const char * key, char * data, bool strict = false);
 
     /**
-     * @brief Get encrypted datum from the file system. 
-     * 
-     * @note This returns dynamically allocated memory. The file data must be deleted.
-     * 
-     * @param key 
-     * @param secret_key 
-     * @return char* 
-     */
-    char * get_encrypted_data(const char * key, char * secret_key); 
-
-    /**
-     * @brief - Store data to the filesystem that is encrypted with the secret key.
-     * 
-     * @param key 
-     * @param data 
-     * @param strict 
-     * @param secret_key 
-     * @return true 
-     * @return false 
-     */
-    bool store_encrypted_data(const char * key, char * data, bool strict = false, char * secret_key = 0x0); 
-
-    /**
      * @brief Create a file in the spiffs filesystem. If strict is true and file exists, return false. 
      * 
      * @param filename 
@@ -119,6 +96,31 @@ namespace Filesystem{
      * @return false 
      */
     bool delete_file(const char * filename, bool strict=false);
+
+
+    // ENCRYPTION FUNCTIONS AVAILABLE FOR STORAGE --------------------------------------------------------
+    
+    /**
+     * @brief Store enrypted data using AES256
+     * 
+     * @param filename 
+     * @param num_blocks 
+     * @param datum 
+     * @param key 
+     * @return true 
+     * @return false 
+     */
+    bool store_encrypted_block(const char * filename, const char * datum, const unsigned char * key);
+
+    /**
+     * @brief Get encrypted data blocks from spiffs. 
+     * 
+     * @param filename 
+     * @param key 
+     * @return true 
+     * @return false 
+     */
+    char * get_encrypted_block(const char * filename, const unsigned char * key);
 
 };
 

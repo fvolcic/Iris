@@ -36,7 +36,19 @@ bool ExampleDecoder::decode(JsonDocument * doc) {
     const char * filename = (*doc)["file"];
     
     bool save = (*doc)["save"];
+    bool format = (*doc)["format"]; 
+    bool deletefile = (*doc)["delete"];
+    bool help = (*doc)["help"];
+    bool encrypt = (*doc)["encrypt"];
+    bool decrypt = (*doc)["decrypt"]; 
 
+    if(help){
+        print("Welcome to the example decoder.\n");
+        print("To delete, set the \"delete\" flag\n");
+        print("To save, set the \"save\" flag\n");
+        print("To format, set the \"format\" flag\n");
+        return true;
+    }
     if(save){
         char * datum = (char *)(const char *)(*doc)["data"];
         Filesystem::store_data(filename, datum); 
@@ -44,6 +56,26 @@ bool ExampleDecoder::decode(JsonDocument * doc) {
         print_char_until(filename, '\0', 100);
         print("\n"); 
         return true; 
+    }
+    if(format){
+        print("Formatting filesystem...\n");
+        Filesystem::format_filesystem();
+        print("Finished Formatting\n");
+        return true;
+    }
+    if(deletefile){
+        Filesystem::delete_file(filename);
+        print("Finished deleting ");
+        print_char_until(filename, '\0', 100);
+        print("\n");
+        return true;
+    }
+    if(encrypt){
+        print("Saving encrypted data...\n");
+        char * datum = (char *)(const char *)(*doc)["data"];
+        Filesystem::store_encrypted_block(filename, datum, nullptr);
+        print("Finished encrypted data save\n");
+        return true;
     }
 
     print_char_until(filename, '\0', 10); 
@@ -54,8 +86,16 @@ bool ExampleDecoder::decode(JsonDocument * doc) {
         return true;
     }
 
+    if(decrypt){
+        char * data = Filesystem::get_encrypted_block(filename, nullptr);
+        print_char_until(data, '\0', MAX_MESSAGE_LENGTH);
+        delete[] data; 
+    }
+
     char * data = Filesystem::get_data(filename); 
     print_char_until(data, '\0', MAX_MESSAGE_LENGTH);
+
+    delete[] data; 
 
     return true;
 }

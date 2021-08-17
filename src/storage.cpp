@@ -12,6 +12,8 @@
 
 #include "storage.h"
 #include "SPIFFS.h"
+#include "mbedtls/aes.h"
+#include <cmath>
 
 bool Filesystem::launch_success = false; 
 
@@ -109,7 +111,7 @@ bool Filesystem::file_exists(const char * filename){
     return SPIFFS.exists(filename); 
 }
 
-bool delete_file(const char * filename, bool strict=false){
+bool Filesystem::delete_file(const char * filename, bool strict){
 
     if(!Filesystem::is_mounted())
         return false; 
@@ -127,16 +129,65 @@ bool delete_file(const char * filename, bool strict=false){
 //TODO::------------------------------------------------------------------------------------
 //Must actually implement the excrypted data storage methods. This currently just stores data normally,
 //but should really use an encrypted key that is stored in the program binary. 
-/**
- * @todo Create an actual crypto implementation for this function
- */
-bool Filesystem::store_encrypted_data(const char * key, char * data, bool strict, char * secret_key){
-    return Filesystem::store_data(key, data, strict); 
+
+bool Filesystem::store_encrypted_block(const char * filename, const char * datum, const unsigned char * key){
+    if(!is_mounted())
+        return false; 
+
+    mbedtls_aes_context aes; 
+    unsigned int datum_size_t = 0;
+    char * datum_index = (char  *)datum;
+    
+    while(*datum_index){
+        ++datum_size_t;
+        ++datum_index;
+    }
+
+    unsigned int num_blocks = ceil( (double) datum_size_t / 16.0 ); // determine the number of needed blocks
+
+    unsigned char * output_buffer = new u_char[num_blocks * 16 + 1]; // output buffer for storing encrypted data
+
+    unsigned char testkey[] = "bcdefghijklmnop"; // <---- REMOVE THIS AND USE ACTUAL KEY
+
+    mbedtls_aes_init( &aes );
+    mbedtls_aes_setkey_enc( &aes, testkey, 128);
+    
+    unsigned char* index = (unsigned char *)datum;
+
+    for(int i = 0; i < num_blocks; ++i){
+        mbedtls_aes_crypt_ecb( &aes, ESP_AES_ENCRYPT, index + (i * 16), output_buffer + (i * 16));
+    }
+    
+    output_buffer[num_blocks*16+1] = '\0';
+
+    return Filesystem::store_data(filename, (char *) output_buffer);
 }
 
-/**
- * @todo Create an actual crypto implementation for this function
- */
-char * Filesystem::get_encrypted_data(const char * key, char * secret_key){
-    return Filesystem::get_data(key); 
+char * Filesystem::get_encrypted_block(const char * filename, const unsigned char * key){
+
+    if(!is_mounted())
+        return false; 
+
+    static const char mode = 'w'; 
+    File file = SPIFFS.open(filename, & mode); 
+
+    unsigned char * encrypted_file = (unsigned char *) Filesystem::get_data(filename);
+
+    int num_blocks = ceil ( file.size() / 16.0 );
+
+    unsigned char * output_buffer = new unsigned char[num_blocks * 16];
+
+    mbedtls_aes_context aes; 
+    unsigned char testkey[] = "bcdefghijklmnop"; // <---- REMOVE THIS AND USE ACTUAL KEY
+
+    mbedtls_aes_init( &aes );
+    mbedtls_aes_setkey_enc( &aes, testkey, 128);
+
+
+    for(int i = 0; i < num_blocks; ++i){
+        mbedtls_aes_crypt_ecb( &aes , ESP_AES_DECRYPT, encrypted_file + (i * 16), output_buffer + (i * 16));
+    }
+
+    delete[] encrypted_file;
+    return (char *)output_buffer;
 }
