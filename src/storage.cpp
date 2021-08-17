@@ -58,7 +58,7 @@ bool Filesystem::is_mounted(){
     return Filesystem::launch_success; 
 }
 
-char * Filesystem::get_data(char * key){
+char * Filesystem::get_data(const char * key){
 
     if(!Filesystem::is_mounted())
         return nullptr; 
@@ -81,7 +81,7 @@ char * Filesystem::get_data(char * key){
     return fileBuffer; 
 }
 
-bool Filesystem::store_data(char * key, char * data, bool strict){
+bool Filesystem::store_data(const char * key, char * data, bool strict){
 
     // If there was an error mounting the filesystem 
     if(!Filesystem::is_mounted())
@@ -103,13 +103,13 @@ bool Filesystem::store_data(char * key, char * data, bool strict){
     return true; 
 }
 
-bool Filesystem::file_exists(char * filename){
+bool Filesystem::file_exists(const char * filename){
     if(!is_mounted())
         return false; 
     return SPIFFS.exists(filename); 
 }
 
-bool delete_file(char * filename, bool strict=false){
+bool delete_file(const char * filename, bool strict=false){
 
     if(!Filesystem::is_mounted())
         return false; 
@@ -130,13 +130,13 @@ bool delete_file(char * filename, bool strict=false){
 /**
  * @todo Create an actual crypto implementation for this function
  */
-bool Filesystem::store_encrypted_data(char * key, char * data, bool strict, char * secret_key){
+bool Filesystem::store_encrypted_data(const char * key, char * data, bool strict, char * secret_key){
     return Filesystem::store_data(key, data, strict); 
 }
 
 /**
  * @todo Create an actual crypto implementation for this function
  */
-char * Filesystem::get_encrypted_data(char * key, char * secret_key){
+char * Filesystem::get_encrypted_data(const char * key, char * secret_key){
     return Filesystem::get_data(key); 
 }

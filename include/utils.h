@@ -53,7 +53,7 @@ namespace Utils
          * @param buffer 
          * @param endbyte 
          */
-        void print_char_until(char * buffer, char endbyte, int length);
+        void print_char_until(const char * buffer, char endbyte, int length);
 
         /**
          * @brief Return true if there is serial available.

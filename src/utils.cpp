@@ -62,7 +62,7 @@ bool Utils::LEDSerial::readSerialUntil(char endByte, char * buffer, unsigned int
     return Serial.readBytesUntil(endByte, buffer, length); 
 }
 
-void Utils::LEDSerial::print_char_until(char * buffer, char endbyte, int length){
+void Utils::LEDSerial::print_char_until(const char * buffer, char endbyte, int length){
     if(!Utils::LEDSerial::serialInitialized)
         Utils::LEDSerial::initializeSerial(); 
     for(int i = 0; i < length; ++i){
