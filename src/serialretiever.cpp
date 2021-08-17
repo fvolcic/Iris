@@ -15,6 +15,7 @@
 #include "serialretriever.h"
 #include "utils.h"
 #include "message.h"
+#include "printer.h"
 
 #ifndef SERIALRETIEVER_H
 #define SERIALRETIEVER_H
@@ -24,7 +25,7 @@ void SerialRetriever::setupRetriever(){
 }
 
 void SerialRetriever::updateRetriever(){
-    
+    PRINT("Running Update Serial\n");
     // First check if there is some new information available to be read. 
     if(!Utils::LEDSerial::serialAvailable())
         return; 

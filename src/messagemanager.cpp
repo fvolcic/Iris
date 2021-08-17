@@ -15,12 +15,17 @@
 
 using Msg = Message; 
 
-MessageManager::MessageManager(){}
+MessageManager::MessageManager(){
+    for(unsigned int i = 0; i < num_sources; ++i) {
+        this->message_sources[i]->setupRetriever(); // setup all the different retrievers
+    }
+}
 
 Msg * MessageManager::getNewMessage(){
 
     // scan through sources. if there is a new message, then get that new message. 
     for( unsigned int i = source_index; i < num_sources + source_index; ++i ){
+        message_sources[i % num_sources]->updateRetriever(); 
         if(message_sources[i % num_sources]->isMessageAvailable()){
            source_index = (i + 1) % num_sources;
            return message_sources[i % num_sources]->getNewMessage();

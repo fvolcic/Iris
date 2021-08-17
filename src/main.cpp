@@ -17,9 +17,11 @@
 
 void setup() {
   PRINTER_SETUP();
-  PRINT("Welcome to Iris");
-  PRINT("Debug Mode::True");
+  PRINT("Welcome to Iris\n");
+  PRINT("Debug Mode::True\n");
 
+
+  PRINT("Starting the message system\n");
   MessageSystem::startMessageSystem({}); 
 
 }

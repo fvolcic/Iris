@@ -12,16 +12,24 @@
  */
 
 #include "thread.h"
+#include "utils.h"
 #include "SYSTEM_CONFIG.h"
+
+#include "printer.h"
 
 Thread::thread_handle Thread::create_thread(Thread::thread_config * config){
 #ifdef USING_FREE_RTOS
     if(config->pinToCore){
-        xTaskCreatePinnedToCore(config->task, nullptr, config->stackDepth, nullptr, config->taskPriority, config->handle, config->coreId); 
+        PRINT("PINNING THREAD TO CORE");
+        xTaskCreatePinnedToCore(config->task, NULL, config->stackDepth, NULL, config->taskPriority, config->handle, config->coreId); 
     }
     else if(!config->pinToCore){
-        xTaskCreate(config->task, nullptr, config->stackDepth, nullptr, config->taskPriority, config->handle); 
+        PRINT("CREATED UNPINNED THREAD\n");
+        char name[] = "randomTaskName";
+        name[0] = (char) Utils::random();
+        xTaskCreate(config->task, name, config->stackDepth, NULL, config->taskPriority, config->handle); 
     }
+    PRINT("THREAD CREATED\n");
     return config->handle; 
 #endif
 }

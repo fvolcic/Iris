@@ -18,7 +18,7 @@
 #endif
 
 #ifndef VERBOSE
-#define PRINTER_SETUP() ()
+#define PRINTER_SETUP()
 #endif
 
 #ifdef VERBOSE
@@ -27,5 +27,5 @@
 #endif
 
 #ifndef VERBOSE
-#define PRINT(str) ()
+#define PRINT(str)
 #endif
