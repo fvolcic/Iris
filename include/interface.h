@@ -15,11 +15,33 @@
 
 namespace Interface{
 
-enum class Interfaces { WIFI, MQTT, BT, SERIAL }; 
+enum class Interfaces { WIFI, BT, SERIAL }; 
 
-char interface_file[] = {'/', 'I', 'F', '0', '\0'}; 
+/**
+ * @brief Check if a specific interface is enabled.
+ * 
+ * @param interface 
+ * @return true 
+ * @return false 
+ */
+bool interface_enabled(Interfaces interface);
 
-template<Interface::Interfaces I>
-bool enabled(); 
+/**
+ * @brief Enable an iterface 
+ * 
+ * @param interface 
+ * @return true 
+ * @return false 
+ */
+bool enable_interface(Interfaces interface, bool reboot = false);
 
+/**
+ * @brief Disable an interface
+ * 
+ * @param interface 
+ * @param reboot 
+ * @return true 
+ * @return false 
+ */
+bool disable_interface(Interfaces interface, bool reboot = false);
 };

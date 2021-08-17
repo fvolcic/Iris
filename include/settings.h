@@ -9,6 +9,9 @@
  * 
  */
 
+#ifndef SETTINGS_H
+#define SETTIGNS_H
+
 /**
  * @brief Namespace representing all different settings locations.
  * 
@@ -23,7 +26,10 @@ namespace Settings{
             unsigned int led_brightness_upper_bound; // The upper bound of the led lights brightness
 
             unsigned int number_leds; // The number of leds on the led strip.
+
+            bool _InitializeLEDSettings();
         };
+
     };
 
     namespace network{
@@ -34,7 +40,32 @@ namespace Settings{
             */
             char * SSID; // network SSID
             char * PASS; // netword PASSWORD
+
+            bool _InitializeWifiSettings();
         };
     }; 
 
+    namespace bluetooth
+    {
+        bool bluetooth_enabled;
+
+        bool _initializeBTSettings(); 
+    } // namespace bluetooth
+    
+    
+    /**
+     * @brief Enum class that tells if/what the error was
+     * 
+     */
+    enum class SettingsInitErr {OK, UnkownError}; 
+
+    /**
+     * @brief Initialize the settigns module of the system
+     * 
+     * @return SettingsInitErr 
+     */
+    SettingsInitErr InitializeSettings(); 
+
 };
+
+#endif

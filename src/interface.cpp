@@ -10,12 +10,52 @@
  */
 
 #include "interface.h"
+#include "storage.h"
 
-template<Interface::Interfaces I>
-bool Interface::enabled(){
+bool Interface::interface_enabled(Interface::Interfaces interface){
+    switch(interface){
+        case Interfaces::BT:
+            return !Filesystem::file_exists("/BT");
+        break;
 
-    //Sets the needed byte for the enabled file in the FS.
-    interface_file[3] = static_cast<char> (I); 
+        case Interfaces::WIFI:
+            return Filesystem::file_exists("/WIFI");
+        break; 
 
-    return Filesystem::file_exists(interface_file); 
+        case Interfaces::SERIAL:
+            return Filesystem::file_exists("/SERIAL");
+        break;
+    }
+}
+
+bool Interface::enable_interface(Interface::Interfaces interface){
+    switch(interface){
+        case Interfaces::BT:
+            return Filesystem::create_file("/BT");
+        break;
+
+        case Interfaces::WIFI:
+            return Filesystem::create_file("/WIFI");
+        break; 
+
+        case Interfaces::SERIAL:
+            return Filesystem::create_file("/SERIAL");
+        break;
+    }
+}
+
+bool Interface::disable_interface(Interface::Interfaces interface){
+    switch(interface){
+        case Interfaces::BT:
+            return Filesystem::delete_file("/BT");
+        break;
+
+        case Interfaces::WIFI:
+            return Filesystem::delete_file("/WIFI");
+        break; 
+
+        case Interfaces::SERIAL:
+            return Filesystem::delete_file("/SERIAL");
+        break;
+    }
 }
