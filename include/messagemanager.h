@@ -15,6 +15,7 @@
 // * All message retriever includes below *
 #include "messageretriever.h"
 #include "serialretriever.h"
+#include "bluetooth_reciever.h"
 
 #ifndef MESSAGERETRIEVER_PIO_H
 #define MESSAGERETRIEVER_PIO_H
@@ -46,8 +47,8 @@ public:
 private: 
 
     // All the different places that messages can come from.
-    static const int num_sources = 1;
-    MessageRetrieverBase * message_sources[1] = { new SerialRetriever() }; 
+    static const int num_sources = 2;
+    MessageRetrieverBase * message_sources[num_sources] = { new SerialRetriever() , new BlueToothRetriever()}; 
 
     // The source index allows for easy scanning of all the different indexs. 
     unsigned int source_index = 0;      

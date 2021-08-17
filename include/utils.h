@@ -48,6 +48,14 @@ namespace Utils
         void print(T datum);
 
         /**
+         * @brief Print char array until a given byte or specified length
+         * 
+         * @param buffer 
+         * @param endbyte 
+         */
+        void print_char_until(char * buffer, char endbyte, int length);
+
+        /**
          * @brief Return true if there is serial available.
          * 
          * @return true 

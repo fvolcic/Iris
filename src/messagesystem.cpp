@@ -14,6 +14,7 @@
 #include "thread.h"
 #include "utils.h"
 #include "messagedecodersystem.h"
+#include "printer.h"
 
 #ifndef MESSAGESYSTEM_CPP
 #define MESSAGESYSTEM_CPP
@@ -22,6 +23,8 @@ bool MessageSystem::startMessageSystem(MessageSystem::messageSystemConfig *confi
 {
     Thread::thread_config threadconfig{};
     threadconfig.task = getTaskEntry(_run);
+    threadconfig.stackDepth = 10000; 
+    PRINT("CREATING THREAD\n");
     MessageSystem::MessageThreadHandle = Thread::create_thread(&threadconfig);
     return true; 
 }
@@ -36,7 +39,7 @@ void MessageSystem::_run(task_param_requirements)
 {
     MessageManager manager; // The funnel for messages from the different message sources
     while (true)
-    {
+    {   
         Message *msg = manager.getNewMessage();
         if (msg == nullptr)
         {
@@ -44,11 +47,12 @@ void MessageSystem::_run(task_param_requirements)
              * @todo Actually implement a time that we need to wait.
              * 
              */
-            delayTask(100); // <------ FIX THIS !!!!!!!!!!!
+            delayTask(1000); // <------ FIX THIS !!!!!!!!!!!
             continue;
         }
         else
         {
+            PRINT("\n\nNEW MESSAGE!!\n\n");
             DecoderSystem::decode_execute(msg);
         }
     }

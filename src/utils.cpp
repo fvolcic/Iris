@@ -62,10 +62,21 @@ bool Utils::LEDSerial::readSerialUntil(char endByte, char * buffer, unsigned int
     return Serial.readBytesUntil(endByte, buffer, length); 
 }
 
+void Utils::LEDSerial::print_char_until(char * buffer, char endbyte, int length){
+    if(!Utils::LEDSerial::serialInitialized)
+        Utils::LEDSerial::initializeSerial(); 
+    for(int i = 0; i < length; ++i){
+        if(buffer[i] == endbyte)
+            return; 
+        Utils::LEDSerial::print(buffer[i]);
+    }
+}
+
 void (*Utils::Program::RESET)(void) = 0;
 
 // template instantions
 template void Utils::LEDSerial::print(char *); 
 template void Utils::LEDSerial::print(char const *); 
+template void Utils::LEDSerial::print(bool); 
 
 #endif
