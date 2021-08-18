@@ -14,8 +14,9 @@
  */
 
 #include "messagedecodertest.h"
-#include "utils.h"
+#include "messagesystem.h"
 #include "storage.h"
+#include "utils.h"
 
 using namespace Utils::LEDSerial; 
 
@@ -45,6 +46,14 @@ bool ExampleDecoder::decode(JsonDocument * doc) {
     bool help = (*doc)["help"];
     bool encrypt = (*doc)["encrypt"];
     bool decrypt = (*doc)["decrypt"]; 
+    bool kill = (*doc)["kill"];
+
+    if(kill){
+        print("Killing message system\n");
+        MessageSystem::killMessageSystem();
+        print("Killed\n"); // Not sure if we will reach this line or not
+        return true;
+    }
 
     if(help){
         print("Welcome to the example decoder.\n");
