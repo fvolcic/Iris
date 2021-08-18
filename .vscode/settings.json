@@ -1,5 +1,8 @@
 {
     "files.associations": {
         "fstream": "cpp"
-    }
+    },
+    "cSpell.words": [
+        "WIFI"
+    ]
 }

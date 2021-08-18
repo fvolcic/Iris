@@ -1,7 +1,11 @@
 /**
  * @file messagedecodertest.cpp
  * 
- * @brief File contains an example message decoder.
+ * @brief File contains an example message decoder. Essentially, this outlines what a new
+ *        decoder will have to look like. This implements the necessary overrides 
+ *        for a full implementation. ExampleDecoder allows access to the internal
+ *        file system from a message, and then prints the result to serial.      
+ *  
  * @version 0.1
  * @date 2021-07-30
  * 
@@ -84,7 +88,15 @@ bool ExampleDecoder::decode(JsonDocument * doc) {
     if(!Filesystem::file_exists(filename)){
         print("File does not exist\n");
         return true;
-    }
+    }/**
+ * @brief 
+ * 
+ * @param filename 
+ * @param datum 
+ * @param key 
+ * @return true 
+ * @return false 
+ */
 
     if(decrypt){
         char * data = Filesystem::get_encrypted_block(filename, nullptr);

@@ -11,6 +11,7 @@
 
 #include "interface.h"
 #include "storage.h"
+#include "utils.h"
 
 bool Interface::interface_enabled(Interface::Interfaces interface){
     switch(interface){
@@ -28,34 +29,46 @@ bool Interface::interface_enabled(Interface::Interfaces interface){
     }
 }
 
-bool Interface::enable_interface(Interface::Interfaces interface){
+bool Interface::enable_interface(Interface::Interfaces interface, bool reboot){
+    bool success = false; 
     switch(interface){
         case Interfaces::BT:
-            return Filesystem::create_file("/BT");
+            success = Filesystem::create_file("/BT");
         break;
 
         case Interfaces::WIFI:
-            return Filesystem::create_file("/WIFI");
+            success = Filesystem::create_file("/WIFI");
         break; 
 
         case Interfaces::SERIAL:
-            return Filesystem::create_file("/SERIAL");
+            success = Filesystem::create_file("/SERIAL");
         break;
     }
+
+    if(reboot)
+        Utils::Program::RESET();
+    
+    return success;
 }
 
-bool Interface::disable_interface(Interface::Interfaces interface){
+bool Interface::disable_interface(Interface::Interfaces interface, bool reboot){
+    bool success = false;
     switch(interface){
         case Interfaces::BT:
-            return Filesystem::delete_file("/BT");
+            success = Filesystem::delete_file("/BT");
         break;
 
         case Interfaces::WIFI:
-            return Filesystem::delete_file("/WIFI");
+            success = Filesystem::delete_file("/WIFI");
         break; 
 
         case Interfaces::SERIAL:
-            return Filesystem::delete_file("/SERIAL");
+            success = Filesystem::delete_file("/SERIAL");
         break;
     }
+
+    if(reboot)
+        Utils::Program::RESET();
+    
+    return success;
 }
