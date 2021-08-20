@@ -16,6 +16,7 @@
 #include <algorithm>
 #include <exception>
 #include <stdexcept>
+#include "color.h"
 
 // For compatibility with Visual Studio
 #include <ciso646>
@@ -382,7 +383,9 @@ void TestCase::run(bool quiet_mode) {
         test_func();
 
         if (not quiet_mode) {
-            std::cout << "PASS" << std::endl;
+            Color::Modifier green(Color::FG_GREEN);
+             Color::Modifier def(Color::FG_DEFAULT);
+            std::cout << green << "PASS" << def << std::endl;
         }
     }
     catch (TestFailure& failure) {
@@ -426,7 +429,9 @@ void TestCase::print(bool quiet_mode) {
         }
     }
     else {
-        std::cout << "PASS" << std::endl;
+        Color::Modifier green(Color::FG_GREEN);
+        Color::Modifier def(Color::FG_DEFAULT);
+        std::cout << green << "PASS" << def << std::endl;
     }
 }
 

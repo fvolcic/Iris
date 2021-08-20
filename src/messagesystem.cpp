@@ -49,7 +49,7 @@ Rebooting...
 */
 bool MessageSystem::killMessageSystem()
 {
-    Thread::delete_task(&MessageSystem::MessageThreadHandle);
+    Thread::delete_task(&MessageSystem::MessageThreadHandle); // I think something is wrong with this line
     return true;
 }
 
