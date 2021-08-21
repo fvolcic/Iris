@@ -1,0 +1,5 @@
+All responses from the esp32 should be made through responders.
+
+A responder is a class derived of the ResponderBase that implements a number of functions that allow
+the code to send some from of a response.
+If someone wants a response over multiple lines, that is possible through the responder system.
