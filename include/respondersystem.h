@@ -10,6 +10,7 @@
  */
 
 #include "enum.h"
+#include "responderbase.h"
 
 #ifndef RESPONDERSYS_H
 #define RESPONDERSYS_H
@@ -20,13 +21,17 @@ namespace Respond{
      * @brief Different errors that can be returned.
      * 
      */
-    enum class ResponderError{ OK, AlreadyEnabled, AlreadyDisabled };
+    enum class ResponderError{ 
+        OK, AlreadyEnabled, AlreadyDisabled, FailedToEnableSome, FailedToDisableSome, FailedToDisable, FailedToEnable
+    };
 
     /**
      * @brief The different possible responders that can be used.
      * 
      */
     ENUM(Responders, SerialBT, HardwareSerial); // Serial enum class where you can determine size in code
+    extern ResponderBase * Responder_Pointers[];
+
     //enum class responders{SerialBT, HardwareSerial};
 
 

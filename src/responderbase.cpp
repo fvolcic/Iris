@@ -48,3 +48,7 @@ ResponderBase::ResponseError ResponderBase::disable_component(){
 ResponderBase::ResponseError ResponderBase::enable_component(){
     return ResponderBase::ResponseError::OK;
 }
+
+bool ResponderBase::isEnabled(){
+    return enabled;
+}

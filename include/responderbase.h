@@ -41,6 +41,14 @@ public:
     ResponseError disable();
 
     /**
+     * @brief Return true if the responder is currently enabled
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool isEnabled();
+
+    /**
      * @brief Send a message with the responder.
      * 
      * @param message 
