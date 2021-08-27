@@ -38,7 +38,7 @@ namespace Respond
      * @brief The different possible responders that can be used.
      * 
      */
-    ENUM(Responders, SerialBT, HardwareSerial); // Serial enum class where you can determine size in code
+    ENUM(Responders, HardwareSerial); // Serial enum class where you can determine size in code
     extern ResponderBase *Responder_Pointers[];
 
     //enum class responders{SerialBT, HardwareSerial};
@@ -97,13 +97,13 @@ namespace Respond
     ResponderError sendDataUntilLength(const char *data, unsigned int length);
 
     // A list that has enough space to contain all possible responders
-    Responders enabledResponders[ENUMSIZE(Responders, unsigned int)];
+    extern Responders enabledResponders[];//[ENUMSIZE(Responders, unsigned int)];
 
     // The number of enabled responders
-    unsigned int num_enabled_responders = 0;
+    extern unsigned int num_enabled_responders;
 
     // The number of responders that current exist
-    constexpr unsigned int num_responders = ENUMSIZE(Responders, unsigned int);
+    extern const unsigned int num_responders;// = ENUMSIZE(Responders, unsigned int);
 };
 
 #endif

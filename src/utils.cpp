@@ -72,7 +72,14 @@ void Utils::LEDSerial::print_char_until(const char * buffer, char endbyte, int l
     }
 }
 
+void Utils::LEDSerial::printSerialUntilLength(const char * buffer, unsigned int length){
+    for(unsigned int i = 0; i < length; ++i)
+        Utils::LEDSerial::print(buffer[i]);
+}
+
 void (*Utils::Program::RESET)(void) = 0;
+
+
 
 // template instantions
 template void Utils::LEDSerial::print(char *); 

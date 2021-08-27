@@ -83,6 +83,16 @@ namespace Utils
          */
 
         bool readSerialUntil(char endByte, char *  buffer, unsigned int length = MAX_MESSAGE_LENGTH, unsigned long timeout = 1000);
+
+        /**
+         * @brief Print buffer to serial until length number of bytes have been sent
+         * 
+         * @param buffer 
+         * @param length 
+         * @return true 
+         * @return false 
+         */
+        void printSerialUntilLength(const char * buffer, unsigned int length);
     };
 
     /**

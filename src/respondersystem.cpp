@@ -14,13 +14,20 @@
 
 #include "respondersystem.h"
 #include "responderbase.h"
+#include "responderserial.h"
 
 // This has a very specific ordering.
 // Each element of the Responder_Pointers must align in the same place as there numeric 
 // value in the enum class that defines all the responders.
 // This array also will always have ENUM_SIZE(responders) number of elts 
-ResponderBase * Respond::Responder_Pointers[] = {};
 
+static auto serialResponder = SerialResponder(); //ENUM ELT #1 -> from respondersystem.h (Responders)
+ResponderBase * Respond::Responder_Pointers[] = { &serialResponder };
+
+// Variables from respondersystem.h
+unsigned int Respond::num_enabled_responders = 0;
+const unsigned int Respond::num_responders = ENUMSIZE(Respond::Responders, unsigned int);
+Respond::Responders Respond::enabledResponders[ENUMSIZE(Respond::Responders, unsigned int)];
 
 Respond::ResponderError Respond::enableAllResponders(){
 
@@ -51,6 +58,7 @@ Respond::ResponderError Respond::enableAllResponders(){
     return returnErr; 
 }
 
+// FIXME This is not working correctly. Ensure that enable and
 Respond::ResponderError Respond::disableAllResponders(){
 
     Respond::ResponderError returnError = Respond::ResponderError::OK;
@@ -69,6 +77,8 @@ Respond::ResponderError Respond::disableAllResponders(){
             err != ResponderBase::ResponseError::AlreadyDisabled or
             err != ResponderBase::ResponseError::ForceDisabled){
                 returnError = Respond::ResponderError::FailedToDisableSome;
+        }else{
+            --num_enabled_responders;
         }
 
     }
@@ -106,7 +116,7 @@ Respond::ResponderError Respond::disableResponder(Respond::Responders responder)
 
 }
 
-Respond::ResponderError Respond::enableReponder(Respond::Responders responder){
+Respond::ResponderError Respond::enableReponder(Respond::Responders responder, bool clear_others){
     
     // check to ensure that the responder is not already in use.
     for(int i = 0; i < num_enabled_responders; ++i){
@@ -140,7 +150,7 @@ Respond::ResponderError Respond::sendDataUntilByte(const char * data, char endBy
         return Respond::ResponderError::UnknownError;
 }
 
-Respond::ResponderError Respond::sendDataUntilLength(const char * data, int length){
+Respond::ResponderError Respond::sendDataUntilLength(const char * data, unsigned int length){
     ResponderBase::ResponseError err = ResponderBase::ResponseError::OK;
     for(unsigned int i = 0; i < num_enabled_responders; ++i){
         err = Responder_Pointers[ static_cast<unsigned int>(enabledResponders[i]) ]->sendDataUntilLength(data, length);

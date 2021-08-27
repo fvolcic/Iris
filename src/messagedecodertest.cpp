@@ -17,6 +17,7 @@
 #include "messagesystem.h"
 #include "storage.h"
 #include "utils.h"
+#include "respondersystem.h"
 
 using namespace Utils::LEDSerial; 
 
@@ -47,7 +48,22 @@ bool ExampleDecoder::decode(JsonDocument * doc) {
     bool encrypt = (*doc)["encrypt"];
     bool decrypt = (*doc)["decrypt"]; 
     bool kill = (*doc)["kill"];
+    bool enable = (*doc)["enable"];
+    bool disable = (*doc)["disable"];
+    bool sayhi = (*doc)["hello"];
 
+    if(enable){
+        Respond::enableAllResponders();
+        return true;
+    }
+    if(disable){
+        Respond::disableAllResponders();
+        return true; 
+    }
+    if(sayhi){
+        Respond::sendDataUntilByte("The Responder says hello!", '\0');
+        return true;
+    }
     if(kill){
         print("Killing message system\n");
         MessageSystem::killMessageSystem();
