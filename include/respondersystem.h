@@ -15,14 +15,23 @@
 #ifndef RESPONDERSYS_H
 #define RESPONDERSYS_H
 
-namespace Respond{
+namespace Respond
+{
 
     /**
      * @brief Different errors that can be returned.
      * 
      */
-    enum class ResponderError{ 
-        OK, AlreadyEnabled, AlreadyDisabled, FailedToEnableSome, FailedToDisableSome, FailedToDisable, FailedToEnable
+    enum class ResponderError
+    {
+        OK,
+        AlreadyEnabled,
+        AlreadyDisabled,
+        FailedToEnableSome,
+        FailedToDisableSome,
+        FailedToDisable,
+        FailedToEnable,
+        UnknownError
     };
 
     /**
@@ -30,10 +39,9 @@ namespace Respond{
      * 
      */
     ENUM(Responders, SerialBT, HardwareSerial); // Serial enum class where you can determine size in code
-    extern ResponderBase * Responder_Pointers[];
+    extern ResponderBase *Responder_Pointers[];
 
     //enum class responders{SerialBT, HardwareSerial};
-
 
     /**
      * @brief enable a responder that the system is able to respond with
@@ -68,8 +76,28 @@ namespace Respond{
      */
     ResponderError disableAllResponders();
 
+    /**
+     * @brief Send data until a specific byte is reached or a specific length
+     * 
+     * @note if length = -1, then only endByte can terminate the data being sent.
+     * 
+     * @param data 
+     * @param endByte 
+     * @return ResponderError 
+     */
+    ResponderError sendDataUntilByte(const char *data, char endByte, int length = -1);
+
+    /**
+     * @brief Send a char array of data, where the length of the char array is length
+     * 
+     * @param data 
+     * @param length 
+     * @return ResponderError 
+     */
+    ResponderError sendDataUntilLength(const char *data, unsigned int length);
+
     // A list that has enough space to contain all possible responders
-    Responders enabledResponders[ ENUMSIZE(Responders, unsigned int) ];
+    Responders enabledResponders[ENUMSIZE(Responders, unsigned int)];
 
     // The number of enabled responders
     unsigned int num_enabled_responders = 0;

@@ -128,3 +128,25 @@ Respond::ResponderError Respond::enableReponder(Respond::Responders responder){
     return Respond::ResponderError::OK; 
 
 }
+
+Respond::ResponderError Respond::sendDataUntilByte(const char * data, char endByte, int length){
+    ResponderBase::ResponseError err = ResponderBase::ResponseError::OK;
+    for(unsigned int i = 0; i < num_enabled_responders; ++i){
+        err = Responder_Pointers[ static_cast<unsigned int>(enabledResponders[i]) ]->sendDataUntilByte(data, endByte, length); 
+    }
+    if(err == ResponderBase::ResponseError::OK)
+        return Respond::ResponderError::OK;
+    else
+        return Respond::ResponderError::UnknownError;
+}
+
+Respond::ResponderError Respond::sendDataUntilLength(const char * data, int length){
+    ResponderBase::ResponseError err = ResponderBase::ResponseError::OK;
+    for(unsigned int i = 0; i < num_enabled_responders; ++i){
+        err = Responder_Pointers[ static_cast<unsigned int>(enabledResponders[i]) ]->sendDataUntilLength(data, length);
+    }
+    if(err == ResponderBase::ResponseError::OK)
+        return Respond::ResponderError::OK;
+    else
+        return Respond::ResponderError::UnknownError;
+}
