@@ -115,7 +115,7 @@ Respond::ResponderError Respond::enableReponder(Respond::Responders responder){
         }
     }
 
-    ResponderBase::ResponseError err = Respond::Responder_Pointers[static_cast<unsigned int>(responder)];
+    ResponderBase::ResponseError err = Respond::Responder_Pointers[static_cast<unsigned int>(responder)]->enable();
 
     if( err != ResponderBase::ResponseError::OK or
         err != ResponderBase::ResponseError::AlreadyEnabed
