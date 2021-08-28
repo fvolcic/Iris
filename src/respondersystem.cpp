@@ -118,8 +118,8 @@ Respond::ResponderError Respond::disableResponder(Respond::Responders responder)
 
     ResponderBase::ResponseError err = Respond::Responder_Pointers[static_cast<unsigned int>(responder)]->disable();
 
-     if(err != ResponderBase::ResponseError::OK or
-            err != ResponderBase::ResponseError::AlreadyDisabled or
+     if(err != ResponderBase::ResponseError::OK and
+            err != ResponderBase::ResponseError::AlreadyDisabled and
             err != ResponderBase::ResponseError::ForceDisabled){
                 return Respond::ResponderError::FailedToDisable;
         }
@@ -139,7 +139,7 @@ Respond::ResponderError Respond::enableReponder(Respond::Responders responder, b
 
     ResponderBase::ResponseError err = Respond::Responder_Pointers[static_cast<unsigned int>(responder)]->enable();
 
-    if( err != ResponderBase::ResponseError::OK or
+    if( err != ResponderBase::ResponseError::OK and
         err != ResponderBase::ResponseError::AlreadyEnabed
         ){
             return Respond::ResponderError::FailedToEnable;
