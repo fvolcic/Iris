@@ -16,7 +16,7 @@
 // Your secret key. Do not share. Generate with -> $ openssl rand -hex 8
 #define SECRET_KEY {0x23,}
 
-//#define VERBOSE // print information via serial. 
+#define VERBOSE // print information via serial. 
 #define VERBOSITY_LEVEL // The level of verbosity for print statements
 #define BAUD 115200
 

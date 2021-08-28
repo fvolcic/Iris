@@ -25,7 +25,7 @@ void SerialRetriever::setupRetriever(){
 }
 
 void SerialRetriever::updateRetriever(){
-    PRINT("Running Update Serial\n");
+    // PRINT("Running Update Serial\n");
     // First check if there is some new information available to be read. 
     if(!Utils::LEDSerial::serialAvailable())
         return; 

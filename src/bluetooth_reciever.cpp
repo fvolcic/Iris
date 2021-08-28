@@ -21,7 +21,7 @@ void BlueToothRetriever::setupRetriever(){
 }
 
 void BlueToothRetriever::updateRetriever(){
-    PRINT("Running Update BT\n");
+    // PRINT("Running Update BT\n");
     if(BlueToothRetriever::SerialBT.available()){
         Message * messageBuffer = this->getMessageBuffer();
         SerialBT.readBytesUntil(Utils::LEDSerial::finalSerialByte, (uint8_t *)( messageBuffer->begin()), MAX_MESSAGE_LENGTH); // hack lmfao

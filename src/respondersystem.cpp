@@ -15,6 +15,7 @@
 #include "respondersystem.h"
 #include "responderbase.h"
 #include "responderserial.h"
+#include "printer.h"
 
 // This has a very specific ordering.
 // Each element of the Responder_Pointers must align in the same place as there numeric 
@@ -61,6 +62,10 @@ Respond::ResponderError Respond::enableAllResponders(){
 // FIXME This is not working correctly. Ensure that enable and
 Respond::ResponderError Respond::disableAllResponders(){
 
+    PRINT("NUM ENABLED RESPONDERS PRE: ");
+    PRINT(num_enabled_responders);
+    PRINT("\n");
+
     Respond::ResponderError returnError = Respond::ResponderError::OK;
 
     int index = 0;
@@ -73,15 +78,22 @@ Respond::ResponderError Respond::disableAllResponders(){
 
         ResponderBase::ResponseError err = Respond::Responder_Pointers[index]->disable();
 
-        if(err != ResponderBase::ResponseError::OK or
-            err != ResponderBase::ResponseError::AlreadyDisabled or
+        if(err != ResponderBase::ResponseError::OK &&
+            err != ResponderBase::ResponseError::AlreadyDisabled &&
             err != ResponderBase::ResponseError::ForceDisabled){
                 returnError = Respond::ResponderError::FailedToDisableSome;
+                PRINT("ERR: ");
+                PRINT(static_cast<unsigned int>(err));
+                PRINT("\n");
         }else{
             --num_enabled_responders;
         }
 
     }
+
+    PRINT("NUM ENABLED RESPONDERS POST: ");
+    PRINT(num_enabled_responders);
+    PRINT("\n\n");
 
     return returnError; 
 

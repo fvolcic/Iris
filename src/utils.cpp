@@ -85,5 +85,7 @@ void (*Utils::Program::RESET)(void) = 0;
 template void Utils::LEDSerial::print(char *); 
 template void Utils::LEDSerial::print(char const *); 
 template void Utils::LEDSerial::print(bool); 
+template void Utils::LEDSerial::print(unsigned int);
+template void Utils::LEDSerial::print(int);
 
 #endif
