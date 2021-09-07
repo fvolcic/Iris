@@ -1,7 +1,7 @@
 <h1 align="center">Welcome to Iris 👋</h1>
 
 <p align="center">
-![text846](https://user-images.githubusercontent.com/59806465/132366867-31bbd156-ff0c-47b6-bce8-834c2fc88e39.png)
+  <img src="https://user-images.githubusercontent.com/59806465/132366867-31bbd156-ff0c-47b6-bce8-834c2fc88e39.png" width="300">
 </p>
 
 <p>
