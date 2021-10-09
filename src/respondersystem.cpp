@@ -15,6 +15,7 @@
 #include "respondersystem.h"
 #include "responderbase.h"
 #include "responderserial.h"
+#include "responderbluetooth.h"
 #include "printer.h"
 
 // This has a very specific ordering.
@@ -23,7 +24,8 @@
 // This array also will always have ENUM_SIZE(responders) number of elts 
 
 static auto serialResponder = SerialResponder(); //ENUM ELT #1 -> from respondersystem.h (Responders)
-ResponderBase * Respond::Responder_Pointers[] = { &serialResponder };
+static auto bluetoothResponder = BluetoothResponder(); //ENUM ELT #2 
+ResponderBase * Respond::Responder_Pointers[] = { &serialResponder, &bluetoothResponder };
 
 // Variables from respondersystem.h
 unsigned int Respond::num_enabled_responders = 0;

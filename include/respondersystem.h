@@ -38,7 +38,7 @@ namespace Respond
      * @brief The different possible responders that can be used.
      * 
      */
-    ENUM(Responders, HardwareSerial); // Serial enum class where you can determine size in code
+    ENUM(Responders, HardwareSerial, BluetoothSerial); // Serial enum class where you can determine size in code
     extern ResponderBase *Responder_Pointers[];
 
     //enum class responders{SerialBT, HardwareSerial};

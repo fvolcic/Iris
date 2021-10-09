@@ -25,4 +25,5 @@ public:
 protected:
 virtual ResponseError enable_component();   
 
+
 }; 
