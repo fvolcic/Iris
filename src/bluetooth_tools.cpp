@@ -29,6 +29,7 @@ void Bluetooth::initializeBluetooth(){
 
     // vSemaphoreCreateBinary(BluetoothSephamore); <-- Depreciated Semaphore creation tool
     BluetoothSephamore = xSemaphoreCreateBinary();
+    xSemaphoreGive(BluetoothSephamore); // Required to give semaphore before it can be taken by any threads
 }
 
 void Bluetooth::deinitBluetooth(){
