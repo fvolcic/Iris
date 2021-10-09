@@ -12,19 +12,36 @@
 #include "bluetooth_reciever.h"
 #include "BluetoothSerial.h"
 #include "printer.h"
+#include "bluetooth_tools.h"
+#include "special_includes.h"
+
+//getFreeRTOSHeader(semphr.h)
+
+//#include "semphr.h"
+#include "/home/franklin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/freertos/freertos/semphr.h"
+//#include <semphr.h>
 
 void BlueToothRetriever::setupRetriever(){
     PRINT("Starting Bluetooth\n");
-    BlueToothRetriever::SerialBT = BluetoothSerial(); 
-    SerialBT.begin();
+    Bluetooth::initializeBluetooth();
+   // BlueToothRetriever::SerialBT = BluetoothSerial(); 
+   // SerialBT.begin();
     PRINT("Bluetooth started\n");
 }
 
 void BlueToothRetriever::updateRetriever(){
-    // PRINT("Running Update BT\n");
-    if(BlueToothRetriever::SerialBT.available()){
-        Message * messageBuffer = this->getMessageBuffer();
-        SerialBT.readBytesUntil(Utils::LEDSerial::finalSerialByte, (uint8_t *)( messageBuffer->begin()), MAX_MESSAGE_LENGTH); // hack lmfao
-        this->enqueue_message(messageBuffer); 
+    if( Bluetooth::BluetoothSephamore != NULL ){
+
+        if( xSemaphoreTake( Bluetooth::BluetoothSephamore, (TickType_t) 30 / 10.0) == pdTRUE ){
+            if(Bluetooth::SerialBT.available()){
+                Message * messageBuffer = this->getMessageBuffer();
+                Bluetooth::SerialBT.readBytesUntil(Utils::LEDSerial::finalSerialByte, (uint8_t *)( messageBuffer->begin()), MAX_MESSAGE_LENGTH); // hack lmfao
+                this->enqueue_message(messageBuffer); 
+            }
+
+            xSemaphoreGive(Bluetooth::BluetoothSephamore);
+        }
+
     }
+
 }

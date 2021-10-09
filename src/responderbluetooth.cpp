@@ -9,14 +9,20 @@
  * 
  */
 
-#include "responderbase.h"
+#include "bluetooth_tools.h"
+#include "BluetoothSerial.h"
+#include "responderbluetooth.h"
 
-class BluetoothResponder : public ResponderBase {
+BluetoothResponder::BluetoothResponder(){
+    Bluetooth::initializeBluetooth();
+}
 
-public:
+BluetoothResponder::~BluetoothResponder(){}
 
+ResponderBase::ResponseError BluetoothResponder::sendDataUntilByte(const char * data, char endByte, int length){
 
+}
 
-private:
-
-};
+ResponderBase::ResponseError BluetoothResponder::enable_component(){
+    
+}

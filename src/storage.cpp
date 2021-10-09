@@ -130,7 +130,7 @@ bool Filesystem::delete_file(const char * filename, bool strict){
 //Must actually implement the encrypted data storage methods. This currently just stores data normally,
 //but should really use an encrypted key that is stored in the program binary. 
 
-//FIXME: These simply do not work at all 
+//FIXME: These simply do not work at all... fuck
 
 bool Filesystem::store_encrypted_block(const char * filename, const char * datum, const unsigned char * key){
     if(!is_mounted())
