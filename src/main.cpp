@@ -16,6 +16,7 @@
 #include "messagesystem.h"
 
 void setup() {
+
   PRINTER_SETUP();
   PRINT("Welcome to Iris\n");
   PRINT("Debug Mode::True\n");

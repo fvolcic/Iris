@@ -156,6 +156,9 @@ Respond::ResponderError Respond::enableReponder(Respond::Responders responder, b
 Respond::ResponderError Respond::sendDataUntilByte(const char * data, char endByte, int length){
     ResponderBase::ResponseError err = ResponderBase::ResponseError::OK;
     for(unsigned int i = 0; i < num_enabled_responders; ++i){
+        PRINT("Sending Data to Device: ");
+        PRINT(i);
+        PRINT("\n");
         err = Responder_Pointers[ static_cast<unsigned int>(enabledResponders[i]) ]->sendDataUntilByte(data, endByte, length); 
     }
     if(err == ResponderBase::ResponseError::OK)

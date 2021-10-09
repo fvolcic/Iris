@@ -14,27 +14,41 @@
 #include "responderbluetooth.h"
 #include "printer.h"
 
+/**
+ * @brief Construct a new Bluetooth Responder:: Bluetooth Responder object
+ * 
+ * @bug
+ */
 BluetoothResponder::BluetoothResponder()
 {
-    Bluetooth::initializeBluetooth();
+    // FIXME When this is added to the code, the code no longer boots. There is a (RTCWDT_RTC_RESET), 
+    // This is due to a watchdog timer error. The reason behind this is not entirely clear, but I am 
+    // Guessing that it has to do with multiple bluetooth initializations happening. The bluetooth responder
+    // Is created as a global variable, and that may be part of the problem. Not 100% sure though. 
+
+    // Bluetooth::initializeBluetooth();
 }
 
 BluetoothResponder::~BluetoothResponder() {}
 
 ResponderBase::ResponseError BluetoothResponder::sendDataUntilByte(const char *data, char endByte, int length)
 {
-
+    PRINT("Trying To Respond With Bluetooth\n");
     if (Bluetooth::BluetoothSephamore != NULL)
     {
-
+        PRINT("Trying to take Semaphore\n");
         if (xSemaphoreTake(Bluetooth::BluetoothSephamore, (TickType_t)30 / 10.0) == pdTRUE)
         {
+            
+             PRINT("Acquired  Semaphore!\n");
 
             if (length == -1)
                 length = __INT_MAX__;
 
             for (char *i = (char *)data; *i != endByte && (i - data) < length; ++i)
             {
+                PRINT("Reponding: ");
+                PRINT(*i);
                 Bluetooth::SerialBT.print(*i);
             }
             xSemaphoreGive(Bluetooth::BluetoothSephamore);

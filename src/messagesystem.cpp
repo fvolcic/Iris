@@ -65,6 +65,7 @@ void MessageSystem::_run(task_param_requirements)
              * @todo Actually implement a time that we need to wait.
              * 
              */
+            // TODO implement the wait time \/\/
             delayTask(1000); // <------ FIX THIS !!!!!!!!!!!
             continue;
         }

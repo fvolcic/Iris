@@ -32,14 +32,18 @@ void BlueToothRetriever::setupRetriever(){
 void BlueToothRetriever::updateRetriever(){
     if( Bluetooth::BluetoothSephamore != NULL ){
 
+        //FIXME This semaphore shit does not work.. 
+        PRINT("Retriever Trying to take semaphore\n");
         if( xSemaphoreTake( Bluetooth::BluetoothSephamore, (TickType_t) 30 / 10.0) == pdTRUE ){
+            PRINT("semaphore taken\n");
             if(Bluetooth::SerialBT.available()){
                 Message * messageBuffer = this->getMessageBuffer();
                 Bluetooth::SerialBT.readBytesUntil(Utils::LEDSerial::finalSerialByte, (uint8_t *)( messageBuffer->begin()), MAX_MESSAGE_LENGTH); // hack lmfao
                 this->enqueue_message(messageBuffer); 
             }
-
+            
             xSemaphoreGive(Bluetooth::BluetoothSephamore);
+            PRINT("semaphore given");
         }
 
     }
