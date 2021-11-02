@@ -9,9 +9,9 @@
  * 
  */
 
-#include "messagemanager.h"
-#include "messagedecoderbase.h"
-#include "thread.h"
+#include "MessageSystem/messagemanager.h"
+#include "MessageSystem/MessageDecoders/messagedecoderbase.h"
+#include "System/thread.h"
 
 
 /**

@@ -10,12 +10,12 @@
  */
 
 #include "ArduinoJson.h"
-#include "message.h"
-#include "messagedecoderbase.h"
-#include "messagedecodersystem.h"
+#include "MessageSystem/message.h"
+#include "MessageSystem/MessageDecoders/messagedecoderbase.h"
+#include "MessageSystem/MessageDecoders/messagedecodersystem.h"
 
 // Decoders below
-#include "messagedecodertest.h"
+#include "MessageSystem/MessageDecoders/messagedecodertest.h"
 
 #ifndef MESSAGEDECODERSYS_CPP
 #define MESSAGEDECODERSYS_CPP

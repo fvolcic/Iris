@@ -12,11 +12,11 @@
 
 //FIXME Actually test this file and functions
 
-#include "respondersystem.h"
-#include "responderbase.h"
-#include "responderserial.h"
-#include "responderbluetooth.h"
-#include "printer.h"
+#include "MessageSystem/Responders/respondersystem.h"
+#include "MessageSystem/Responders/responderbase.h"
+#include "MessageSystem/Responders/responderserial.h"
+#include "MessageSystem/Responders/responderbluetooth.h"
+#include "Utils/printer.h"
 
 // This has a very specific ordering.
 // Each element of the Responder_Pointers must align in the same place as there numeric 

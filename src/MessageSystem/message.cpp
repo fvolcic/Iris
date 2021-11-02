@@ -9,8 +9,8 @@
  * 
  */
 
-#include "message.h"
-#include "globals.h"
+#include "MessageSystem/message.h"
+#include "Utils/globals.h"
 
 Message::Message(char *message, MessageType type, bool *flag)
     : buffer(message), msgType(type), messageBufferInUse(flag)

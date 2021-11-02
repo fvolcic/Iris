@@ -9,7 +9,7 @@
  * 
  */
 
-#include "structures.h"
+#include "Utils/structures.h"
 
 
 //*****************************************************************
@@ -159,7 +159,7 @@ bool ledstd::RingBuffer<T, BufferSize>::queue_full(){
 
 // RingBuffer template instantiations below. Needed for the linking stage of compilation.
 
-#include "message.h"
+#include "MessageSystem/message.h"
 
 template class ledstd::RingBuffer<int, 5u>; 
 template class ledstd::RingBuffer<Message *, 5u>; 

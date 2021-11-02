@@ -9,11 +9,11 @@
  * 
  */
 
-#include "bluetooth_reciever.h"
+#include "MessageSystem/Retrievers/bluetooth_reciever.h"
 #include "BluetoothSerial.h"
-#include "printer.h"
-#include "bluetooth_tools.h"
-#include "special_includes.h"
+#include "Utils/printer.h"
+#include "Utils/bluetooth_tools.h"
+#include "Utils/special_includes.h"
 
 //getFreeRTOSHeader(semphr.h)
 

@@ -11,9 +11,9 @@
 
 #include <Arduino.h>
 
-#include "storage.h"
-#include "printer.h"
-#include "messagesystem.h"
+#include "System/storage.h"
+#include "Utils/printer.h"
+#include "MessageSystem/messagesystem.h"
 
 void setup() {
 

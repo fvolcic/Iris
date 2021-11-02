@@ -11,7 +11,7 @@
  */
 
 #include <Arduino.h>
-#include "SYSTEM_CONFIG.h"
+#include "System/SYSTEM_CONFIG.h"
 
 #ifndef THREAD_H
 #define THREAD_H

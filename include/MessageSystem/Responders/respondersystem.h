@@ -9,8 +9,8 @@
  * 
  */
 
-#include "enum.h"
-#include "responderbase.h"
+#include "Utils/enum.h"
+#include "MessageSystem/Responders/responderbase.h"
 
 #ifndef RESPONDERSYS_H
 #define RESPONDERSYS_H

@@ -9,12 +9,12 @@
  * 
  */
 
-#include "messagesystem.h"
-#include "messagemanager.h"
-#include "thread.h"
-#include "utils.h"
-#include "messagedecodersystem.h"
-#include "printer.h"
+#include "MessageSystem/messagesystem.h"
+#include "MessageSystem/messagemanager.h"
+#include "System/thread.h"
+#include "Utils/utils.h"
+#include "MessageSystem/MessageDecoders/messagedecodersystem.h"
+#include "Utils/printer.h"
 
 #ifndef MESSAGESYSTEM_CPP
 #define MESSAGESYSTEM_CPP

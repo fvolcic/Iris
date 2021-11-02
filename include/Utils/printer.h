@@ -9,8 +9,8 @@
  * 
  */
 
-#include "globals.h"
-#include "utils.h"
+#include "Utils/globals.h"
+#include "Utils/utils.h"
 
 #ifdef VERBOSE
 #define PRINTER_SETUP()\

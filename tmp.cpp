@@ -9,7 +9,7 @@
  * 
  */
 
-#include "responderbase.h"
+#include "MessageSystem/Responders/responderbase.h"
 
 class BluetoothResponder : public ResponderBase {
 

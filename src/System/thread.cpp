@@ -11,11 +11,11 @@
  * @note espressif freeRTOS: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/system/freertos.html 
  */
 
-#include "thread.h"
-#include "utils.h"
-#include "SYSTEM_CONFIG.h"
+#include "System/thread.h"
+#include "Utils/utils.h"
+#include "System/SYSTEM_CONFIG.h"
 
-#include "printer.h"
+#include "Utils/printer.h"
 
 Thread::thread_handle Thread::create_thread(Thread::thread_config * config){
 #ifdef USING_FREE_RTOS

@@ -13,11 +13,11 @@
  * 
  */
 
-#include "messagedecodertest.h"
-#include "messagesystem.h"
-#include "storage.h"
-#include "utils.h"
-#include "respondersystem.h"
+#include "MessageSystem/MessageDecoders/messagedecodertest.h"
+#include "MessageSystem/messagesystem.h"
+#include "System/storage.h"
+#include "Utils/utils.h"
+#include "MessageSystem/Responders/respondersystem.h"
 
 using namespace Utils::LEDSerial; 
 

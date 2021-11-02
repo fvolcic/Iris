@@ -9,8 +9,8 @@
  * 
  */
 
-#include "settings.h"
-#include "interface.h"
+#include "System/settings.h"
+#include "System/interface.h"
 
 Settings::SettingsInitErr Settings::InitializeSettings(){
     MainThread::LED::_InitializeLEDSettings();

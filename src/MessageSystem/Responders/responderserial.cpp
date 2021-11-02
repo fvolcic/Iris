@@ -9,8 +9,8 @@
  * 
  */
 
-#include "responderserial.h"
-#include "utils.h"
+#include "MessageSystem/Responders/responderserial.h"
+#include "Utils/utils.h"
 
 SerialResponder::SerialResponder(){
 

@@ -9,7 +9,7 @@
  * 
  */
 
-#include "bluetooth_tools.h"
+#include "Utils/bluetooth_tools.h"
 #include "BluetoothSerial.h"
 
 // Initializations of some of the global variables

@@ -9,10 +9,10 @@
  * 
  */
 
-#include "bluetooth_tools.h"
+#include "Utils/bluetooth_tools.h"
 #include "BluetoothSerial.h"
-#include "responderbluetooth.h"
-#include "printer.h"
+#include "MessageSystem/Responders/responderbluetooth.h"
+#include "Utils/printer.h"
 
 /**
  * @brief Construct a new Bluetooth Responder:: Bluetooth Responder object

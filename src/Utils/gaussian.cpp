@@ -1,4 +1,4 @@
-#include "gaussian.h"
+#include "Utils/gaussian.h"
 #include <Arduino.h>
 
 //Generates a random gaussian value - there are 128 unique values in this fast gaussian function

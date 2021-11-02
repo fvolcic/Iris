@@ -9,7 +9,7 @@
  * 
  */
 
-#include "messagedecoderbase.h"
+#include "MessageSystem/MessageDecoders/messagedecoderbase.h"
 
 #ifndef MESSAGEDECODERTEST_H
 #define MESSAGEDECODERTEST_H

@@ -9,8 +9,8 @@
  * 
  */
 
-#include "messageretriever.h"
-#include "message.h"
+#include "MessageSystem/messageretriever.h"
+#include "MessageSystem/message.h"
 
 #ifndef MESSAGERETRIEVER_CPP
 #define MESSAGERETRIEVER_CPP

@@ -10,12 +10,12 @@
  */
 
 #include "ArduinoJson.h"
-#include "globals.h"
-#include "message.h"
-#include "messagedecoderbase.h"
+#include "Utils/globals.h"
+#include "MessageSystem/message.h"
+#include "MessageSystem/MessageDecoders/messagedecoderbase.h"
 
 // Decoders
-#include "messagedecodertest.h"
+#include "MessageSystem/MessageDecoders/messagedecodertest.h"
 
 #ifndef MESSAGEDECODER_H
 #define MESSAGEDECODER_H

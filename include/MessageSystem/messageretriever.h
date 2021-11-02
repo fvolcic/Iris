@@ -9,9 +9,9 @@
  * 
  */
 
-#include "globals.h"
-#include "message.h"
-#include "structures.h"
+#include "Utils/globals.h"
+#include "MessageSystem/message.h"
+#include "Utils/structures.h"
 
 #ifndef MESSAGERETRIEVER_H
 #define MESSAGERETRIEVER_H

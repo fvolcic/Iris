@@ -10,12 +10,12 @@
  * 
  */
 
-#include "message.h"
+#include "MessageSystem/message.h"
 
 // * All message retriever includes below *
-#include "messageretriever.h"
-#include "serialretriever.h"
-#include "bluetooth_reciever.h"
+#include "MessageSystem/messageretriever.h"
+#include "MessageSystem/Retrievers/serialretriever.h"
+#include "MessageSystem/Retrievers/bluetooth_reciever.h"
 
 #ifndef MESSAGERETRIEVER_PIO_H
 #define MESSAGERETRIEVER_PIO_H

@@ -11,11 +11,11 @@
 
 #include <Arduino.h>
 
-#include "globals.h"
-#include "serialretriever.h"
-#include "utils.h"
-#include "message.h"
-#include "printer.h"
+#include "Utils/globals.h"
+#include "MessageSystem/Retrievers/serialretriever.h"
+#include "Utils/utils.h"
+#include "MessageSystem/message.h"
+#include "Utils/printer.h"
 
 #ifndef SERIALRETIEVER_H
 #define SERIALRETIEVER_H

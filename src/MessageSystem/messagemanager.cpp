@@ -9,9 +9,9 @@
  * 
  */
 
-#include "messagemanager.h"
-#include "messageretriever.h"
-#include "message.h"
+#include "MessageSystem/messagemanager.h"
+#include "MessageSystem/messageretriever.h"
+#include "MessageSystem/message.h"
 
 using Msg = Message; 
 

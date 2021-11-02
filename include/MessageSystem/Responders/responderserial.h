@@ -9,7 +9,7 @@
  * 
  */
 
-#include "responderbase.h"
+#include "MessageSystem/Responders/responderbase.h"
 
 #ifndef RESPONDERSERIAL_H
 #define RESPONDERSERIAL_H
