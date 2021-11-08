@@ -27,6 +27,7 @@ bool Interface::interface_enabled(Interface::Interfaces interface){
             return Filesystem::file_exists("/SERIAL");
         break;
     }
+    return false;
 }
 
 bool Interface::enable_interface(Interface::Interfaces interface, bool reboot){

@@ -21,13 +21,15 @@ Settings::SettingsInitErr Settings::InitializeSettings(){
 }
 
 bool Settings::MainThread::LED::_InitializeLEDSettings(){
-
+    return true;
 }
 
 bool Settings::bluetooth::_initializeBTSettings(){
     bluetooth_enabled = Interface::interface_enabled(Interface::Interfaces::BT);
+    return true;
 }
 
 bool Settings::network::WIFI::_InitializeWifiSettings(){
     network_enabled = Interface::interface_enabled(Interface::Interfaces::WIFI);
+    return true;
 }

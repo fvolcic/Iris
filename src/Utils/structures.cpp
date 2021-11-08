@@ -117,7 +117,8 @@ ledstd::RingBuffer<T, BufferSize>::~RingBuffer(){}
 template<class T, unsigned int BufferSize>
 void ledstd::RingBuffer<T, BufferSize>::push(T elt){
     queue[tail] = elt; 
-    tail = (++tail) % BufferSize;  
+    ++tail;
+    tail %= BufferSize;  
 
     if(tail == head)
         fullQueue = true;
@@ -125,7 +126,9 @@ void ledstd::RingBuffer<T, BufferSize>::push(T elt){
 
 template<class T, unsigned int BufferSize>
 void ledstd::RingBuffer<T, BufferSize>::pop(){
-    head = (++head) % BufferSize; 
+
+    ++head;
+    head %= BufferSize; 
 
     if(fullQueue)
         fullQueue = false; 
