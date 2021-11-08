@@ -77,12 +77,49 @@ namespace ledstd{
              */
             unsigned int size(); 
 
+            /**
+             * @brief Get the element at the specified location of the vector
+             * 
+             * @param index 
+             * @return T& 
+             */
             T & at(unsigned int index); 
 
+            /**
+             * @brief Get the element at the specified location
+             * 
+             * @param index 
+             * @return T& 
+             */
             T & operator[](unsigned int index); 
 
+            /**
+             * @brief Pointer to the first element of the vector
+             * 
+             * @return T* 
+             */
             T * begin();
+            
+            /**
+             * @brief Pointer to the last element of the vector
+             * 
+             * @return T* 
+             */
             T * end(); 
+
+            /**
+             * @brief Remove an element from the specified index of the vector
+             * 
+             * @param index 
+             */
+            void remove(int index);
+
+            /**
+             * @brief Resize the capacity of the vector to either 1 or the min 
+             *        needed capacity to hold all the current elements
+             * 
+             */
+            void resize();
 
         private:
 
@@ -227,6 +264,86 @@ namespace ledstd{
 
     };
 
+
+    /**
+     * @brief 
+     * 
+     * @tparam T 
+     */
+    template<class T>
+    class Table{
+        public:
+
+            Table();
+            Table(int rows);
+            Table(int rows, int cols);
+
+            /**
+             * @brief Insert an element at the specified row and col
+             *        For example, insert(datum, 3, 3) will put datum at table[3][3] 
+             * 
+             * 
+             * @param row Row which you would like to insert the new element
+             * @param col Column where you would like the new element inserted
+             *
+             */
+            void insert(T datum, int row, int col);
+
+            /**
+             * @brief Remove the element located at position row, col
+             * 
+             * @param row 
+             * @param col 
+             */
+            void remove(int row, int col);
+
+            /**
+             * @brief Pop the last element from the specified row
+             * 
+             * @param row 
+             */
+            void pop_from_row(int row);
+
+            /**
+             * @brief Insert new row
+             * 
+             */
+            void add_row();
+
+            /**
+             * @brief Remove a row from the table
+             * 
+             * @param row 
+             */
+            void remove_row(int row);
+
+            /**
+             * @brief Return a pointer to the internal array of one of the rows in the table
+             * 
+             * @param row 
+             */
+            T* data(int row);
+
+            /**
+             * @brief Get the size of the entire table
+             * 
+             * @return int 
+             */
+            int size();
+
+            /**
+             * @brief Get the size of a specific row of the table
+             * 
+             * @param row 
+             * @return int 
+             */
+            int size(int row);
+
+        private:
+
+        ledstd::vector< ledstd:: vector<T>, 1> table;
+
+    };
 
 }; 
 

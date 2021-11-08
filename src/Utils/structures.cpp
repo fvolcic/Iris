@@ -103,6 +103,26 @@ T & ledstd::vector<T, Size>::operator[](unsigned int index){
     return datum[index];
 }
 
+template<class T, int Size>
+void remove(int index){
+    for(int i = index; i < size() - 1; ++i)
+        datum[i] = datum[i+1]; 
+    pop_back();
+}
+
+template<class T, int Size>
+void resize(){
+    int new_capacity = size() > 1 ? size() : 1; // the new capacity of the vector
+
+    T * new_datum = new T[new_capacity];
+    for(int i = 0; i < size(); ++i)
+        new_datum[i] = datum[i];
+
+    delete datum;
+    datum = new_datum;
+
+}
+
 
 //*****************************************************************
 //*                       RingBuffer                              *
@@ -166,3 +186,54 @@ bool ledstd::RingBuffer<T, BufferSize>::queue_full(){
 
 template class ledstd::RingBuffer<int, 5u>; 
 template class ledstd::RingBuffer<Message *, 5u>; 
+
+
+//*****************************************************************
+//*                       Table                                   *
+//*****************************************************************
+
+
+template<class T>
+ledstd::Table<T>::Table(){
+
+}
+
+template<class T>
+void ledstd::Table<T>::add_row(){ 
+
+}
+
+template<class T>
+void ledstd::Table<T>::pop_from_row(int row){
+
+}
+
+template<class T>
+void ledstd::Table<T>::remove_row(int row){ 
+
+}
+
+template<class T>
+void ledstd::Table<T>::remove(int row, int col){
+
+}
+
+template<class T>
+void ledstd::Table<T>::insert(T datum, int row, int col){
+
+}
+
+template<class T>
+int ledstd::Table<T>::size(){ 
+
+}
+
+template<class T>
+int ledstd::Table<T>::size(int row){
+
+}
+
+template<class T>
+T * ledstd::Table<T>::data(int row){
+
+}
