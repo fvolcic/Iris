@@ -15,12 +15,6 @@
 #include "Utils/bluetooth_tools.h"
 #include "Utils/special_includes.h"
 
-//getFreeRTOSHeader(semphr.h)
-
-//#include "semphr.h"
-#include "/home/franklin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/freertos/freertos/semphr.h"
-//#include <semphr.h>
-
 void BlueToothRetriever::setupRetriever(){
     PRINT("Starting Bluetooth\n");
     Bluetooth::initializeBluetooth();
