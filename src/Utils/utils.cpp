@@ -46,13 +46,6 @@ void Utils::LEDSerial::initializeSerial(unsigned long baud_rate){
     }
 }
 
-template<typename T>
-void Utils::LEDSerial::print(T datum){
-    if(!Utils::LEDSerial::serialInitialized)
-        Utils::LEDSerial::initializeSerial(); 
-    Serial.print(datum); 
-}
-
 bool Utils::LEDSerial::serialAvailable(){
     return Serial.available(); 
 }
@@ -78,14 +71,5 @@ void Utils::LEDSerial::printSerialUntilLength(const char * buffer, unsigned int 
 }
 
 void (*Utils::Program::RESET)(void) = 0;
-
-
-
-// template instantions
-template void Utils::LEDSerial::print(char *); 
-template void Utils::LEDSerial::print(char const *); 
-template void Utils::LEDSerial::print(bool); 
-template void Utils::LEDSerial::print(unsigned int);
-template void Utils::LEDSerial::print(int);
 
 #endif

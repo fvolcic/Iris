@@ -15,7 +15,7 @@
 
 namespace Interface{
 
-enum class Interfaces { WIFI, BT, SERIAL }; 
+enum class Interfaces { WIFI, BT, ESP_SERIAL }; 
 
 /**
  * @brief Check if a specific interface is enabled.

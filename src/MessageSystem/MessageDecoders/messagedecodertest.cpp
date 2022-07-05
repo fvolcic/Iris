@@ -35,7 +35,9 @@ const char * ExampleDecoder::get_key() {
 bool ExampleDecoder::decode(JsonDocument * doc) {
     initializeSerial();
     print("Received New Data\n"); 
-    print(doc->data().asString()); 
+    // print( doc );
+    print(doc->data().asString().c_str()); 
+    print("HERE!"); 
 
     Filesystem::launch(); 
 

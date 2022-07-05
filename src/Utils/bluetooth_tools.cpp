@@ -10,7 +10,9 @@
  */
 
 #include "Utils/bluetooth_tools.h"
+#include "Utils/utils.h"
 #include "BluetoothSerial.h"
+#include "BTAddress.h"
 
 // Initializations of some of the global variables
 bool Bluetooth::bluetooth_initialized = false;
@@ -24,11 +26,16 @@ void Bluetooth::initializeBluetooth(){
 
     bluetooth_initialized = true;
 
-    SerialBT = BluetoothSerial();
+    // SerialBT = BluetoothSerial();
     SerialBT.begin();
 
     // vSemaphoreCreateBinary(BluetoothSephamore); <-- Depreciated Semaphore creation tool
     BluetoothSephamore = xSemaphoreCreateBinary();
+
+    
+    Utils::LEDSerial::print("BT Address: "); 
+    // Utils::LEDSerial::print(bt_address.toString().c_str());
+
     xSemaphoreGive(BluetoothSephamore); // Required to give semaphore before it can be taken by any threads
 }
 

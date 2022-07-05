@@ -23,7 +23,7 @@ bool Interface::interface_enabled(Interface::Interfaces interface){
             return Filesystem::file_exists("/WIFI");
         break; 
 
-        case Interfaces::SERIAL:
+        case Interfaces::ESP_SERIAL:
             return Filesystem::file_exists("/SERIAL");
         break;
     }
@@ -41,7 +41,7 @@ bool Interface::enable_interface(Interface::Interfaces interface, bool reboot){
             success = Filesystem::create_file("/WIFI");
         break; 
 
-        case Interfaces::SERIAL:
+        case Interfaces::ESP_SERIAL:
             success = Filesystem::create_file("/SERIAL");
         break;
     }
@@ -63,7 +63,7 @@ bool Interface::disable_interface(Interface::Interfaces interface, bool reboot){
             success = Filesystem::delete_file("/WIFI");
         break; 
 
-        case Interfaces::SERIAL:
+        case Interfaces::ESP_SERIAL:
             success = Filesystem::delete_file("/SERIAL");
         break;
     }
