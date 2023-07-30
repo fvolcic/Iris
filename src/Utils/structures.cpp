@@ -10,7 +10,7 @@
  */
 
 #include "Utils/structures.h"
-
+#include <Arduino.h>
 
 //*****************************************************************
 //*                           Vector                              *
@@ -166,3 +166,4 @@ bool ledstd::RingBuffer<T, BufferSize>::queue_full(){
 
 template class ledstd::RingBuffer<int, 5u>; 
 template class ledstd::RingBuffer<Message *, 5u>; 
+template class ledstd::RingBuffer<String, 6u>;

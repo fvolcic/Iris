@@ -19,16 +19,21 @@ void BlueToothRetriever::setupRetriever(){
     PRINT("Starting Bluetooth\n");
     Bluetooth::initializeBluetooth();
    // BlueToothRetriever::SerialBT = BluetoothSerial(); 
-   // SerialBT.begin();
+   // SerialBT.begin(); 
     PRINT("Bluetooth started\n");
 }
 
 void BlueToothRetriever::updateRetriever(){
     if( Bluetooth::BluetoothSephamore != NULL ){
         if( xSemaphoreTake( Bluetooth::BluetoothSephamore, (TickType_t) 30 / 10.0) == pdTRUE ){
-            if(Bluetooth::SerialBT.available()){
+            if(Bluetooth::hasNextMessage()){
                 Message * messageBuffer = this->getMessageBuffer();
-                Bluetooth::SerialBT.readBytesUntil(Utils::LEDSerial::finalSerialByte, (uint8_t *)( messageBuffer->begin()), MAX_MESSAGE_LENGTH); // hack lmfao
+                auto msg = Bluetooth::getNextMessage();
+                auto bufferIter = messageBuffer->begin();
+                for(int i = 0; i < msg.length(); i++){
+                    *bufferIter = msg[i];
+                    bufferIter++;
+                }
                 this->enqueue_message(messageBuffer); 
             }
             

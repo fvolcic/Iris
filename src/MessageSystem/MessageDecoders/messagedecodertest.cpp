@@ -36,7 +36,7 @@ bool ExampleDecoder::decode(JsonDocument * doc) {
     initializeSerial();
     print("Received New Data\n"); 
     // print( doc );
-    print(doc->data().asString().c_str()); 
+    
     print("HERE!"); 
 
     Filesystem::launch(); 
@@ -115,7 +115,15 @@ bool ExampleDecoder::decode(JsonDocument * doc) {
     if(!Filesystem::file_exists(filename)){
         print("File does not exist\n");
         return true;
-    }/**
+    } else {
+        print("File exists\n");
+        char * data = Filesystem::get_data(filename);
+        
+        print_char_until(data, '\0', MAX_MESSAGE_LENGTH);
+        delete[] data;
+    }
+    
+    /**
  * @brief 
  * 
  * @param filename 

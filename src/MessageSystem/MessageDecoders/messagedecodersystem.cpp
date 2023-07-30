@@ -33,8 +33,10 @@ bool DecoderSystem::decode_execute(Message *msg)
 
     const char *val = jsonObj["type"];
 
-    if (!val)
+    if (!val) {
+        msg->DestroyMessage();
         return false;
+    }
 
     for (unsigned int i = 0; i < DecoderSystem::num_decoders; ++i)
     {
@@ -44,6 +46,8 @@ bool DecoderSystem::decode_execute(Message *msg)
             return DecoderSystem::decoders[i]->decode(& jsonObj);
         }
     }
+
+    msg->DestroyMessage();
 
     return false;
 }
